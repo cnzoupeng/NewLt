@@ -1,0 +1,10 @@
+D:\mycode\NewLt\bin\Debug\NewLt.exe
+D:\mycode\NewLt\bin\Debug\NewLt.pdb
+D:\mycode\NewLt\obj\Debug\ResolveAssemblyReference.cache
+D:\mycode\NewLt\obj\Debug\NewLt.Properties.Resources.resources
+D:\mycode\NewLt\obj\Debug\GenerateResource.read.1.tlog
+D:\mycode\NewLt\obj\Debug\GenerateResource.write.1.tlog
+D:\mycode\NewLt\obj\Debug\NewLt.exe.licenses
+D:\mycode\NewLt\obj\Debug\NewLt.exe
+D:\mycode\NewLt\obj\Debug\NewLt.pdb
+D:\mycode\NewLt\obj\Debug\NewLt.MainForm.resources
