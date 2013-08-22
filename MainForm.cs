@@ -13,26 +13,28 @@ using DevExpress.XtraEditors;
 using DevExpress.Utils;
 
 
+
 namespace NewLt
 {
+    
     public partial class MainForm : XtraForm
     {
+        public LtData ltData;
+
         public MainForm()
         {
+            ltData = new LtData();
             InitializeComponent();
-            InitGrid();
 
+            if (ltData.load_history() < 0)
+            {
+                MessageBox.Show("Load history data failed\n");
+            }
         }
-        BindingList<Person> gridDataList = new BindingList<Person>();
-        void InitGrid()
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            gridDataList.Add(new Person("John", "Smith"));
-            gridDataList.Add(new Person("Gabriel", "Smith"));
-            gridDataList.Add(new Person("Ashley", "Smith", "some comment"));
-            gridDataList.Add(new Person("Adrian", "Smith", "some comment"));
-            gridDataList.Add(new Person("Gabriella", "Smith", "some comment"));
-
+            int xx = 6;
         }
-
     }
 }

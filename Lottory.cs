@@ -1,0 +1,533 @@
+﻿
+using System;
+using System.IO;
+using System.Collections;
+using System.Windows.Forms;
+
+namespace NewLt
+{   
+
+    public class LottoryItem
+    {
+        public int id = 0;
+        public int[] red = {0,0,0,0,0,0};
+        public int blue;
+        public int sum_red;
+        public int sum_all;
+        public int ac;
+        public int sd;
+        public int even_num;
+        public int odd_num;
+        public int miss_row;
+        public int map_miss_row;
+        public int miss_col;
+        public int map_miss_col;
+        public long map;
+        public long mapFilter;
+        public int[] allNums;
+        public string odd_even_str = null;
+
+        public const int NUMS = 29;
+
+
+        public static string[] names = { "ID", "R1", "R2", "R3", "R4", "R5", "R6", "BL", 
+                                           "SUM_RED", "SUM_ALL", "AC", "SD", "EVEN_NUM", "ODD_NUM", "EO", 
+                                           "MR", "MR1", "MR2", "MR3", "MR4", "MR5", "MR6",
+                                           "MC", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6"};
+
+        public int get_item_by_index(int index)
+        {
+            if (index >= 0 && index < NUMS)
+            {
+                return allNums[index];
+            }
+            return -1;
+        }
+
+        public LottoryItem()
+        {
+            allNums = new int[NUMS];
+        }
+
+        public static int bit_one_count(long u)
+        {
+            int ret = 0;
+            while (u != 0)
+            {
+                u = (u & (u - 1));
+                ret++;
+            }
+            return ret;
+        }
+
+        public void init()
+        {
+            Array.Sort(this.red);
+
+            calc_ac();
+            calc_sandu();
+            calc_odd_even();
+            calc_miss_row();
+            calc_miss_col();
+
+
+            allNums[0] = this.id;
+            for (int i = 0; i < 6; i++ )
+            {
+                allNums[i + 1] = this.red[i];
+            }
+            allNums[7] = this.blue;
+            allNums[8] = this.sum_red;
+            allNums[9] = this.sum_all;
+            allNums[10] = this.ac;
+            allNums[11] = this.sd;
+            allNums[12] = this.even_num;
+            allNums[13] = this.odd_num;
+            allNums[14] = 0;
+            allNums[15] = this.miss_row;
+            allNums[16] = this.MR1;
+            allNums[17] = this.MR2;
+            allNums[18] = this.MR3;
+            allNums[19] = this.MR4;
+            allNums[20] = this.MR5;
+            allNums[21] = this.MR6;
+            allNums[22] = this.map_miss_col;
+            allNums[23] = this.MC1;
+            allNums[24] = this.MC2;
+            allNums[25] = this.MC3;
+            allNums[26] = this.MC4;
+            allNums[27] = this.MC5;
+            allNums[28] = this.MC6;
+        }
+
+
+        public int calc_ac()
+        {
+            long acmap = 0;
+            long one = 1;
+            int ac = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = i + 1; j < 6; j++)
+                {
+                    ac = Math.Abs((int)this.red[j] - (int)this.red[i]);
+                    acmap |= one << (ac - 1);
+                }
+            }
+
+            this.ac = LottoryItem.bit_one_count(acmap) - 5;
+            return this.ac;
+        }
+
+        public int calc_sandu()
+        {
+            int max = 0;
+            for (int i = 1; i < 34; i++)
+            {
+                int min = 0xFF;
+                int cal = 0;
+                for (int j = 0; j < 6; j++)
+                {
+                    cal = Math.Abs(i - (int)this.red[j]);
+                    if (cal < min)
+                    {
+                        min = cal;
+                    }
+                }
+
+                if (min > max)
+                {
+                    max = min;
+                }
+            }
+            this.sd = (int)max;
+            return this.sd;
+        }
+
+        public int calc_odd_even()
+        {
+            int even_num = 0;
+            this.odd_even_str = new string(' ', 1);
+            odd_even_str = "";
+
+            for (int i = 0; i < 6; i++ )
+            {
+                if (this.red[i] % 2 != 0)
+                {
+                    even_num++;
+                    odd_even_str += "奇";
+                }
+                else
+                {
+                    odd_even_str += "偶";
+                }
+            }
+            this.even_num = even_num;
+            this.odd_num = 6 - even_num;
+            return 0;
+        }
+
+        public int calc_miss_row()
+        {
+            long bit1 = 1;
+            long missBase = 0x3F;
+            this.map_miss_row = 0;
+            this.miss_row = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                if ((this.map & missBase) != 0)
+                {
+                    this.map_miss_row |= (int)(bit1 << i);                    
+                }
+                else
+                {
+                    this.miss_row++;
+                }
+                missBase <<= 6;
+            }
+
+            return this.miss_row;
+        }
+
+        public int calc_miss_col()
+        {
+            int bit1 = 1;
+            long missBase = 0x555;
+            this.map_miss_col = 0;
+            this.miss_col = 0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                if ((this.map & missBase) != 0)
+                {
+                    this.map_miss_col |= bit1 << i;
+                }
+                else
+                {
+                    this.miss_col++;
+                }
+
+                missBase = missBase << 1;
+                if ((this.map & missBase) != 0)
+                {
+                    this.map_miss_col |= bit1 << (i + 3);                    
+                }
+                else
+                {
+                    this.miss_col++;
+                }
+                missBase <<= 11;
+            }
+
+            return this.miss_col;
+        }
+
+        //------------------------------------------
+
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
+        public int R1
+        {
+            get { return this.red[0]; }
+            set { this.red[0] = value; }
+        }
+
+        public int R2
+        {
+            get { return this.red[1]; }
+            set { this.red[1] = value; }
+        }
+
+        public int R3
+        {
+            get { return this.red[2]; }
+            set { this.red[2] = value; }
+        }
+
+        public int R4
+        {
+            get { return this.red[3]; }
+            set { this.red[3] = value; }
+        }
+
+        public int R5
+        {
+            get { return this.red[4]; }
+            set { this.red[4] = value; }
+        }
+
+        public int R6
+        {
+            get { return this.red[5]; }
+            set { this.red[5] = value; }
+        }
+
+        public int BL
+        {
+            get { return this.blue; }
+            set { this.blue = value; }
+        }
+
+        public int SUM_RED
+        {
+            get { return this.sum_red; }
+            set { this.sum_red = value; }
+        }
+
+        public int SUM_ALL
+        {
+            get { return this.sum_all; }
+            set { this.sum_all = value; }
+        }
+
+        public int AC
+        {
+            get { return this.ac; }
+            set { this.ac = value; }
+        }
+
+        public int SD
+        {
+            get { return this.sd; }
+            set { this.sd = value; }
+        }
+
+        public int EVEN_NUM
+        {
+            get { return this.even_num; }
+            set { this.even_num = value; }
+        }
+
+        public int ODD_NUM
+        {
+            get { return this.odd_num; }
+            set { this.odd_num = value; }
+        }
+
+        public string EVEN_ODD
+        {
+            get { return this.odd_even_str; }
+            set { this.odd_even_str = value; }
+        }
+
+        public int MR
+        {
+            get { return this.miss_row; }
+            set { this.miss_row = value; }
+        }
+
+        public int MC
+        {
+            get { return this.miss_col; }
+            set { this.miss_col = value; }
+        }
+
+        public int MC1
+        {
+            get { return (int)((this.map_miss_col & 0x1) > 0 ? 0 : 1); }
+        }
+        public int MC2
+        {
+            get { return (int)((this.map_miss_col & 0x2) > 0 ? 0 : 2); }
+        }
+        public int MC3
+        {
+            get { return (int)((this.map_miss_col & 0x4) > 0 ? 0 : 3); }
+        }
+        public int MC4
+        {
+            get { return (int)((this.map_miss_col & 0x8) > 0 ? 0 : 4); }
+        }
+        public int MC5
+        {
+            get { return (int)((this.map_miss_col & 0x10) > 0 ? 0 : 5); }
+        }
+        public int MC6
+        {
+            get { return (int)((this.map_miss_col & 0x20) > 0 ? 0 : 6); }
+        }
+
+
+        public int MR1
+        {
+            get { return (int)((this.map_miss_row & 0x1) > 0 ? 0 : 1); }
+        }
+        public int MR2
+        {
+            get { return (int)((this.map_miss_row & 0x2) > 0 ? 0 : 2); }
+        }
+        public int MR3
+        {
+            get { return (int)((this.map_miss_row & 0x4) > 0 ? 0 : 3); }
+        }
+        public int MR4
+        {
+            get { return (int)((this.map_miss_row & 0x8) > 0 ? 0 : 4); }
+        }
+        public int MR5
+        {
+            get { return (int)((this.map_miss_row & 0x10) > 0 ? 0 : 5); }
+        }
+        public int MR6
+        {
+            get { return (int)((this.map_miss_row & 0x20) > 0 ? 0 : 6); }
+        }
+     }
+
+    public class LtFileOper
+    {
+        public int string_to_item(string str, LottoryItem item)
+        {
+            long bit1 = 1;
+            string[] strItem = str.Split('\t');
+            if (strItem.Length > 7)
+            {
+                item.map = 0;
+                item.id = int.Parse(strItem[0]);
+                for (int i = 0; i < DEFINE.RED_ITEM_COUNT; i++)
+                {
+                    item.red[i] = int.Parse(strItem[i + 1]);
+                    item.sum_all += item.red[i];
+                    item.sum_red += item.red[i];
+                    item.map |= bit1 << ((char)(item.red[i] - 1));
+                }
+                item.blue = int.Parse(strItem[7]);
+                item.sum_all += item.blue;
+
+                item.init();
+                return 0;
+            }
+
+             MessageBox.Show("Wrong data");
+             return -1;
+
+        }
+        
+        public int load_item_from_file(string fileName, ArrayList ltSet)
+        {
+            StreamReader objReader = new StreamReader(fileName);
+            string sLine = "";
+            while (sLine != null)
+            {
+                sLine = objReader.ReadLine();
+                if (sLine != null && !sLine.Equals(""))
+                {
+                    LottoryItem item = new LottoryItem();
+                    if (string_to_item(sLine, item) == 0)
+                    {
+                        ltSet.Add(item);
+                    }
+                }
+            }
+            objReader.Close();
+            return ltSet.Count;
+        }
+
+        public int write_item_to_file(string fileName, string itemStr)
+        {
+            StreamWriter objWriter = new StreamWriter(fileName, false);
+            objWriter.Write(itemStr);
+            objWriter.Close();
+            return 0;
+        }
+    }
+
+    public class Num_Choose
+    {
+        public string[] column = {"", "", "", "", "", ""};
+
+        public Num_Choose(int c1, int c2, int c3, int c4, int c5, int c6)
+        {
+            int[] val = {c1, c2, c3, c4, c5, c6};
+            for (int i = 0; i < 6; i++ )
+            {
+                if (val[i] >= 0)
+                {
+                    this.column[i] = val[i].ToString();
+                }    
+            }
+        }
+
+        public string NUM_COL_1
+        {
+            get { return this.column[0]; }
+        }
+        public string NUM_COL_2
+        {
+            get { return this.column[1]; }
+        }
+        public string NUM_COL_3
+        {
+            get { return this.column[2]; }
+        }
+        public string NUM_COL_4
+        {
+            get { return this.column[3]; }
+        }
+        public string NUM_COL_5
+        {
+            get { return this.column[4]; }
+        }
+        public string NUM_COL_6
+        {
+            get { return this.column[5]; }
+        }
+    }
+    
+    public class EvenOdd_Choose
+    {
+        public string[] column = { "偶", "偶", "偶", "偶", "偶", "偶" };
+        
+        public string NUM_COL_1
+        {
+            get { return this.column[0]; }
+        }
+        public string NUM_COL_2
+        {
+            get { return this.column[1]; }
+        }
+        public string NUM_COL_3
+        {
+            get { return this.column[2]; }
+        }
+        public string NUM_COL_4
+        {
+            get { return this.column[3]; }
+        }
+        public string NUM_COL_5
+        {
+            get { return this.column[4]; }
+        }
+        public string NUM_COL_6
+        {
+            get { return this.column[5]; }
+        }
+    }
+
+    public class NumCensus
+    {
+        int num;
+        int count;
+
+        public NumCensus(int num, int count)
+        {
+            this.num = num;
+            this.count = count;
+        }
+
+        public int NUM
+        {
+            get { return this.num; }
+        }
+
+        public int COUNT
+        {
+            get { return this.count; }
+        }
+    }
+
+}

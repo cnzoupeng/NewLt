@@ -93,6 +93,7 @@
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.sc_h_1)).EndInit();
             this.sc_h_1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc_h_v2)).EndInit();
