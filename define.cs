@@ -1,6 +1,4 @@
-﻿
-
-namespace NewLt
+﻿namespace NewLt
 {
     public class DEFINE
     {
@@ -17,6 +15,4 @@ namespace NewLt
         public int col_end = -1;
         public int col_map = 0;
     }
-
-
 }
