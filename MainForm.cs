@@ -136,20 +136,14 @@ namespace NewLt
             refresh_runchart_data();
         }
 
-        public void refresh_runchart_data()
+        public int get_id_range(ref int start, ref int stop)
         {
-            if (runchart_is_drawing)
-            {
-                return;
-            }
-            runchart_is_drawing = true;
-
             if (comb_id_select_begin_r.SelectedIndex < 0
                 || comb_id_select_end_r.SelectedIndex < 0
                 || comb_name_select_r.SelectedIndex < 0)
             {
                 runchart_is_drawing = false;
-                return;
+                return -1;
             }
 
             int id_begin = Int32.Parse(comb_id_select_begin_r.EditValue.ToString());
@@ -168,7 +162,7 @@ namespace NewLt
             if (valIndex >= LottoryItem.names.Length)
             {
                 runchart_is_drawing = false;
-                return;
+                return -1;
             }
 
             int index_begin = -1;
@@ -197,7 +191,7 @@ namespace NewLt
             if (index_begin < 0 && index_end < 0)
             {
                 runchart_is_drawing = false;
-                return;
+                return -1;
             }
             if (index_begin > index_end)
             {
@@ -206,8 +200,92 @@ namespace NewLt
                 index_begin ^= index_end;
             }
 
-            this.Cursor = Cursors.WaitCursor;
+            start = index_begin;
+            stop = index_end;
+            return 0;
+        }
 
+        public void refresh_dig_data()
+        {
+            if (runchart_is_drawing)
+            {
+                return;
+            }
+
+            runchart_is_drawing = true;
+            int index_begin = 0, index_end = 0;
+            if (get_id_range(ref index_begin, ref index_end) < 0)
+            {
+                MessageBox.Show("获取数据范围失败");
+                return;
+            }
+
+            string nameid = comb_name_select_r.EditValue.ToString();
+            this.Cursor = Cursors.WaitCursor;
+            //-------------------------------------------
+            BindingList<NumCensus> list_census = new BindingList<NumCensus>();
+
+            int[] index = new int[256];
+            for (int i = 0; i < 256; i++)
+            {
+                index[i] = 0;
+            }
+
+            for (int i = index_begin; i < index_end; i++)
+            {
+                LottoryItem item = (LottoryItem)ltData.ltSet[i];
+                index[item.allNums[1]]++;
+            }
+
+            for (int i = 0; i < 256; i++)
+            {
+                if (index[i] > 0)
+                {
+                    NumCensus census = new NumCensus(i, index[i]);
+                    list_census.Add(census);
+                }
+            }
+
+            //----------------------------------------------
+            chart_line_one.DataSource = list_census;
+
+            chart_line_one.SeriesSerializable[0].Name = "SUM";
+            chart_line_one.SeriesSerializable[0].ArgumentDataMember = "NUM";
+            chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = "COUNT";
+
+            chart_line_one.SeriesSerializable[1].Name = "AC";
+            chart_line_one.SeriesSerializable[1].ArgumentDataMember = "ID";
+            chart_line_one.SeriesSerializable[1].ValueDataMembers[0] = "AC";
+
+            chart_line_one.SeriesSerializable[2].Name = "SD";
+            chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
+            chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
+
+            chart_line_one.SeriesSerializable[3].Name = "ODD";
+            chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
+            chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "ODD_NUM";
+
+            this.Cursor = Cursors.Default;
+            runchart_is_drawing = false;
+        }
+
+        public void refresh_runchart_data()
+        {
+            if (runchart_is_drawing)
+            {
+                return;
+            }
+           
+            runchart_is_drawing = true;
+            int index_begin = 0, index_end = 0;
+            if (get_id_range(ref index_begin, ref index_end) < 0)
+            {
+                MessageBox.Show("获取数据范围失败");
+                return;
+            }
+            
+            string nameid = comb_name_select_r.EditValue.ToString();
+            this.Cursor = Cursors.WaitCursor;
             //-------------------------------------------
 
             ArrayList list_data = ltData.ltSet.GetRange(index_begin, index_end - index_begin);

@@ -165,4 +165,32 @@ namespace NewLt
             }
         }
     }
+
+    public class NumCensus
+    {
+        public int num;
+        public int count;
+
+        public NumCensus(int num, int count)
+        {
+            this.num = num;
+            this.count = count;
+        }
+
+        public int NUM
+        {
+            get
+            {
+                return num;
+            }
+        }
+
+        public int COUNT
+        {
+            get
+            {
+                return count;
+            }
+        }
+    }
 }

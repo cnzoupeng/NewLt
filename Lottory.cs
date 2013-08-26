@@ -672,33 +672,5 @@ namespace NewLt
                 return column[5];
             }
         }
-    }
-
-    public class NumCensus
-    {
-        private int num;
-        private int count;
-
-        public NumCensus(int num, int count)
-        {
-            this.num = num;
-            this.count = count;
-        }
-
-        public int NUM
-        {
-            get
-            {
-                return num;
-            }
-        }
-
-        public int COUNT
-        {
-            get
-            {
-                return count;
-            }
-        }
-    }
+    } 
 }
