@@ -55,14 +55,29 @@
             DevExpress.XtraCharts.PointOptions pointOptions5 = new DevExpress.XtraCharts.PointOptions();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView5 = new DevExpress.XtraCharts.LineSeriesView();
             DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane4 = new DevExpress.XtraCharts.XYDiagramPane();
+            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane5 = new DevExpress.XtraCharts.XYDiagramPane();
+            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane6 = new DevExpress.XtraCharts.XYDiagramPane();
+            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY4 = new DevExpress.XtraCharts.SecondaryAxisY();
+            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY5 = new DevExpress.XtraCharts.SecondaryAxisY();
+            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY6 = new DevExpress.XtraCharts.SecondaryAxisY();
             DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.PointOptions pointOptions6 = new DevExpress.XtraCharts.PointOptions();
             DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.PointOptions pointOptions7 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.PointOptions pointOptions8 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel4 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.PointOptions pointOptions9 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel5 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.PointOptions pointOptions10 = new DevExpress.XtraCharts.PointOptions();
             this.sc_h_1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.sc_h_v2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.grid_history = new DevExpress.XtraGrid.GridControl();
@@ -128,11 +143,24 @@
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_dig_one)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel5)).BeginInit();
             this.SuspendLayout();
             // 
             // sc_h_1
@@ -525,17 +553,17 @@
             // 
             this.chart_line_one.CrosshairOptions.ArgumentLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(57)))), ((int)(((byte)(205)))));
             this.chart_line_one.CrosshairOptions.ValueLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(57)))), ((int)(((byte)(205)))));
-            xyDiagram1.AxisX.Label.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.GridLines.Visible = true;
             xyDiagram1.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             xyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram1.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1;2;1;0";
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1;0;1;2";
             xyDiagram1.AxisY.GridLines.MinorVisible = true;
             xyDiagram1.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             xyDiagram1.AxisY.Range.AlwaysShowZeroLevel = false;
             xyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagramPane1.Name = "Pane 1";
             xyDiagramPane1.PaneID = 0;
             xyDiagramPane2.Name = "Pane 2";
@@ -547,23 +575,32 @@
             xyDiagramPane2,
             xyDiagramPane3});
             secondaryAxisY1.AxisID = 0;
+            secondaryAxisY1.GridLines.MinorVisible = true;
+            secondaryAxisY1.GridLines.Visible = true;
             secondaryAxisY1.Name = "Secondary AxisY 1";
             secondaryAxisY1.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            secondaryAxisY1.Range.AlwaysShowZeroLevel = false;
             secondaryAxisY1.Range.ScrollingRange.SideMarginsEnabled = true;
             secondaryAxisY1.Range.SideMarginsEnabled = true;
             secondaryAxisY1.VisibleInPanesSerializable = "0";
             secondaryAxisY2.AxisID = 1;
+            secondaryAxisY2.GridLines.MinorVisible = true;
+            secondaryAxisY2.GridLines.Visible = true;
             secondaryAxisY2.Name = "Secondary AxisY 2";
             secondaryAxisY2.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            secondaryAxisY2.Range.AlwaysShowZeroLevel = false;
             secondaryAxisY2.Range.ScrollingRange.SideMarginsEnabled = true;
             secondaryAxisY2.Range.SideMarginsEnabled = true;
-            secondaryAxisY2.VisibleInPanesSerializable = "2";
+            secondaryAxisY2.VisibleInPanesSerializable = "1";
             secondaryAxisY3.AxisID = 2;
+            secondaryAxisY3.GridLines.MinorVisible = true;
+            secondaryAxisY3.GridLines.Visible = true;
             secondaryAxisY3.Name = "Secondary AxisY 3";
             secondaryAxisY3.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            secondaryAxisY3.Range.AlwaysShowZeroLevel = false;
             secondaryAxisY3.Range.ScrollingRange.SideMarginsEnabled = true;
             secondaryAxisY3.Range.SideMarginsEnabled = true;
-            secondaryAxisY3.VisibleInPanesSerializable = "-1";
+            secondaryAxisY3.VisibleInPanesSerializable = "2";
             xyDiagram1.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
             secondaryAxisY1,
             secondaryAxisY2,
@@ -578,42 +615,49 @@
             pointOptions1.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointSeriesLabel1.PointOptions = pointOptions1;
             series1.Label = pointSeriesLabel1;
-            series1.Name = "SeriesOne";
-            series1.ShowInLegend = false;
-            lineSeriesView1.AxisYName = "Secondary AxisY 1";
-            lineSeriesView1.ColorEach = true;
+            series1.Name = "Series_1";
             lineSeriesView1.LineMarkerOptions.BorderVisible = false;
-            lineSeriesView1.LineMarkerOptions.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Gradient;
-            lineSeriesView1.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Hexagon;
-            lineSeriesView1.LineMarkerOptions.Size = 6;
+            lineSeriesView1.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
             lineSeriesView1.LineMarkerOptions.Visible = true;
             lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            lineSeriesView1.PaneName = "Pane 1";
             series1.View = lineSeriesView1;
             pointSeriesLabel2.LineVisible = true;
             pointOptions2.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointOptions2.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointSeriesLabel2.PointOptions = pointOptions2;
             series2.Label = pointSeriesLabel2;
-            series2.Name = "Series 1";
-            lineSeriesView2.PaneName = "Pane 2";
+            series2.Name = "Series_2";
+            lineSeriesView2.AxisYName = "Secondary AxisY 1";
+            lineSeriesView2.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
+            lineSeriesView2.LineMarkerOptions.Visible = true;
+            lineSeriesView2.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            lineSeriesView2.PaneName = "Pane 1";
             series2.View = lineSeriesView2;
             pointSeriesLabel3.LineVisible = true;
             pointOptions3.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointOptions3.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointSeriesLabel3.PointOptions = pointOptions3;
             series3.Label = pointSeriesLabel3;
-            series3.Name = "Series 2";
+            series3.Name = "Series_3";
             lineSeriesView3.AxisYName = "Secondary AxisY 2";
-            lineSeriesView3.PaneName = "Pane 3";
+            lineSeriesView3.LineMarkerOptions.BorderVisible = false;
+            lineSeriesView3.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
+            lineSeriesView3.LineMarkerOptions.Visible = true;
+            lineSeriesView3.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            lineSeriesView3.PaneName = "Pane 2";
             series3.View = lineSeriesView3;
             pointSeriesLabel4.LineVisible = true;
             pointOptions4.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointOptions4.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointSeriesLabel4.PointOptions = pointOptions4;
             series4.Label = pointSeriesLabel4;
-            series4.Name = "Series 3";
+            series4.Name = "Series_4";
             lineSeriesView4.AxisYName = "Secondary AxisY 3";
+            lineSeriesView4.LineMarkerOptions.BorderVisible = false;
+            lineSeriesView4.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
+            lineSeriesView4.LineMarkerOptions.Visible = true;
+            lineSeriesView4.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            lineSeriesView4.PaneName = "Pane 3";
             series4.View = lineSeriesView4;
             this.chart_line_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1,
@@ -636,11 +680,54 @@
             xyDiagram2.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             xyDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram2.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1;0;1;2";
+            xyDiagram2.AxisY.GridLines.MinorVisible = true;
             xyDiagram2.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            xyDiagram2.AxisY.Range.AlwaysShowZeroLevel = false;
             xyDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram2.AxisY.Range.SideMarginsEnabled = true;
             xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagramPane4.Name = "Pane 1";
+            xyDiagramPane4.PaneID = 0;
+            xyDiagramPane5.Name = "Pane 2";
+            xyDiagramPane5.PaneID = 1;
+            xyDiagramPane6.Name = "Pane 3";
+            xyDiagramPane6.PaneID = 2;
+            xyDiagram2.Panes.AddRange(new DevExpress.XtraCharts.XYDiagramPane[] {
+            xyDiagramPane4,
+            xyDiagramPane5,
+            xyDiagramPane6});
+            secondaryAxisY4.AxisID = 0;
+            secondaryAxisY4.GridLines.MinorVisible = true;
+            secondaryAxisY4.GridLines.Visible = true;
+            secondaryAxisY4.Name = "Secondary AxisY 1";
+            secondaryAxisY4.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            secondaryAxisY4.Range.AlwaysShowZeroLevel = false;
+            secondaryAxisY4.Range.ScrollingRange.SideMarginsEnabled = true;
+            secondaryAxisY4.Range.SideMarginsEnabled = true;
+            secondaryAxisY4.VisibleInPanesSerializable = "0";
+            secondaryAxisY5.AxisID = 1;
+            secondaryAxisY5.GridLines.MinorVisible = true;
+            secondaryAxisY5.GridLines.Visible = true;
+            secondaryAxisY5.Name = "Secondary AxisY 2";
+            secondaryAxisY5.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            secondaryAxisY5.Range.AlwaysShowZeroLevel = false;
+            secondaryAxisY5.Range.ScrollingRange.SideMarginsEnabled = true;
+            secondaryAxisY5.Range.SideMarginsEnabled = true;
+            secondaryAxisY5.VisibleInPanesSerializable = "1";
+            secondaryAxisY6.AxisID = 2;
+            secondaryAxisY6.GridLines.MinorVisible = true;
+            secondaryAxisY6.GridLines.Visible = true;
+            secondaryAxisY6.Name = "Secondary AxisY 3";
+            secondaryAxisY6.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            secondaryAxisY6.Range.AlwaysShowZeroLevel = false;
+            secondaryAxisY6.Range.ScrollingRange.SideMarginsEnabled = true;
+            secondaryAxisY6.Range.SideMarginsEnabled = true;
+            secondaryAxisY6.VisibleInPanesSerializable = "2";
+            xyDiagram2.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
+            secondaryAxisY4,
+            secondaryAxisY5,
+            secondaryAxisY6});
             this.chart_dig_one.Diagram = xyDiagram2;
             this.chart_dig_one.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart_dig_one.Location = new System.Drawing.Point(0, 0);
@@ -650,21 +737,44 @@
             pointOptions6.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             sideBySideBarSeriesLabel1.PointOptions = pointOptions6;
             series5.Label = sideBySideBarSeriesLabel1;
-            series5.Name = "Series 1";
+            series5.Name = "Series_g_1";
             sideBySideBarSeriesLabel2.LineVisible = true;
             pointOptions7.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointOptions7.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             sideBySideBarSeriesLabel2.PointOptions = pointOptions7;
             series6.Label = sideBySideBarSeriesLabel2;
-            series6.Name = "Series 2";
-            this.chart_dig_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series5,
-        series6};
+            series6.Name = "Series_g_2";
+            sideBySideBarSeriesView1.AxisYName = "Secondary AxisY 1";
+            sideBySideBarSeriesView1.PaneName = "Pane 1";
+            series6.View = sideBySideBarSeriesView1;
             sideBySideBarSeriesLabel3.LineVisible = true;
             pointOptions8.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointOptions8.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             sideBySideBarSeriesLabel3.PointOptions = pointOptions8;
-            this.chart_dig_one.SeriesTemplate.Label = sideBySideBarSeriesLabel3;
+            series7.Label = sideBySideBarSeriesLabel3;
+            series7.Name = "Series_g_3";
+            sideBySideBarSeriesView2.AxisYName = "Secondary AxisY 2";
+            sideBySideBarSeriesView2.PaneName = "Pane 2";
+            series7.View = sideBySideBarSeriesView2;
+            sideBySideBarSeriesLabel4.LineVisible = true;
+            pointOptions9.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions9.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            sideBySideBarSeriesLabel4.PointOptions = pointOptions9;
+            series8.Label = sideBySideBarSeriesLabel4;
+            series8.Name = "Series_g_4";
+            sideBySideBarSeriesView3.AxisYName = "Secondary AxisY 3";
+            sideBySideBarSeriesView3.PaneName = "Pane 3";
+            series8.View = sideBySideBarSeriesView3;
+            this.chart_dig_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series5,
+        series6,
+        series7,
+        series8};
+            sideBySideBarSeriesLabel5.LineVisible = true;
+            pointOptions10.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions10.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            sideBySideBarSeriesLabel5.PointOptions = pointOptions10;
+            this.chart_dig_one.SeriesTemplate.Label = sideBySideBarSeriesLabel5;
             this.chart_dig_one.Size = new System.Drawing.Size(268, 407);
             this.chart_dig_one.TabIndex = 0;
             // 
@@ -717,12 +827,25 @@
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_line_one)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_dig_one)).EndInit();
             this.ResumeLayout(false);
 

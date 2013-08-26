@@ -40,6 +40,8 @@ namespace NewLt
             grid_history.DataSource = gridList;            
 
             init_ctrl();
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public void init_ctrl()
@@ -223,7 +225,7 @@ namespace NewLt
             //series_show.ArgumentDataMember = "ID";
             //series_show.ValueDataMembers[0] = nameid;
             //chart_line_one.Series.Add(series_show);
-            chart_line_one.SeriesSerializable[0].Name = "SUM_RED";
+            chart_line_one.SeriesSerializable[0].Name = "SUM";
             chart_line_one.SeriesSerializable[0].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = "SUM_RED";
 
@@ -235,7 +237,7 @@ namespace NewLt
             chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
 
-            chart_line_one.SeriesSerializable[3].Name = "ODD_NUM";
+            chart_line_one.SeriesSerializable[3].Name = "ODD";
             chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "ODD_NUM";
 
