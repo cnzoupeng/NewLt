@@ -32,7 +32,19 @@ namespace NewLt
                                            "SUM_RED", "SUM_ALL", "AC", "SD", "EVEN_NUM", "ODD_NUM", "EO",
                                            "MR", "MR1", "MR2", "MR3", "MR4", "MR5", "MR6",
                                            "MC", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" };
-
+        public static int ItemId(string name)
+        {
+            int index = -1;
+            for (int i = 0; i < names.Length; i++ )
+            {
+                if (names[i] == name)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
+        }
         public int get_item_by_index(int index)
         {
             if (index >= 0 && index < NUMS)

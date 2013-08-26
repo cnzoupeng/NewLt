@@ -23,6 +23,8 @@ namespace NewLt
         public LtData ltData;
         public BindingList<LottoryItem> gridList;
         public bool runchart_is_drawing;
+        public int index_begin;
+        public int index_end;
 
         public MainForm()
         {
@@ -41,7 +43,9 @@ namespace NewLt
 
             init_ctrl();
 
-            this.WindowState = FormWindowState.Maximized;
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized; 
         }
 
         public void init_ctrl()
@@ -133,7 +137,21 @@ namespace NewLt
             comb_id_select_begin_r.Refresh();
             comb_id_select_end_r.Refresh();
 
+            index_begin = 0;
+            index_end = 0;
+            if (get_id_range(ref this.index_begin, ref this.index_end) < 0)
+            {
+                MessageBox.Show("获取数据范围失败");
+                return;
+            }
+
+            this.Cursor = Cursors.WaitCursor;
+
             refresh_runchart_data();
+
+            refresh_dig_data();
+
+            this.Cursor = Cursors.Default;
         }
 
         public int get_id_range(ref int start, ref int stop)
@@ -205,6 +223,30 @@ namespace NewLt
             return 0;
         }
 
+        public void get_item_census(int start, int stop, int typeid, BindingList<NumCensus> list)
+        {
+            int[] index = new int[256];
+            for (int i = 0; i < 256; i++)
+            {
+                index[i] = 0;
+            }
+
+            for (int i = index_begin; i <= index_end; i++)
+            {
+                LottoryItem item = (LottoryItem)ltData.ltSet[i];
+                index[item.allNums[typeid]]++;
+            }
+
+            for (int i = 0; i < 256; i++)
+            {
+                if (index[i] > 0)
+                {
+                    NumCensus census = new NumCensus(i, index[i]);
+                    list.Add(census);
+                }
+            }
+        }
+
         public void refresh_dig_data()
         {
             if (runchart_is_drawing)
@@ -213,59 +255,44 @@ namespace NewLt
             }
 
             runchart_is_drawing = true;
-            int index_begin = 0, index_end = 0;
-            if (get_id_range(ref index_begin, ref index_end) < 0)
-            {
-                MessageBox.Show("获取数据范围失败");
-                return;
-            }
-
             string nameid = comb_name_select_r.EditValue.ToString();
-            this.Cursor = Cursors.WaitCursor;
+            
             //-------------------------------------------
-            BindingList<NumCensus> list_census = new BindingList<NumCensus>();
+            BindingList<NumCensus> list_census_1 = new BindingList<NumCensus>();
+            BindingList<NumCensus> list_census_2 = new BindingList<NumCensus>();
+            BindingList<NumCensus> list_census_3 = new BindingList<NumCensus>();
+            BindingList<NumCensus> list_census_4 = new BindingList<NumCensus>();
+            get_item_census(index_begin, index_end, LottoryItem.ItemId("BL"), list_census_1);
+            get_item_census(index_begin, index_end, LottoryItem.ItemId("AC"), list_census_2);
+            get_item_census(index_begin, index_end, LottoryItem.ItemId("SD"), list_census_3);
+            get_item_census(index_begin, index_end, LottoryItem.ItemId("ODD_NUM"), list_census_4);
 
-            int[] index = new int[256];
-            for (int i = 0; i < 256; i++)
-            {
-                index[i] = 0;
-            }
-
-            for (int i = index_begin; i < index_end; i++)
-            {
-                LottoryItem item = (LottoryItem)ltData.ltSet[i];
-                index[item.allNums[1]]++;
-            }
-
-            for (int i = 0; i < 256; i++)
-            {
-                if (index[i] > 0)
-                {
-                    NumCensus census = new NumCensus(i, index[i]);
-                    list_census.Add(census);
-                }
-            }
 
             //----------------------------------------------
-            chart_line_one.DataSource = list_census;
+            //chart_dig_one.DataSource = list_census;
 
-            chart_line_one.SeriesSerializable[0].Name = "SUM";
-            chart_line_one.SeriesSerializable[0].ArgumentDataMember = "NUM";
-            chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = "COUNT";
+            chart_dig_one.SeriesSerializable[0].DataSource = list_census_1;
+            chart_dig_one.SeriesSerializable[1].DataSource = list_census_2;
+            chart_dig_one.SeriesSerializable[2].DataSource = list_census_3;
+            chart_dig_one.SeriesSerializable[3].DataSource = list_census_4;
 
-            chart_line_one.SeriesSerializable[1].Name = "AC";
-            chart_line_one.SeriesSerializable[1].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[1].ValueDataMembers[0] = "AC";
+            chart_dig_one.SeriesSerializable[0].Name = "BLUE";
+            chart_dig_one.SeriesSerializable[0].ArgumentDataMember = "NUM";
+            chart_dig_one.SeriesSerializable[0].ValueDataMembers[0] = "COUNT";
 
-            chart_line_one.SeriesSerializable[2].Name = "SD";
-            chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
+            chart_dig_one.SeriesSerializable[1].Name = "AC";
+            chart_dig_one.SeriesSerializable[1].ArgumentDataMember = "NUM";
+            chart_dig_one.SeriesSerializable[1].ValueDataMembers[0] = "COUNT";
 
-            chart_line_one.SeriesSerializable[3].Name = "ODD";
-            chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "ODD_NUM";
+            chart_dig_one.SeriesSerializable[2].Name = "SD";
+            chart_dig_one.SeriesSerializable[2].ArgumentDataMember = "NUM";
+            chart_dig_one.SeriesSerializable[2].ValueDataMembers[0] = "COUNT";
 
-            this.Cursor = Cursors.Default;
+            chart_dig_one.SeriesSerializable[3].Name = "ODD";
+            chart_dig_one.SeriesSerializable[3].ArgumentDataMember = "NUM";
+            chart_dig_one.SeriesSerializable[3].ValueDataMembers[0] = "COUNT";
+
+            
             runchart_is_drawing = false;
         }
 
@@ -276,19 +303,11 @@ namespace NewLt
                 return;
             }
            
-            runchart_is_drawing = true;
-            int index_begin = 0, index_end = 0;
-            if (get_id_range(ref index_begin, ref index_end) < 0)
-            {
-                MessageBox.Show("获取数据范围失败");
-                return;
-            }
-            
+            runchart_is_drawing = true;        
             string nameid = comb_name_select_r.EditValue.ToString();
-            this.Cursor = Cursors.WaitCursor;
             //-------------------------------------------
 
-            ArrayList list_data = ltData.ltSet.GetRange(index_begin, index_end - index_begin);
+            ArrayList list_data = ltData.ltSet.GetRange(index_begin, index_end - index_begin + 1);
             BindingList<LottoryItem> list_show = new BindingList<LottoryItem>();
             foreach (LottoryItem item in list_data)
             {
@@ -296,13 +315,8 @@ namespace NewLt
             }
 
             //----------------------------------------------
-            //chart_line_one.Series.Clear();
             chart_line_one.DataSource = list_show;
 
-            //Series series_show = new Series(nameid, ViewType.Line);
-            //series_show.ArgumentDataMember = "ID";
-            //series_show.ValueDataMembers[0] = nameid;
-            //chart_line_one.Series.Add(series_show);
             chart_line_one.SeriesSerializable[0].Name = "SUM";
             chart_line_one.SeriesSerializable[0].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = "SUM_RED";
@@ -319,41 +333,41 @@ namespace NewLt
             chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "ODD_NUM";
 
+            runchart_is_drawing = false;
+        }
 
-            //XYDiagram diagram = (XYDiagram)chart_line_one.Diagram;
-            //diagram.AxisX.Label.Angle = 40;
-            //diagram.AxisX.Label.Antialiasing = true;
+        public void refresh_all_data()
+        {
+            if (ltData.ltSet.Count == 0)
+            {
+                return;
+            }
 
-            //int max_width = chart_line_one.Width / 20;
-            //diagram.AxisX.Range.Auto = true;
-            //diagram.AxisX.Range.SetInternalMinMaxValues(1, max_width);
-            //diagram.AxisX.MinorCount = max_width;
+            index_begin = 0;
+            index_end = 0;
+            if (get_id_range(ref this.index_begin, ref this.index_end) < 0)
+            {
+                //MessageBox.Show("获取数据范围失败");
+                return;
+            }
 
-            //if (list_show.Count < max_width)
-            //{
-            //    diagram.EnableAxisXScrolling = false;
-            //}
-            //else
-            //{
-            //    diagram.EnableAxisXScrolling = true;
-            //    diagram.DefaultPane.EnableAxisXScrolling = DefaultBoolean.Default;
+            this.Cursor = Cursors.WaitCursor;
 
-            //}
-            //diagram.EnableAxisYScrolling = false;
+            refresh_runchart_data();
 
-            //// Adjust how the scrolling can be performed.
-            //diagram.ScrollingOptions.UseKeyboard = false;
-            //diagram.ScrollingOptions.UseMouse = true;
-            //diagram.ScrollingOptions.UseScrollBars = true;
-
-
-            //ScrollBarOptions scrollBarOptions = diagram.DefaultPane.ScrollBarOptions;
-            //scrollBarOptions.BarThickness = 12;
-            //scrollBarOptions.BackColor = Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(227)))), ((int)(((byte)(235)))));
-            //scrollBarOptions.BarColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(140)))), ((int)(((byte)(197)))));
+            refresh_dig_data();
 
             this.Cursor = Cursors.Default;
-            runchart_is_drawing = false;
+        }
+
+        private void comb_id_select_begin_r_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refresh_all_data();
+        }
+
+        private void comb_id_select_end_r_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refresh_all_data();
         }
 
    }

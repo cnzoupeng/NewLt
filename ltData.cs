@@ -109,6 +109,8 @@ namespace NewLt
             url += "/2040001";
 
             var strResult = string.Empty;
+            int tryTimes = 3;
+RETRY:
             try
             {
                 var request = (HttpWebRequest)WebRequest.Create(url);
@@ -123,6 +125,12 @@ namespace NewLt
             }
             catch (System.Exception ex)
             {
+                tryTimes--;
+                if (tryTimes > 0)
+                {
+                    goto RETRY;
+                }
+
                 MessageBox.Show(ex.Message);
                 return;
             }
@@ -179,18 +187,12 @@ namespace NewLt
 
         public int NUM
         {
-            get
-            {
-                return num;
-            }
+            get { return num;}
         }
 
         public int COUNT
         {
-            get
-            {
-                return count;
-            }
+            get{return count;}
         }
     }
 }
