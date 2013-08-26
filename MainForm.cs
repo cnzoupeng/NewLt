@@ -223,9 +223,21 @@ namespace NewLt
             //series_show.ArgumentDataMember = "ID";
             //series_show.ValueDataMembers[0] = nameid;
             //chart_line_one.Series.Add(series_show);
-            chart_line_one.SeriesSerializable[0].Name = nameid;
+            chart_line_one.SeriesSerializable[0].Name = "SUM_RED";
             chart_line_one.SeriesSerializable[0].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = nameid;
+            chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = "SUM_RED";
+
+            chart_line_one.SeriesSerializable[1].Name = "AC";
+            chart_line_one.SeriesSerializable[1].ArgumentDataMember = "ID";
+            chart_line_one.SeriesSerializable[1].ValueDataMembers[0] = "AC";
+
+            chart_line_one.SeriesSerializable[2].Name = "SD";
+            chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
+            chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
+
+            chart_line_one.SeriesSerializable[3].Name = "ODD_NUM";
+            chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
+            chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "ODD_NUM";
 
 
             //XYDiagram diagram = (XYDiagram)chart_line_one.Diagram;
