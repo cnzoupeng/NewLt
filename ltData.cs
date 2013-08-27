@@ -11,9 +11,16 @@ namespace NewLt
     public class LtData
     {
         public ArrayList ltSet;
+        public MainForm form;
 
         public LtData()
         {
+            ltSet = new ArrayList();
+        }
+
+        public LtData(MainForm form)
+        {
+            this.form = form;
             ltSet = new ArrayList();
         }
 
@@ -28,8 +35,8 @@ namespace NewLt
 
         public static int string_to_item(string str, LottoryItem item)
         {
-            var bit1 = 1;
-            var strItem = str.Split(' ');
+            long bit1 = 1;
+            string[] strItem = str.Split(' ');
             if (strItem.Length > 7)
             {
                 item.map = 0;
@@ -114,7 +121,7 @@ RETRY:
             try
             {
                 var request = (HttpWebRequest)WebRequest.Create(url);
-                request.Timeout = 3000;
+                request.Timeout = 8000;
                 request.Headers.Set("Pragma", "no-cache");
                 var response = (HttpWebResponse)request.GetResponse();
                 var streamReceive = response.GetResponseStream();
@@ -131,7 +138,7 @@ RETRY:
                     goto RETRY;
                 }
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("更新数据失败：" + ex.Message);
                 return;
             }
 
@@ -167,10 +174,12 @@ RETRY:
             }
 
             objWriter.Close();
+
             if (items.Length > 2)
             {
-                MessageBox.Show("更新数据 " + (items.Length - 2).ToString() + "条\n");
+                ltData.form.otherUpdateDatas();
             }
+            
         }
     }
 

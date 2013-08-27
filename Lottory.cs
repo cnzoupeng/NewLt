@@ -32,6 +32,11 @@ namespace NewLt
                                            "SUM_RED", "SUM_ALL", "AC", "SD", "EVEN_NUM", "ODD_NUM", "EO",
                                            "MR", "MR1", "MR2", "MR3", "MR4", "MR5", "MR6",
                                            "MC", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" };
+        public static string[] namesCn = { "ID", "红球1", "红球2", "红球3", "红球4", "红球5", "红球6", "篮球",
+                                           "和值", "和值蓝", "AC值", "散度", "基数", "偶数", "EO",
+                                           "MR", "MR1", "MR2", "MR3", "MR4", "MR5", "MR6",
+                                           "MC", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" };
+
         public static int ItemId(string name)
         {
             int index = -1;
@@ -45,6 +50,21 @@ namespace NewLt
             }
             return index;
         }
+
+        public static int ItemCnId(string name)
+        {
+            int index = -1;
+            for (int i = 0; i < namesCn.Length; i++)
+            {
+                if (namesCn[i] == name)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
+        }
+
         public int get_item_by_index(int index)
         {
             if (index >= 0 && index < NUMS)
@@ -113,9 +133,9 @@ namespace NewLt
 
         public int calc_ac()
         {
-            var acmap = 0;
-            var one = 1;
-            var ac = 0;
+            long acmap = 0;
+            long one = 1;
+            int ac = 0;
             for (var i = 0; i < 5; i++)
             {
                 for (var j = i + 1; j < 6; j++)
@@ -131,11 +151,11 @@ namespace NewLt
 
         public int calc_sandu()
         {
-            var max = 0;
+            long max = 0;
             for (var i = 1; i < 34; i++)
             {
-                var min = 0xFF;
-                var cal = 0;
+                long min = 0xFF;
+                long cal = 0;
                 for (var j = 0; j < 6; j++)
                 {
                     cal = Math.Abs(i - (int)red[j]);
@@ -156,11 +176,11 @@ namespace NewLt
 
         public int calc_odd_even()
         {
-            var even_num = 0;
+            int even_num = 0;
             odd_even_str = new string(' ', 1);
             odd_even_str = string.Empty;
 
-            for (var i = 0; i < 6; i++ )
+            for (int i = 0; i < 6; i++ )
             {
                 if (red[i] % 2 != 0)
                 {
@@ -179,11 +199,11 @@ namespace NewLt
 
         public int calc_miss_row()
         {
-            var bit1 = 1;
-            var missBase = 0x3F;
+            long bit1 = 1;
+            long missBase = 0x3F;
             map_miss_row = 0;
             miss_row = 0;
-            for (var i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if ((map & missBase) != 0)
                 {
@@ -201,8 +221,8 @@ namespace NewLt
 
         public int calc_miss_col()
         {
-            var bit1 = 1;
-            long missBase = 0x555;
+            int bit1 = 1;
+            int missBase = 0x555;
             map_miss_col = 0;
             miss_col = 0;
 
@@ -528,8 +548,8 @@ namespace NewLt
     {
         public int string_to_item(string str, LottoryItem item)
         {
-            var bit1 = 1;
-            var strItem = str.Split('\t');
+            long bit1 = 1;
+            string[] strItem = str.Split('\t');
             if (strItem.Length > 7)
             {
                 item.map = 0;
