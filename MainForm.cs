@@ -24,6 +24,7 @@ namespace NewLt
         public LtData ltData;
         public BindingList<LottoryItem> gridList;
         public BindingList<NumberAll> gridListAll;
+        public BindingList<TypeFilt> listFilter;
         public bool runchart_is_drawing;
         public int index_begin;
         public int index_end;
@@ -35,12 +36,49 @@ namespace NewLt
             load_history();
             init_number_all();
             init_ctrl();
-
+            init_filter();
             refresh_all_data();
-           
+
+          
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        public void itemCalcTest()
+        {
+            for (int j = 0; j < gridList.Count; j++)
+            {
+                LottoryItem item = (LottoryItem)gridList[j];
+                TinyLott tItem = new TinyLott(item.map);
+                if (tItem.sd != item.sd || tItem.ac != item.ac || tItem.sum != item.sum_red || tItem.odd != item.odd_num)
+                {
+                    MessageBox.Show("Error");
+                    return;
+                }
+                for(int i = 0; i < 6; i++)
+                {
+                    if (tItem.red[i] != item.red[i])
+                    {
+                        MessageBox.Show("Error");
+                        return;
+                    }
+                }
+            }
+
+            MessageBox.Show("OK");
+        }
+
+        public void init_filter()
+        {
+            listFilter = new BindingList<TypeFilt>();
+            listFilter.Add(new TypeFilt("红球", "1", "33", "4", "5"));
+            listFilter.Add(new TypeFilt("和值", "80", "120", "88 89", "98 99"));
+            listFilter.Add(new TypeFilt("AC", "1", "11", "2 3", "7"));
+            listFilter.Add(new TypeFilt("散度", "1", "9", "2 3", "8"));
+            listFilter.Add(new TypeFilt("偶数", "1", "3", "2", "1"));
+            listFilter.Add(new TypeFilt("缺行", "1", "5", "2 ", "4"));
+            listFilter.Add(new TypeFilt("篮球", "1", "16", "12 ", "2 3 4"));
         }
 
         public void load_history()
@@ -419,6 +457,12 @@ namespace NewLt
         {
             ColumnView view = sender as ColumnView;
             girdHisView.MoveLast();
+        }
+
+        private void btFileter_Click(object sender, EventArgs e)
+        {
+            FormFileter formf = new FormFileter(listFilter);
+            formf.Show();
         }
     }
 }

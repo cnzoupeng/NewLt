@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.ComponentModel;
+using System;
 
 namespace NewLt
 {
@@ -202,6 +203,379 @@ RETRY:
         public int COUNT
         {
             get{return count;}
+        }
+    }
+
+    public class TypeFilt
+    {
+        public const int SUM_MIN = 21;
+        public const int SUM_MAX = 183;
+        public const int AC_MIN = 1;
+        public const int AC_MAX = 11;
+        public const int SD_MIN = 1;
+        public const int SD_MAX = 18;
+        public const int BL_MIN = 1;
+        public const int BL_MAX = 16;
+        public const int ODD_MIN = 0;
+        public const int ODD_MAX = 6;
+        public const int MISS_MIN = 0;
+        public const int MISS_MAX = 5;
+
+        public string type;
+        public string min;
+        public string max;
+        public string inc;
+        public string dec;
+
+        public int num_min;
+        public int num_max;
+        public int[] num_inc;
+        public int[] num_dec;
+
+        public int match_success;
+        public int match_failed;
+
+        public TypeFilt(string type, string min, string max, string inc, string dec)
+        {
+            this.type = type;
+            this.min = min;
+            this.max = max;
+            this.inc = inc;
+            this.dec = dec;
+            match_success = 0;
+            match_failed = 0;
+        }
+
+        public TypeFilt(string type, int min, int max, string inc, string dec)
+        {
+            this.type = type;
+            this.min = min.ToString();
+            this.max = max.ToString();
+            this.inc = inc;
+            this.dec = dec;
+            match_success = 0;
+            match_failed = 0;
+        }
+
+        public bool match_red(ref int[] red)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                if (_isOutOf(red[i], num_min, num_max))
+                {
+                    match_failed++;
+                    return false;
+                }
+            }
+
+            //排除不要的号码
+            for (int i = 0; i < num_dec.Length; i++)
+            {
+                for (int j = 0; j < 6; j++ )
+                {
+                    if (red[j] == num_dec[i])
+                    {
+                        match_failed++;
+                        return false;
+                    }
+                }
+            }
+
+            int existCount = 0;
+            for (int i = 0; i < num_inc.Length; i++)
+            {                
+                for (int j = 0; j < 6; j++)
+                {
+                    if (red[j] == num_inc[i])
+                    {
+                        existCount++;
+                        break;
+                    }
+                }
+            }
+            if (existCount != num_inc.Length)
+            {
+                match_failed++;
+                return false;
+            }
+
+            match_success++;
+            return true;
+        }
+
+        public bool match(int val)
+        {
+            for (int i = 0; i < num_inc.Length; i++)
+            {
+                if (val == num_inc[i])
+                {
+                    match_success++;
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < num_dec.Length; i++)
+            {
+                if (val == num_dec[i])
+                {
+                    match_failed++;
+                    return false;
+                }
+            }
+
+            if (_isOutOf(val, num_min, num_max))
+            {
+                match_failed++;
+                return false;
+            }
+
+            match_success++;
+            return true;
+        }
+
+        public bool parseRule(ref string err)
+        {
+            min = min.Trim();
+            max = max.Trim();
+            inc = inc.Trim();
+            dec = dec.Trim();
+            err = "【" + type + "】";
+            char[] separator = { ',', ' ', ':' };
+
+            try
+            {
+                num_min = int.Parse(min);
+            }
+            catch
+            {
+                err += "【最小值】 不是数字";
+                return false;
+            }
+
+            try
+            {
+                num_max = int.Parse(max);
+            }
+            catch
+            {
+                err += "【最大】 不是数字";
+                return false;
+            }
+
+            try
+            {
+                string[] inc_s = inc.Split(separator);
+                if (inc_s.Length > 0)
+                {
+                    num_inc = new int[inc_s.Length];
+                }
+                for (int i = 0; i < inc_s.Length; i++)
+                {
+                    num_inc[i] = int.Parse(inc_s[i]);
+                
+                }
+                Array.Sort(num_inc);
+            }
+            catch
+            {
+                err += "【包含值】 不是数字";
+                return false;
+            }
+
+            try
+            {
+                string[] dec_s = dec.Split(separator);
+                if (dec_s.Length > 0)
+                {
+                    num_dec = new int[dec_s.Length];
+                }
+                for (int i = 0; i < dec_s.Length; i++)
+                {
+                    num_dec[i] = int.Parse(dec_s[i]);
+                }
+                Array.Sort(num_dec);
+            }
+            catch
+            {
+                err += "【排除值】 不是数字";
+                return false;
+            }
+
+            
+            if (type == "和值")
+            {
+                if (!_rangeCheck(SUM_MIN, SUM_MAX, ref err))
+                {
+                    return false;
+                }
+            }
+            else if (type == "AC")
+            {
+                if (!_rangeCheck(AC_MIN, AC_MAX, ref err))
+                {
+                    return false;
+                }
+            }
+            else if (type == "散度")
+            {
+                if (!_rangeCheck(SD_MIN, SD_MAX, ref err))
+                {
+                    return false;
+                }
+            }
+            else if (type == "偶数")
+            {
+                if (!_rangeCheck(ODD_MIN, ODD_MAX, ref err))
+                {
+                    return false;
+                }
+            }
+            else if (type == "缺行")
+            {
+                if (!_rangeCheck(MISS_MIN, MISS_MAX, ref err))
+                {
+                    return false;
+                }
+            }
+            else if (type == "篮球")
+            {
+                if (!_rangeCheck(BL_MIN, BL_MAX, ref err))
+                {
+                    return false;
+                }
+            }
+
+            err = null;
+            return true;
+        }
+
+        private bool _isCover(int val, int min, int max)
+        {
+            return (val >= min && val <= max);
+        }
+
+        private bool _isOutOf(int val, int min, int max)
+        {
+            return !(val >= min && val <= max);
+        }
+
+        private bool _rangeCheck(int min, int max, ref string err)
+        { 
+            if (_isOutOf(num_min, min, max))
+            {
+                err += "  【最小值】超出范围【" + min.ToString() + "--" + max.ToString() + "】";
+                return false;
+            }
+            if (_isOutOf(num_max, min, max))
+            {
+                err += "  【最大值】超出范围【" + min.ToString() + "--" + max.ToString() + "】";
+                return false;
+            }
+
+            for (int i = 0; i < num_inc.Length; i++)
+            {
+                if (_isOutOf(num_inc[i], min, max))
+                {
+                    err += "  【包含值】超出范围【" + min.ToString() + "--" + max.ToString() + "】";
+                    return false;
+                }
+            }
+
+            for (int i = 0; i < num_dec.Length; i++)
+            {
+                if (_isOutOf(num_dec[i], min, max))
+                {
+                    err += "  【排除值】超出范围【" + min.ToString() + "--" + max.ToString() + "】";
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public string TYPE
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        public string MIN
+        {
+            get { return min; }
+            set { min = value; }
+        }
+
+        public string MAX
+        {
+            get { return max; }
+            set { max = value; }
+        }
+
+        public string INC
+        {
+            get { return inc; }
+            set { inc = value; }
+        }
+
+        public string DEC
+        {
+            get { return dec; }
+            set { dec = value; }
+        }
+    }
+
+    public class TypeFiltOut
+    {
+        public string num;
+        public int sum;
+        public int ac;
+        public int sd;
+        public int ou;
+
+        public TypeFiltOut(string num, int sum, int ac, int sd, int ou)
+        {
+            this.num = num;
+            this.sum = sum;
+            this.ac = ac;
+            this.sd = sd;
+            this.ou = ou;
+        }
+
+        public TypeFiltOut(TinyLott ltt)
+        {
+            this.num = "";
+            for (int i = 0; i < 6; i++ )
+            {
+                this.num += string.Format("{0:00}  ", ltt.red[i]);
+            }
+            this.sum = ltt.sum;
+            this.ac = ltt.ac;
+            this.sd = ltt.sd;
+            this.ou = ltt.odd;
+        }
+
+        public string NUM
+        {
+            get { return num; }
+        }
+
+        public int SUM
+        {
+            get { return sum; }
+        }
+
+        public int AC
+        {
+            get { return ac; }
+        }
+
+        public int SD
+        {
+            get { return sd; }
+        }
+
+        public int ODD
+        {
+            get { return ou; }
         }
     }
 }

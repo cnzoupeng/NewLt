@@ -47,7 +47,9 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridHis = new DevExpress.XtraGrid.GridControl();
             this.girdHisView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.gridBand_id = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bg_id = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand_red = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.r1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.r2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.r3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -81,6 +83,8 @@
             this.r31 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.r32 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.r33 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand_blue = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.b1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.b2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.b3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -98,6 +102,7 @@
             this.b15 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.b16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.btFileter = new DevExpress.XtraEditors.SimpleButton();
             this.comb_id_select_range_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_name_select_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_id_select_end_r = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -105,10 +110,6 @@
             this.chart_line_one = new DevExpress.XtraCharts.ChartControl();
             this.chart_dig_one = new DevExpress.XtraCharts.ChartControl();
             this.pageOther = new DevExpress.XtraTab.XtraTabPage();
-            this.gridBand_id = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand_red = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand_blue = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.pageHisotry.SuspendLayout();
@@ -299,6 +300,21 @@
             this.girdHisView.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell_1);
             this.girdHisView.RowLoaded += new DevExpress.XtraGrid.Views.Base.RowEventHandler(this.girdHisView_RowLoaded);
             // 
+            // gridBand_id
+            // 
+            this.gridBand_id.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand_id.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand_id.Caption = "期号";
+            this.gridBand_id.Columns.Add(this.bg_id);
+            this.gridBand_id.Name = "gridBand_id";
+            this.gridBand_id.OptionsBand.AllowHotTrack = false;
+            this.gridBand_id.OptionsBand.AllowMove = false;
+            this.gridBand_id.OptionsBand.AllowPress = false;
+            this.gridBand_id.OptionsBand.AllowSize = false;
+            this.gridBand_id.OptionsBand.FixedWidth = true;
+            this.gridBand_id.Width = 65;
+            // 
             // bg_id
             // 
             this.bg_id.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
@@ -314,6 +330,52 @@
             this.bg_id.Name = "bg_id";
             this.bg_id.Visible = true;
             this.bg_id.Width = 65;
+            // 
+            // gridBand_red
+            // 
+            this.gridBand_red.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand_red.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand_red.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand_red.Caption = "红球";
+            this.gridBand_red.Columns.Add(this.r1);
+            this.gridBand_red.Columns.Add(this.r2);
+            this.gridBand_red.Columns.Add(this.r3);
+            this.gridBand_red.Columns.Add(this.r4);
+            this.gridBand_red.Columns.Add(this.r5);
+            this.gridBand_red.Columns.Add(this.r6);
+            this.gridBand_red.Columns.Add(this.r7);
+            this.gridBand_red.Columns.Add(this.r8);
+            this.gridBand_red.Columns.Add(this.r9);
+            this.gridBand_red.Columns.Add(this.r10);
+            this.gridBand_red.Columns.Add(this.r11);
+            this.gridBand_red.Columns.Add(this.r12);
+            this.gridBand_red.Columns.Add(this.r13);
+            this.gridBand_red.Columns.Add(this.r14);
+            this.gridBand_red.Columns.Add(this.r15);
+            this.gridBand_red.Columns.Add(this.r16);
+            this.gridBand_red.Columns.Add(this.r17);
+            this.gridBand_red.Columns.Add(this.r18);
+            this.gridBand_red.Columns.Add(this.r19);
+            this.gridBand_red.Columns.Add(this.r20);
+            this.gridBand_red.Columns.Add(this.r21);
+            this.gridBand_red.Columns.Add(this.r22);
+            this.gridBand_red.Columns.Add(this.r23);
+            this.gridBand_red.Columns.Add(this.r24);
+            this.gridBand_red.Columns.Add(this.r25);
+            this.gridBand_red.Columns.Add(this.r26);
+            this.gridBand_red.Columns.Add(this.r27);
+            this.gridBand_red.Columns.Add(this.r28);
+            this.gridBand_red.Columns.Add(this.r29);
+            this.gridBand_red.Columns.Add(this.r30);
+            this.gridBand_red.Columns.Add(this.r31);
+            this.gridBand_red.Columns.Add(this.r32);
+            this.gridBand_red.Columns.Add(this.r33);
+            this.gridBand_red.Name = "gridBand_red";
+            this.gridBand_red.OptionsBand.AllowHotTrack = false;
+            this.gridBand_red.OptionsBand.AllowMove = false;
+            this.gridBand_red.OptionsBand.AllowPress = false;
+            this.gridBand_red.OptionsBand.AllowSize = false;
+            this.gridBand_red.Width = 1102;
             // 
             // r1
             // 
@@ -579,6 +641,46 @@
             this.r33.Visible = true;
             this.r33.Width = 46;
             // 
+            // gridBand1
+            // 
+            this.gridBand1.Caption = " ";
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.OptionsBand.AllowMove = false;
+            this.gridBand1.OptionsBand.AllowPress = false;
+            this.gridBand1.OptionsBand.AllowSize = false;
+            this.gridBand1.OptionsBand.FixedWidth = true;
+            this.gridBand1.OptionsBand.ShowCaption = false;
+            this.gridBand1.Width = 20;
+            // 
+            // gridBand_blue
+            // 
+            this.gridBand_blue.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand_blue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand_blue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand_blue.Caption = "篮球";
+            this.gridBand_blue.Columns.Add(this.b1);
+            this.gridBand_blue.Columns.Add(this.b2);
+            this.gridBand_blue.Columns.Add(this.b3);
+            this.gridBand_blue.Columns.Add(this.b4);
+            this.gridBand_blue.Columns.Add(this.b5);
+            this.gridBand_blue.Columns.Add(this.b6);
+            this.gridBand_blue.Columns.Add(this.b7);
+            this.gridBand_blue.Columns.Add(this.b8);
+            this.gridBand_blue.Columns.Add(this.b9);
+            this.gridBand_blue.Columns.Add(this.b10);
+            this.gridBand_blue.Columns.Add(this.b11);
+            this.gridBand_blue.Columns.Add(this.b12);
+            this.gridBand_blue.Columns.Add(this.b13);
+            this.gridBand_blue.Columns.Add(this.b14);
+            this.gridBand_blue.Columns.Add(this.b15);
+            this.gridBand_blue.Columns.Add(this.b16);
+            this.gridBand_blue.Name = "gridBand_blue";
+            this.gridBand_blue.OptionsBand.AllowHotTrack = false;
+            this.gridBand_blue.OptionsBand.AllowMove = false;
+            this.gridBand_blue.OptionsBand.AllowPress = false;
+            this.gridBand_blue.OptionsBand.AllowSize = false;
+            this.gridBand_blue.Width = 535;
+            // 
             // b1
             // 
             this.b1.Caption = "b1";
@@ -713,6 +815,7 @@
             this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.btFileter);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_range_r);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_name_select_r);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_end_r);
@@ -725,6 +828,15 @@
             this.splitContainerControl2.SplitterPosition = 436;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
+            // 
+            // btFileter
+            // 
+            this.btFileter.Location = new System.Drawing.Point(510, 2);
+            this.btFileter.Name = "btFileter";
+            this.btFileter.Size = new System.Drawing.Size(75, 22);
+            this.btFileter.TabIndex = 17;
+            this.btFileter.Text = "号码过滤";
+            this.btFileter.Click += new System.EventHandler(this.btFileter_Click);
             // 
             // comb_id_select_range_r
             // 
@@ -861,107 +973,6 @@
             this.pageOther.Size = new System.Drawing.Size(1117, 566);
             this.pageOther.Text = "号码筛选";
             // 
-            // gridBand_id
-            // 
-            this.gridBand_id.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand_id.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridBand_id.Caption = "期号";
-            this.gridBand_id.Columns.Add(this.bg_id);
-            this.gridBand_id.Name = "gridBand_id";
-            this.gridBand_id.OptionsBand.AllowHotTrack = false;
-            this.gridBand_id.OptionsBand.AllowMove = false;
-            this.gridBand_id.OptionsBand.AllowPress = false;
-            this.gridBand_id.OptionsBand.AllowSize = false;
-            this.gridBand_id.OptionsBand.FixedWidth = true;
-            this.gridBand_id.Width = 65;
-            // 
-            // gridBand_red
-            // 
-            this.gridBand_red.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand_red.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand_red.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridBand_red.Caption = "红球";
-            this.gridBand_red.Columns.Add(this.r1);
-            this.gridBand_red.Columns.Add(this.r2);
-            this.gridBand_red.Columns.Add(this.r3);
-            this.gridBand_red.Columns.Add(this.r4);
-            this.gridBand_red.Columns.Add(this.r5);
-            this.gridBand_red.Columns.Add(this.r6);
-            this.gridBand_red.Columns.Add(this.r7);
-            this.gridBand_red.Columns.Add(this.r8);
-            this.gridBand_red.Columns.Add(this.r9);
-            this.gridBand_red.Columns.Add(this.r10);
-            this.gridBand_red.Columns.Add(this.r11);
-            this.gridBand_red.Columns.Add(this.r12);
-            this.gridBand_red.Columns.Add(this.r13);
-            this.gridBand_red.Columns.Add(this.r14);
-            this.gridBand_red.Columns.Add(this.r15);
-            this.gridBand_red.Columns.Add(this.r16);
-            this.gridBand_red.Columns.Add(this.r17);
-            this.gridBand_red.Columns.Add(this.r18);
-            this.gridBand_red.Columns.Add(this.r19);
-            this.gridBand_red.Columns.Add(this.r20);
-            this.gridBand_red.Columns.Add(this.r21);
-            this.gridBand_red.Columns.Add(this.r22);
-            this.gridBand_red.Columns.Add(this.r23);
-            this.gridBand_red.Columns.Add(this.r24);
-            this.gridBand_red.Columns.Add(this.r25);
-            this.gridBand_red.Columns.Add(this.r26);
-            this.gridBand_red.Columns.Add(this.r27);
-            this.gridBand_red.Columns.Add(this.r28);
-            this.gridBand_red.Columns.Add(this.r29);
-            this.gridBand_red.Columns.Add(this.r30);
-            this.gridBand_red.Columns.Add(this.r31);
-            this.gridBand_red.Columns.Add(this.r32);
-            this.gridBand_red.Columns.Add(this.r33);
-            this.gridBand_red.Name = "gridBand_red";
-            this.gridBand_red.OptionsBand.AllowHotTrack = false;
-            this.gridBand_red.OptionsBand.AllowMove = false;
-            this.gridBand_red.OptionsBand.AllowPress = false;
-            this.gridBand_red.OptionsBand.AllowSize = false;
-            this.gridBand_red.Width = 1102;
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = " ";
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.OptionsBand.AllowMove = false;
-            this.gridBand1.OptionsBand.AllowPress = false;
-            this.gridBand1.OptionsBand.AllowSize = false;
-            this.gridBand1.OptionsBand.FixedWidth = true;
-            this.gridBand1.OptionsBand.ShowCaption = false;
-            this.gridBand1.Width = 20;
-            // 
-            // gridBand_blue
-            // 
-            this.gridBand_blue.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand_blue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand_blue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridBand_blue.Caption = "篮球";
-            this.gridBand_blue.Columns.Add(this.b1);
-            this.gridBand_blue.Columns.Add(this.b2);
-            this.gridBand_blue.Columns.Add(this.b3);
-            this.gridBand_blue.Columns.Add(this.b4);
-            this.gridBand_blue.Columns.Add(this.b5);
-            this.gridBand_blue.Columns.Add(this.b6);
-            this.gridBand_blue.Columns.Add(this.b7);
-            this.gridBand_blue.Columns.Add(this.b8);
-            this.gridBand_blue.Columns.Add(this.b9);
-            this.gridBand_blue.Columns.Add(this.b10);
-            this.gridBand_blue.Columns.Add(this.b11);
-            this.gridBand_blue.Columns.Add(this.b12);
-            this.gridBand_blue.Columns.Add(this.b13);
-            this.gridBand_blue.Columns.Add(this.b14);
-            this.gridBand_blue.Columns.Add(this.b15);
-            this.gridBand_blue.Columns.Add(this.b16);
-            this.gridBand_blue.Name = "gridBand_blue";
-            this.gridBand_blue.OptionsBand.AllowHotTrack = false;
-            this.gridBand_blue.OptionsBand.AllowMove = false;
-            this.gridBand_blue.OptionsBand.AllowPress = false;
-            this.gridBand_blue.OptionsBand.AllowSize = false;
-            this.gridBand_blue.Width = 535;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1070,6 +1081,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_red;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_blue;
+        private DevExpress.XtraEditors.SimpleButton btFileter;
 
 
 

@@ -96,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="define.cs" />
+    <Compile Include="FormFileter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFileter.Designer.cs">
+      <DependentUpon>FormFileter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lottory.cs" />
     <Compile Include="ltData.cs" />
     <Compile Include="MainForm.cs">
@@ -107,6 +113,9 @@
     <Compile Include="NumberAll.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormFileter.resx">
+      <DependentUpon>FormFileter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
