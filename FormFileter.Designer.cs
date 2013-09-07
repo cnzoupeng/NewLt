@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridFilter = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -46,9 +46,9 @@
             this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btDoFileter = new DevExpress.XtraEditors.SimpleButton();
+            this.btRandChange = new DevExpress.XtraEditors.SimpleButton();
+            this.btRandToHis = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressFilter.Properties)).BeginInit();
@@ -180,9 +180,9 @@
             // gridFiltOut
             // 
             this.gridFiltOut.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridFiltOut.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridFiltOut.Location = new System.Drawing.Point(410, 10);
             this.gridFiltOut.MainView = this.gridFiltViewOut;
             this.gridFiltOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -290,41 +290,41 @@
             this.bandedGridColumn5.Visible = true;
             this.bandedGridColumn5.Width = 60;
             // 
-            // simpleButton2
+            // btDoFileter
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(278, 21);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(116, 30);
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "全量过虑";
-            this.simpleButton2.Click += new System.EventHandler(this.btAllFilter_Click);
+            this.btDoFileter.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.btDoFileter.Appearance.Options.UseFont = true;
+            this.btDoFileter.Location = new System.Drawing.Point(278, 21);
+            this.btDoFileter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btDoFileter.Name = "btDoFileter";
+            this.btDoFileter.Size = new System.Drawing.Size(116, 30);
+            this.btDoFileter.TabIndex = 5;
+            this.btDoFileter.Text = "全量过虑";
+            this.btDoFileter.Click += new System.EventHandler(this.btAllFilter_Click);
             // 
-            // simpleButton1
+            // btRandChange
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(561, 21);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(98, 30);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "换一批";
-            this.simpleButton1.Click += new System.EventHandler(this.btNextFilterOut_Click);
+            this.btRandChange.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.btRandChange.Appearance.Options.UseFont = true;
+            this.btRandChange.Location = new System.Drawing.Point(561, 21);
+            this.btRandChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btRandChange.Name = "btRandChange";
+            this.btRandChange.Size = new System.Drawing.Size(98, 30);
+            this.btRandChange.TabIndex = 5;
+            this.btRandChange.Text = "换一批";
+            this.btRandChange.Click += new System.EventHandler(this.btNextFilterOut_Click);
             // 
-            // simpleButton4
+            // btRandToHis
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Location = new System.Drawing.Point(667, 21);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(128, 30);
-            this.simpleButton4.TabIndex = 5;
-            this.simpleButton4.Text = "添加到历史列表";
-            this.simpleButton4.Click += new System.EventHandler(this.btAddFilterOutToHis_Click);
+            this.btRandToHis.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.btRandToHis.Appearance.Options.UseFont = true;
+            this.btRandToHis.Location = new System.Drawing.Point(667, 21);
+            this.btRandToHis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btRandToHis.Name = "btRandToHis";
+            this.btRandToHis.Size = new System.Drawing.Size(128, 30);
+            this.btRandToHis.TabIndex = 5;
+            this.btRandToHis.Text = "添加到历史列表";
+            this.btRandToHis.Click += new System.EventHandler(this.btAddFilterOutToHis_Click);
             // 
             // FormFileter
             // 
@@ -333,9 +333,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 299);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btRandToHis);
+            this.Controls.Add(this.btRandChange);
+            this.Controls.Add(this.btDoFileter);
             this.Controls.Add(this.gridFiltOut);
             this.Controls.Add(this.progressFilter);
             this.Controls.Add(this.gridFilter);
@@ -375,9 +375,9 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btDoFileter;
+        private DevExpress.XtraEditors.SimpleButton btRandChange;
+        private DevExpress.XtraEditors.SimpleButton btRandToHis;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
     }

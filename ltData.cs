@@ -210,16 +210,18 @@ RETRY:
     {
         public const int SUM_MIN = 21;
         public const int SUM_MAX = 183;
-        public const int AC_MIN = 1;
-        public const int AC_MAX = 11;
-        public const int SD_MIN = 1;
-        public const int SD_MAX = 18;
-        public const int BL_MIN = 1;
-        public const int BL_MAX = 16;
+        public const int AC_MIN = 0;
+        public const int AC_MAX = 10;
+        public const int SD_MIN = 3;
+        public const int SD_MAX = 27;
         public const int ODD_MIN = 0;
         public const int ODD_MAX = 6;
         public const int MISS_MIN = 0;
         public const int MISS_MAX = 5;
+        public const int BL_MIN = 1;
+        public const int BL_MAX = 16;
+        public const int RED_MIN = 1;
+        public const int RED_MAX = 33;
 
         public string type;
         public string min;
@@ -229,21 +231,24 @@ RETRY:
 
         public int num_min;
         public int num_max;
-        public int[] num_inc;
-        public int[] num_dec;
+        public ArrayList num_inc;
+        public ArrayList num_dec;
 
         public int match_success;
         public int match_failed;
 
         public TypeFilt(string type, string min, string max, string inc, string dec)
         {
-            this.type = type;
-            this.min = min;
-            this.max = max;
-            this.inc = inc;
-            this.dec = dec;
+            this.type = type.Trim();
+            this.min = min.Trim();
+            this.max = max.Trim();
+            this.inc = inc.Trim();
+            this.dec = dec.Trim();
             match_success = 0;
             match_failed = 0;
+            num_inc = new ArrayList();
+            num_dec = new ArrayList();
+            setDefaultValue();
         }
 
         public TypeFilt(string type, int min, int max, string inc, string dec)
@@ -255,6 +260,90 @@ RETRY:
             this.dec = dec;
             match_success = 0;
             match_failed = 0;
+            num_inc = new ArrayList();
+            num_dec = new ArrayList();
+            setDefaultValue();
+        }
+
+        public void setDefaultValue()
+        {
+            if (type == "和值")
+            {
+                if (min.Length == 0)
+                {
+                    min = SUM_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = SUM_MAX.ToString();
+                }
+            }
+            else if (type == "AC")
+            {
+                if (min.Length == 0)
+                {
+                    min = AC_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = AC_MAX.ToString();
+                }
+            }
+            else if (type == "散度")
+            {
+                if (min.Length == 0)
+                {
+                    min = SD_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = SD_MAX.ToString();
+                }
+            }
+            else if (type == "偶数")
+            {
+                if (min.Length == 0)
+                {
+                    min = ODD_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = ODD_MAX.ToString();
+                }
+            }
+            else if (type == "缺行")
+            {
+                if (min.Length == 0)
+                {
+                    min = MISS_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = MISS_MAX.ToString();
+                }
+            }
+            else if (type == "篮球")
+            {
+                if (min.Length == 0)
+                {
+                    min = BL_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = BL_MAX.ToString();
+                }
+            }
+            else if (type == "红球")
+            {
+                if (min.Length == 0)
+                {
+                    min = RED_MIN.ToString();
+                }
+                if (max.Length == 0)
+                {
+                    max = RED_MAX.ToString();
+                }
+            }
         }
 
         public bool match_red(ref int[] red)
@@ -269,11 +358,11 @@ RETRY:
             }
 
             //排除不要的号码
-            for (int i = 0; i < num_dec.Length; i++)
+            for (int i = 0; i < num_dec.Count; i++)
             {
                 for (int j = 0; j < 6; j++ )
                 {
-                    if (red[j] == num_dec[i])
+                    if (red[j] == (int)num_dec[i])
                     {
                         match_failed++;
                         return false;
@@ -282,18 +371,18 @@ RETRY:
             }
 
             int existCount = 0;
-            for (int i = 0; i < num_inc.Length; i++)
+            for (int i = 0; i < num_inc.Count; i++)
             {                
                 for (int j = 0; j < 6; j++)
                 {
-                    if (red[j] == num_inc[i])
+                    if (red[j] == (int)num_inc[i])
                     {
                         existCount++;
                         break;
                     }
                 }
             }
-            if (existCount != num_inc.Length)
+            if (existCount != num_inc.Count)
             {
                 match_failed++;
                 return false;
@@ -305,18 +394,18 @@ RETRY:
 
         public bool match(int val)
         {
-            for (int i = 0; i < num_inc.Length; i++)
+            for (int i = 0; i < num_inc.Count; i++)
             {
-                if (val == num_inc[i])
+                if (val == (int)num_inc[i])
                 {
                     match_success++;
                     return true;
                 }
             }
 
-            for (int i = 0; i < num_dec.Length; i++)
+            for (int i = 0; i < num_dec.Count; i++)
             {
-                if (val == num_dec[i])
+                if (val == (int)num_dec[i])
                 {
                     match_failed++;
                     return false;
@@ -331,6 +420,19 @@ RETRY:
 
             match_success++;
             return true;
+        }
+
+        public ArrayList removeDup(ArrayList list)
+        {
+            ArrayList newList = new ArrayList();
+            for (int i = 0; i < list.Count; ++i )
+            {
+                if (newList.IndexOf(list[i]) < 0)
+                {
+                    newList.Add(list[i]);
+                }
+            }
+            return newList;
         }
 
         public bool parseRule(ref string err)
@@ -364,17 +466,17 @@ RETRY:
 
             try
             {
+                num_inc.Clear();
                 string[] inc_s = inc.Split(separator);
-                if (inc_s.Length > 0)
-                {
-                    num_inc = new int[inc_s.Length];
-                }
                 for (int i = 0; i < inc_s.Length; i++)
                 {
-                    num_inc[i] = int.Parse(inc_s[i]);
-                
+                    if (inc_s[i].Length > 0)
+                    {
+                        num_inc.Add(int.Parse(inc_s[i]));
+                    }                    
                 }
-                Array.Sort(num_inc);
+                num_inc = removeDup(num_inc);
+                num_inc.Sort();
             }
             catch
             {
@@ -384,16 +486,17 @@ RETRY:
 
             try
             {
+                num_dec.Clear();
                 string[] dec_s = dec.Split(separator);
-                if (dec_s.Length > 0)
-                {
-                    num_dec = new int[dec_s.Length];
-                }
                 for (int i = 0; i < dec_s.Length; i++)
                 {
-                    num_dec[i] = int.Parse(dec_s[i]);
+                    if (dec_s[i].Length > 0)
+                    {
+                        num_dec.Add(int.Parse(dec_s[i]));
+                    }                    
                 }
-                Array.Sort(num_dec);
+                num_dec = removeDup(num_dec);
+                num_dec.Sort();
             }
             catch
             {
@@ -401,7 +504,7 @@ RETRY:
                 return false;
             }
 
-            
+            //范围检查
             if (type == "和值")
             {
                 if (!_rangeCheck(SUM_MIN, SUM_MAX, ref err))
@@ -444,6 +547,13 @@ RETRY:
                     return false;
                 }
             }
+            else if (type == "红球")
+            {
+                if (!_rangeCheck(RED_MIN, RED_MAX, ref err))
+                {
+                    return false;
+                }
+            }
 
             err = null;
             return true;
@@ -472,18 +582,18 @@ RETRY:
                 return false;
             }
 
-            for (int i = 0; i < num_inc.Length; i++)
+            for (int i = 0; i < num_inc.Count; i++)
             {
-                if (_isOutOf(num_inc[i], min, max))
+                if (_isOutOf((int)num_inc[i], min, max))
                 {
                     err += "  【包含值】超出范围【" + min.ToString() + "--" + max.ToString() + "】";
                     return false;
                 }
             }
 
-            for (int i = 0; i < num_dec.Length; i++)
+            for (int i = 0; i < num_dec.Count; i++)
             {
-                if (_isOutOf(num_dec[i], min, max))
+                if (_isOutOf((int)num_dec[i], min, max))
                 {
                     err += "  【排除值】超出范围【" + min.ToString() + "--" + max.ToString() + "】";
                     return false;

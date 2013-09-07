@@ -17,31 +17,24 @@ namespace NewLt
         BindingList<TypeFilt> listRuleInGrid;
         public ArrayList listFilAll;
         public ArrayList listRule;
-        public ArrayList listRand;
-        public const int SHOW_MATCH_COUT = 5;
+        public const int SHOW_MATCH_COUT = 6;
+        Random random;
 
         public FormFileter(BindingList<TypeFilt> list)
         {
             InitializeComponent();
             listRule = new ArrayList();
             listFilAll = new ArrayList();
-            listRand = new ArrayList();
             listFiltOut = new BindingList<TypeFiltOut>();
             listRuleInGrid = list;
             gridFilter.DataSource = list;
             gridFiltOut.DataSource = listFiltOut;
+            random = new Random(DateTime.Now.DayOfYear + DateTime.Now.Millisecond);
             this.TopMost = true;
         }
 
         public bool isMatch(TinyLott lott)
         {
-//             listFilter.Add(new TypeFilt("和值", "21", "186", "2 3", "16 14 22"));
-//             listFilter.Add(new TypeFilt("AC", "1", "11", "2 3", "7"));
-//             listFilter.Add(new TypeFilt("散度", "1", "9", "2 3", "8"));
-//             listFilter.Add(new TypeFilt("偶数", "1", "3", "2", "1"));
-//             listFilter.Add(new TypeFilt("缺行", "1", "6", "2 ", "9"));
-//             listFilter.Add(new TypeFilt("篮球", "1", "16", "12 ", "2 3 4"));
-
             if (!((TypeFilt)listRule[0]).match_red(ref lott.red))
             {
                 return false;
@@ -72,7 +65,7 @@ namespace NewLt
         public bool parseFiltOpt(ref string err)
         {
             listRule.Clear();
-            for (int i = 0; i < 7; i++ )
+            for (int i = 0; i < listRuleInGrid.Count; i++)
             {
                 TypeFilt ruleInGrid = (TypeFilt)listRuleInGrid[i];
                 TypeFilt rule = new TypeFilt(ruleInGrid.type, ruleInGrid.min, ruleInGrid.max, ruleInGrid.inc, ruleInGrid.dec);
@@ -85,6 +78,39 @@ namespace NewLt
                 listRule.Add(rule);
             }
             return true;
+        }
+
+        public void calc_test()
+        {
+            int ac_min = 111;
+            int ac_max = 0;
+            int sd_min = 111;
+            int sd_max = 0;
+            Combin cmb = new Combin(33, 6);
+            long curMap = cmb.next();
+            while (curMap != 0)
+            {
+                TinyLott lott = new TinyLott(curMap);
+                curMap = cmb.next();
+
+                if (lott.ac < ac_min)
+                {
+                    ac_min = lott.ac;
+                }
+                if (lott.ac > ac_max)
+                {
+                    ac_max = lott.ac;
+                }
+                if (lott.sd < sd_min)
+                {
+                    sd_min = lott.sd;
+                }
+                if (lott.sd > sd_max)
+                {
+                    sd_max = lott.sd;
+                }
+            }
+            curMap = 0;
         }
 
         private void btQuickFilter_Click(object sender, EventArgs e)
@@ -142,15 +168,18 @@ namespace NewLt
 
         private void btAllFilter_Click(object sender, EventArgs e)
         {
+            int randIndex = 0;
             string err = "";
-            simpleButton2.Enabled = false;
-            listRand.Clear();
+            btDoFileter.Enabled = false;
             listFiltOut.Clear();
+            listFilAll.Clear();
+            gridFiltOut.Refresh();
+            
 
             if (!parseFiltOpt(ref err))
             {
                 MessageBox.Show(err);
-                simpleButton2.Enabled = true;
+                btDoFileter.Enabled = true;
                 return;
             }
 
@@ -180,76 +209,38 @@ namespace NewLt
                 {
                     progressFilter.PerformStep();
                     progressFilter.Refresh();
-                    gridBand2.Caption = "  存在 " + listFilAll.Count.ToString() + " 个号码";
+                    gridBand2.Caption = "  找到 " + listFilAll.Count.ToString() + " 个号码";
                     gridFiltOut.Refresh();
                 }
             }
-            listFiltOut.Clear();
-
-            int tryTimes = 0xFFFFF;
-            Random rdm = new Random(DateTime.Now.DayOfYear + DateTime.Now.Millisecond);            
-            int randIndex = 0;
+            
             for (int i = 0; i < listFilAll.Count && i < SHOW_MATCH_COUT; i++)
             {
-                while (tryTimes > 0)
-                {
-                    randIndex = rdm.Next(0, listFilAll.Count);
-                    for (int j = 0; j < listRand.Count; ++j )
-                    {
-                        if ((int)listRand[j] == randIndex)
-                        {
-                            tryTimes--;
-                            continue;
-                        }
-                    }
-                    listRand.Add(randIndex);
-                    break;
-                }
-
-                if (tryTimes < 0)
-                {
-                    break;
-                }
+                randIndex = random.Next(0, listFilAll.Count);
                 listFiltOut.Add(new TypeFiltOut((TinyLott)listFilAll[randIndex]));
             }
+            
+            gridBand2.Caption = "  找到 " + listFilAll.Count.ToString() + " 个号码";
             progressFilter.Properties.Step = prgsStep;
             progressFilter.Refresh();
-            gridBand2.Caption = "  存在 " + listFilAll.Count.ToString() + " 个号码";
-            simpleButton2.Enabled = true;
+            gridFiltOut.Refresh();
+            btDoFileter.Enabled = true;
         }
 
         private void btNextFilterOut_Click(object sender, EventArgs e)
         {
-            simpleButton1.Enabled = false;
+            btRandChange.Enabled = false;
             listFiltOut.Clear();
-            Random rdm = new Random(DateTime.Now.DayOfYear + DateTime.Now.Millisecond);
-            int tryTimes = 0xFFFFF;
+            gridFiltOut.Refresh();
+            
             int randIndex = 0;
-            int show_count = listFilAll.Count - listRand.Count;
-            show_count = show_count < SHOW_MATCH_COUT ? show_count : SHOW_MATCH_COUT;
-            for (int i = 0; i < listFilAll.Count && i < show_count; i++)
+            for (int i = 0; i < listFilAll.Count && i < SHOW_MATCH_COUT; i++)
             {
-                while (tryTimes > 0)
-                {
-                    randIndex = rdm.Next(0, listFilAll.Count);
-                    for (int j = 0; j < listRand.Count; ++j)
-                    {
-                        if ((int)listRand[j] == randIndex)
-                        {
-                            tryTimes--;
-                            continue;
-                        }
-                    }
-                    break;
-                }
-
-                if (tryTimes < 0)
-                {
-                    break;
-                }
+                randIndex = random.Next(0, listFilAll.Count);
                 listFiltOut.Add(new TypeFiltOut((TinyLott)listFilAll[randIndex]));
-            }           
-            simpleButton1.Enabled = true;
+            }
+            gridFiltOut.Refresh();
+            btRandChange.Enabled = true;
         }
 
         private void btAddFilterOutToHis_Click(object sender, EventArgs e)

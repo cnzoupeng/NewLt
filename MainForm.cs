@@ -72,13 +72,13 @@ namespace NewLt
         public void init_filter()
         {
             listFilter = new BindingList<TypeFilt>();
-            listFilter.Add(new TypeFilt("红球", "1", "33", "4", "5"));
-            listFilter.Add(new TypeFilt("和值", "80", "120", "88 89", "98 99"));
-            listFilter.Add(new TypeFilt("AC", "1", "11", "2 3", "7"));
-            listFilter.Add(new TypeFilt("散度", "1", "9", "2 3", "8"));
-            listFilter.Add(new TypeFilt("偶数", "1", "3", "2", "1"));
-            listFilter.Add(new TypeFilt("缺行", "1", "5", "2 ", "4"));
-            listFilter.Add(new TypeFilt("篮球", "1", "16", "12 ", "2 3 4"));
+            listFilter.Add(new TypeFilt("红球", "1", "33", "4 5 6", "7 8"));
+            listFilter.Add(new TypeFilt("和值", "21", "183", "88 89", "98 99"));
+            listFilter.Add(new TypeFilt("AC", "0", "10", "2 3", "7"));
+            listFilter.Add(new TypeFilt("散度", "3", "27", "3", "8"));
+            listFilter.Add(new TypeFilt("偶数", "0", "6", "2", "1"));
+            listFilter.Add(new TypeFilt("缺行", "0", "5", "2 ", "4"));
+            //listFilter.Add(new TypeFilt("篮球", "1", "16", "12 ", "2 3 4"));
         }
 
         public void load_history()
