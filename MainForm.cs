@@ -13,6 +13,7 @@ using DevExpress.XtraEditors;
 using DevExpress.Utils;
 using System.Collections;
 using DevExpress.XtraCharts;
+using DevExpress.XtraGrid.Views.Base;
 
 
 
@@ -22,6 +23,7 @@ namespace NewLt
     {
         public LtData ltData;
         public BindingList<LottoryItem> gridList;
+        public BindingList<NumberAll> gridListAll;
         public bool runchart_is_drawing;
         public int index_begin;
         public int index_end;
@@ -30,22 +32,34 @@ namespace NewLt
         {
             InitializeComponent();
 
+            load_history();
+            init_number_all();
+            init_ctrl();
+
+            refresh_all_data();
+           
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        public void load_history()
+        {
             ltData = new LtData(this);
-            gridList = new BindingList<LottoryItem>();          
+            gridList = new BindingList<LottoryItem>();
 
             if (ltData.load_history() < 0)
             {
                 MessageBox.Show("Load history data failed\n");
             }
-
             ltData.clone_history(gridList);
-            grid_history.DataSource = gridList;            
+        }
 
-            init_ctrl();
-
-            //this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized; 
+        public void init_number_all()
+        {
+            gridListAll = new BindingList<NumberAll>();
+            NumberAllBuild.init_num(gridListAll, gridList);
+            gridHis.DataSource = gridListAll;
         }
 
         public void init_ctrl()
@@ -237,43 +251,43 @@ namespace NewLt
 
             runchart_is_drawing = true;
             string nameid = comb_name_select_r.EditValue.ToString();
-            
+
             //-------------------------------------------
             BindingList<NumCensus> list_census_1 = new BindingList<NumCensus>();
             BindingList<NumCensus> list_census_2 = new BindingList<NumCensus>();
             BindingList<NumCensus> list_census_3 = new BindingList<NumCensus>();
             BindingList<NumCensus> list_census_4 = new BindingList<NumCensus>();
             get_item_census(index_begin, index_end, LottoryItem.ItemCnId(comb_name_select_r.Text), list_census_1);
-            get_item_census(index_begin, index_end, LottoryItem.ItemId("AC"), list_census_2);
-            get_item_census(index_begin, index_end, LottoryItem.ItemId("SD"), list_census_3);
-            get_item_census(index_begin, index_end, LottoryItem.ItemId("BL"), list_census_4);
+            //get_item_census(index_begin, index_end, LottoryItem.ItemId("AC"), list_census_2);
+            //get_item_census(index_begin, index_end, LottoryItem.ItemId("SD"), list_census_3);
+            //get_item_census(index_begin, index_end, LottoryItem.ItemId("BL"), list_census_4);
 
 
             //----------------------------------------------
             //chart_dig_one.DataSource = list_census;
 
             chart_dig_one.SeriesSerializable[0].DataSource = list_census_1;
-            chart_dig_one.SeriesSerializable[1].DataSource = list_census_2;
-            chart_dig_one.SeriesSerializable[2].DataSource = list_census_3;
-            chart_dig_one.SeriesSerializable[3].DataSource = list_census_4;
+            //chart_dig_one.SeriesSerializable[1].DataSource = list_census_2;
+            //chart_dig_one.SeriesSerializable[2].DataSource = list_census_3;
+            //chart_dig_one.SeriesSerializable[3].DataSource = list_census_4;
 
             chart_dig_one.SeriesSerializable[0].Name = comb_name_select_r.Text;
             chart_dig_one.SeriesSerializable[0].ArgumentDataMember = "NUM";
             chart_dig_one.SeriesSerializable[0].ValueDataMembers[0] = "COUNT";
 
-            chart_dig_one.SeriesSerializable[1].Name = "AC值";
-            chart_dig_one.SeriesSerializable[1].ArgumentDataMember = "NUM";
-            chart_dig_one.SeriesSerializable[1].ValueDataMembers[0] = "COUNT";
+            //chart_dig_one.SeriesSerializable[1].Name = "AC值";
+            //chart_dig_one.SeriesSerializable[1].ArgumentDataMember = "NUM";
+            //chart_dig_one.SeriesSerializable[1].ValueDataMembers[0] = "COUNT";
 
-            chart_dig_one.SeriesSerializable[2].Name = "散度";
-            chart_dig_one.SeriesSerializable[2].ArgumentDataMember = "NUM";
-            chart_dig_one.SeriesSerializable[2].ValueDataMembers[0] = "COUNT";
+            //chart_dig_one.SeriesSerializable[2].Name = "散度";
+            //chart_dig_one.SeriesSerializable[2].ArgumentDataMember = "NUM";
+            //chart_dig_one.SeriesSerializable[2].ValueDataMembers[0] = "COUNT";
 
-            chart_dig_one.SeriesSerializable[3].Name = "篮球";
-            chart_dig_one.SeriesSerializable[3].ArgumentDataMember = "NUM";
-            chart_dig_one.SeriesSerializable[3].ValueDataMembers[0] = "COUNT";
+            //chart_dig_one.SeriesSerializable[3].Name = "篮球";
+            //chart_dig_one.SeriesSerializable[3].ArgumentDataMember = "NUM";
+            //chart_dig_one.SeriesSerializable[3].ValueDataMembers[0] = "COUNT";
 
-            
+
             runchart_is_drawing = false;
         }
 
@@ -283,8 +297,8 @@ namespace NewLt
             {
                 return;
             }
-           
-            runchart_is_drawing = true;        
+
+            runchart_is_drawing = true;
             string nameid = comb_name_select_r.EditValue.ToString();
             //-------------------------------------------
 
@@ -302,17 +316,17 @@ namespace NewLt
             chart_line_one.SeriesSerializable[0].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = LottoryItem.names[LottoryItem.ItemCnId(comb_name_select_r.Text)];
 
-            chart_line_one.SeriesSerializable[1].Name = "AC值";
-            chart_line_one.SeriesSerializable[1].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[1].ValueDataMembers[0] = "AC";
+            //chart_line_one.SeriesSerializable[1].Name = "AC值";
+            //chart_line_one.SeriesSerializable[1].ArgumentDataMember = "ID";
+            //chart_line_one.SeriesSerializable[1].ValueDataMembers[0] = "AC";
 
-            chart_line_one.SeriesSerializable[2].Name = "散度";
-            chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
+            //chart_line_one.SeriesSerializable[2].Name = "散度";
+            //chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
+            //chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
 
-            chart_line_one.SeriesSerializable[3].Name = "篮球";
-            chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
-            chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "BL";
+            //chart_line_one.SeriesSerializable[3].Name = "篮球";
+            //chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
+            //chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "BL";
 
             runchart_is_drawing = false;
         }
@@ -348,6 +362,7 @@ namespace NewLt
             ltData.clone_history(gridList);
             init_ctrl();
             refresh_all_data();
+            girdHisView.MoveLast();
             comb_id_select_range_r.SelectedIndex = -1;
             comb_id_select_range_r.SelectedIndex = 1;
         }
@@ -375,14 +390,35 @@ namespace NewLt
             this.BeginInvoke(updt);
         }
 
-        private void chart_dig_one_ObjectSelected(object sender, HotTrackEventArgs e)
+        private void bandedGridView1_CustomDrawCell_1(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            int xx = 1;
+            if (e.Column.ColumnHandle > 0)
+            {
+                NumberAll number = (NumberAll)gridListAll[e.RowHandle];
+
+
+                if (number.map[e.Column.ColumnHandle - 1] > 0)
+                {
+                    if (e.Column.AbsoluteIndex > 33)
+                    {
+                        e.Appearance.BackColor = Color.LightBlue;
+                        //e.Appearance.BackColor = Color.DeepSkyBlue;
+                    }
+                    else
+                    {
+                        //e.Appearance.BackColor = Color.Moccasin;
+                        e.Appearance.BackColor = Color.PeachPuff;
+                    }
+                    e.Appearance.ForeColor = Color.DarkBlue;
+                }
+
+            }  
         }
 
-        private void chart_line_one_ObjectSelected(object sender, HotTrackEventArgs e)
+        private void girdHisView_RowLoaded(object sender, DevExpress.XtraGrid.Views.Base.RowEventArgs e)
         {
-            int xx = 1;
+            ColumnView view = sender as ColumnView;
+            girdHisView.MoveLast();
         }
-   }
+    }
 }

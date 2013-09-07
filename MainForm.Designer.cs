@@ -29,496 +29,706 @@
         private void InitializeComponent()
         {
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane1 = new DevExpress.XtraCharts.XYDiagramPane();
-            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane2 = new DevExpress.XtraCharts.XYDiagramPane();
-            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane3 = new DevExpress.XtraCharts.XYDiagramPane();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY1 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY2 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY3 = new DevExpress.XtraCharts.SecondaryAxisY();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
             DevExpress.XtraCharts.PointOptions pointOptions1 = new DevExpress.XtraCharts.PointOptions();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel2 = new DevExpress.XtraCharts.PointSeriesLabel();
             DevExpress.XtraCharts.PointOptions pointOptions2 = new DevExpress.XtraCharts.PointOptions();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel3 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions3 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView3 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel4 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions4 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView4 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel5 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions5 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView5 = new DevExpress.XtraCharts.LineSeriesView();
             DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane4 = new DevExpress.XtraCharts.XYDiagramPane();
-            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane5 = new DevExpress.XtraCharts.XYDiagramPane();
-            DevExpress.XtraCharts.XYDiagramPane xyDiagramPane6 = new DevExpress.XtraCharts.XYDiagramPane();
-            DevExpress.XtraCharts.SecondaryAxisX secondaryAxisX1 = new DevExpress.XtraCharts.SecondaryAxisX();
-            DevExpress.XtraCharts.SecondaryAxisX secondaryAxisX2 = new DevExpress.XtraCharts.SecondaryAxisX();
-            DevExpress.XtraCharts.SecondaryAxisX secondaryAxisX3 = new DevExpress.XtraCharts.SecondaryAxisX();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY4 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY5 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.SecondaryAxisY secondaryAxisY6 = new DevExpress.XtraCharts.SecondaryAxisY();
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions6 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PointOptions pointOptions3 = new DevExpress.XtraCharts.PointOptions();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions7 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions8 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel4 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions9 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel5 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions10 = new DevExpress.XtraCharts.PointOptions();
-            this.sc_h_1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.sc_h_v2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.grid_history = new DevExpress.XtraGrid.GridControl();
-            this.grid_his_view = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.R1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.R2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.R3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.R4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.R5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.R6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SUM_RED = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.AC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ODD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sc_v2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.comb_name_select_r = new DevExpress.XtraEditors.ComboBoxEdit();
+            DevExpress.XtraCharts.PointOptions pointOptions4 = new DevExpress.XtraCharts.PointOptions();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.pageHisotry = new DevExpress.XtraTab.XtraTabPage();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.gridHis = new DevExpress.XtraGrid.GridControl();
+            this.girdHisView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.bg_id = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r15 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r17 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r18 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r19 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r20 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r23 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r24 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r25 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r27 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r28 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r29 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r30 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r31 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r32 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.r33 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b15 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.b16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.comb_id_select_range_r = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comb_name_select_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_id_select_end_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_id_select_begin_r = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.sc_v3 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.sc_h_4 = new DevExpress.XtraEditors.SplitContainerControl();
             this.chart_line_one = new DevExpress.XtraCharts.ChartControl();
             this.chart_dig_one = new DevExpress.XtraCharts.ChartControl();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_h_1)).BeginInit();
-            this.sc_h_1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_h_v2)).BeginInit();
-            this.sc_h_v2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_history)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_his_view)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_v2)).BeginInit();
-            this.sc_v2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comb_name_select_r.Properties)).BeginInit();
+            this.pageOther = new DevExpress.XtraTab.XtraTabPage();
+            this.gridBand_id = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand_red = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand_blue = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.pageHisotry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.girdHisView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_range_r.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comb_name_select_r.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_end_r.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_begin_r.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_v3)).BeginInit();
-            this.sc_v3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_h_4)).BeginInit();
-            this.sc_h_4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_line_one)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_dig_one)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisX1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisX2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisX3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel5)).BeginInit();
             this.SuspendLayout();
             // 
-            // sc_h_1
+            // xtraTabControl1
             // 
-            this.sc_h_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sc_h_1.Location = new System.Drawing.Point(0, 0);
-            this.sc_h_1.Name = "sc_h_1";
-            this.sc_h_1.Panel1.Controls.Add(this.sc_h_v2);
-            this.sc_h_1.Panel1.Text = "Panel1";
-            this.sc_h_1.Panel2.Controls.Add(this.sc_v2);
-            this.sc_h_1.Panel2.Text = "Panel2";
-            this.sc_h_1.Size = new System.Drawing.Size(1123, 595);
-            this.sc_h_1.SplitterPosition = 531;
-            this.sc_h_1.TabIndex = 0;
-            this.sc_h_1.Text = "splitContainerControl1";
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.pageHisotry;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1123, 595);
+            this.xtraTabControl1.TabIndex = 0;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.pageHisotry,
+            this.pageOther});
+            this.xtraTabControl1.Tag = "";
             // 
-            // sc_h_v2
+            // pageHisotry
             // 
-            this.sc_h_v2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sc_h_v2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
-            this.sc_h_v2.Horizontal = false;
-            this.sc_h_v2.Location = new System.Drawing.Point(0, 0);
-            this.sc_h_v2.Name = "sc_h_v2";
-            this.sc_h_v2.Panel1.Controls.Add(this.grid_history);
-            this.sc_h_v2.Panel1.Text = "Panel1";
-            this.sc_h_v2.Panel2.Text = "Panel2";
-            this.sc_h_v2.Size = new System.Drawing.Size(531, 595);
-            this.sc_h_v2.SplitterPosition = 42;
-            this.sc_h_v2.TabIndex = 0;
-            this.sc_h_v2.Text = "splitContainerControl1";
+            this.pageHisotry.Controls.Add(this.splitContainerControl1);
+            this.pageHisotry.Name = "pageHisotry";
+            this.pageHisotry.Size = new System.Drawing.Size(1117, 566);
+            this.pageHisotry.Text = "历史数据";
             // 
-            // grid_history
+            // splitContainerControl1
             // 
-            this.grid_history.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_history.Location = new System.Drawing.Point(0, 0);
-            this.grid_history.MainView = this.grid_his_view;
-            this.grid_history.Name = "grid_history";
-            this.grid_history.Size = new System.Drawing.Size(531, 547);
-            this.grid_history.TabIndex = 0;
-            this.grid_history.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grid_his_view});
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
+            this.splitContainerControl1.Horizontal = false;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.gridHis);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1117, 566);
+            this.splitContainerControl1.SplitterPosition = 324;
+            this.splitContainerControl1.TabIndex = 0;
+            this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // grid_his_view
+            // gridHis
             // 
-            this.grid_his_view.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.Empty.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.EvenRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.EvenRow.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.EvenRow.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(133)))), ((int)(((byte)(195)))));
-            this.grid_his_view.Appearance.FixedLine.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(109)))), ((int)(((byte)(189)))));
-            this.grid_his_view.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(139)))), ((int)(((byte)(206)))));
-            this.grid_his_view.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.GroupButton.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.GroupRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.GroupRow.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.GroupRow.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(254)))));
-            this.grid_his_view.Appearance.HeaderPanel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grid_his_view.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.HeaderPanel.Options.UseFont = true;
-            this.grid_his_view.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.grid_his_view.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.grid_his_view.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.grid_his_view.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
-            this.grid_his_view.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.grid_his_view.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.HideSelectionRow.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.HorzLine.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.OddRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.OddRow.Options.UseBorderColor = true;
-            this.grid_his_view.Appearance.OddRow.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.grid_his_view.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.grid_his_view.Appearance.Preview.Options.UseFont = true;
-            this.grid_his_view.Appearance.Preview.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.Row.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grid_his_view.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.grid_his_view.Appearance.Row.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.Row.Options.UseFont = true;
-            this.grid_his_view.Appearance.Row.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.Row.Options.UseTextOptions = true;
-            this.grid_his_view.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.grid_his_view.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.grid_his_view.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.grid_his_view.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(155)))), ((int)(((byte)(215)))));
-            this.grid_his_view.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.SelectedRow.Options.UseForeColor = true;
-            this.grid_his_view.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.grid_his_view.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.grid_his_view.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(184)))), ((int)(((byte)(251)))));
-            this.grid_his_view.Appearance.VertLine.Options.UseBackColor = true;
-            this.grid_his_view.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
-            this.R1,
-            this.R2,
-            this.R3,
-            this.R4,
-            this.R5,
-            this.R6,
-            this.BL,
-            this.SUM_RED,
-            this.AC,
-            this.SD,
-            this.ODD});
-            this.grid_his_view.GridControl = this.grid_history;
-            this.grid_his_view.Name = "grid_his_view";
-            this.grid_his_view.OptionsBehavior.Editable = false;
-            this.grid_his_view.OptionsBehavior.ReadOnly = true;
-            this.grid_his_view.OptionsView.EnableAppearanceEvenRow = true;
-            this.grid_his_view.OptionsView.EnableAppearanceOddRow = true;
-            this.grid_his_view.OptionsView.ShowGroupPanel = false;
+            this.gridHis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridHis.Location = new System.Drawing.Point(0, 0);
+            this.gridHis.MainView = this.girdHisView;
+            this.gridHis.Name = "gridHis";
+            this.gridHis.Size = new System.Drawing.Size(1117, 236);
+            this.gridHis.TabIndex = 1;
+            this.gridHis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.girdHisView});
             // 
-            // ID
+            // girdHisView
             // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.OptionsColumn.FixedWidth = true;
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
-            this.ID.Width = 65;
+            this.girdHisView.Appearance.FixedLine.ForeColor = System.Drawing.Color.Gainsboro;
+            this.girdHisView.Appearance.FixedLine.Options.UseForeColor = true;
+            this.girdHisView.Appearance.FocusedCell.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.girdHisView.Appearance.FocusedCell.Options.UseFont = true;
+            this.girdHisView.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.girdHisView.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.girdHisView.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.girdHisView.Appearance.FocusedRow.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.girdHisView.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Gainsboro;
+            this.girdHisView.Appearance.FocusedRow.Options.UseFont = true;
+            this.girdHisView.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.girdHisView.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.girdHisView.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.girdHisView.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.girdHisView.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Gainsboro;
+            this.girdHisView.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.girdHisView.Appearance.Preview.ForeColor = System.Drawing.Color.Gainsboro;
+            this.girdHisView.Appearance.Preview.Options.UseForeColor = true;
+            this.girdHisView.Appearance.Row.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.girdHisView.Appearance.Row.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.girdHisView.Appearance.Row.Options.UseBackColor = true;
+            this.girdHisView.Appearance.Row.Options.UseFont = true;
+            this.girdHisView.Appearance.Row.Options.UseForeColor = true;
+            this.girdHisView.Appearance.Row.Options.UseTextOptions = true;
+            this.girdHisView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.girdHisView.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.girdHisView.Appearance.RowSeparator.ForeColor = System.Drawing.Color.Gainsboro;
+            this.girdHisView.Appearance.RowSeparator.Options.UseForeColor = true;
+            this.girdHisView.Appearance.SelectedRow.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.girdHisView.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Gainsboro;
+            this.girdHisView.Appearance.SelectedRow.Options.UseFont = true;
+            this.girdHisView.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.girdHisView.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.girdHisView.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.girdHisView.Appearance.SelectedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.girdHisView.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.girdHisView.Appearance.VertLine.Options.UseBackColor = true;
+            this.girdHisView.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand_id,
+            this.gridBand_red,
+            this.gridBand1,
+            this.gridBand_blue});
+            this.girdHisView.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.bg_id,
+            this.r1,
+            this.r2,
+            this.r3,
+            this.r4,
+            this.r5,
+            this.r6,
+            this.r7,
+            this.r8,
+            this.r9,
+            this.r10,
+            this.r11,
+            this.r12,
+            this.r13,
+            this.r14,
+            this.r15,
+            this.r16,
+            this.r17,
+            this.r18,
+            this.r19,
+            this.r20,
+            this.r21,
+            this.r22,
+            this.r23,
+            this.r24,
+            this.r25,
+            this.r26,
+            this.r27,
+            this.r28,
+            this.r29,
+            this.r30,
+            this.r31,
+            this.r32,
+            this.r33,
+            this.b1,
+            this.b2,
+            this.b3,
+            this.b4,
+            this.b5,
+            this.b6,
+            this.b7,
+            this.b8,
+            this.b9,
+            this.b10,
+            this.b11,
+            this.b12,
+            this.b13,
+            this.b14,
+            this.b15,
+            this.b16});
+            this.girdHisView.GridControl = this.gridHis;
+            this.girdHisView.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.girdHisView.Name = "girdHisView";
+            this.girdHisView.OptionsBehavior.Editable = false;
+            this.girdHisView.OptionsBehavior.ReadOnly = true;
+            this.girdHisView.OptionsCustomization.AllowBandMoving = false;
+            this.girdHisView.OptionsCustomization.AllowChangeColumnParent = true;
+            this.girdHisView.OptionsCustomization.AllowColumnMoving = false;
+            this.girdHisView.OptionsCustomization.AllowFilter = false;
+            this.girdHisView.OptionsCustomization.AllowGroup = false;
+            this.girdHisView.OptionsCustomization.AllowRowSizing = true;
+            this.girdHisView.OptionsCustomization.AllowSort = false;
+            this.girdHisView.OptionsSelection.MultiSelect = true;
+            this.girdHisView.OptionsView.ShowColumnHeaders = false;
+            this.girdHisView.OptionsView.ShowGroupPanel = false;
+            this.girdHisView.RowHeight = 20;
+            this.girdHisView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.girdHisView.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.Default;
+            this.girdHisView.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.bandedGridView1_CustomDrawCell_1);
+            this.girdHisView.RowLoaded += new DevExpress.XtraGrid.Views.Base.RowEventHandler(this.girdHisView_RowLoaded);
             // 
-            // R1
+            // bg_id
             // 
-            this.R1.Caption = "R1";
-            this.R1.DisplayFormat.FormatString = "D2";
-            this.R1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.R1.FieldName = "R1";
-            this.R1.Name = "R1";
-            this.R1.OptionsColumn.FixedWidth = true;
-            this.R1.Visible = true;
-            this.R1.VisibleIndex = 1;
-            this.R1.Width = 25;
+            this.bg_id.AppearanceCell.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.bg_id.AppearanceCell.ForeColor = System.Drawing.Color.DimGray;
+            this.bg_id.AppearanceCell.Options.UseFont = true;
+            this.bg_id.AppearanceCell.Options.UseForeColor = true;
+            this.bg_id.AppearanceCell.Options.UseTextOptions = true;
+            this.bg_id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bg_id.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bg_id.Caption = "期号";
+            this.bg_id.FieldName = "ID";
+            this.bg_id.MinWidth = 65;
+            this.bg_id.Name = "bg_id";
+            this.bg_id.Visible = true;
+            this.bg_id.Width = 65;
             // 
-            // R2
+            // r1
             // 
-            this.R2.Caption = "R2";
-            this.R2.DisplayFormat.FormatString = "D2";
-            this.R2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.R2.FieldName = "R2";
-            this.R2.Name = "R2";
-            this.R2.OptionsColumn.FixedWidth = true;
-            this.R2.Visible = true;
-            this.R2.VisibleIndex = 2;
-            this.R2.Width = 25;
+            this.r1.Caption = "r1";
+            this.r1.FieldName = "R1";
+            this.r1.Name = "r1";
+            this.r1.Visible = true;
+            this.r1.Width = 33;
             // 
-            // R3
+            // r2
             // 
-            this.R3.Caption = "R3";
-            this.R3.DisplayFormat.FormatString = "D2";
-            this.R3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.R3.FieldName = "R3";
-            this.R3.Name = "R3";
-            this.R3.OptionsColumn.FixedWidth = true;
-            this.R3.Visible = true;
-            this.R3.VisibleIndex = 3;
-            this.R3.Width = 25;
+            this.r2.Caption = "r2";
+            this.r2.FieldName = "R2";
+            this.r2.Name = "r2";
+            this.r2.Visible = true;
+            this.r2.Width = 33;
             // 
-            // R4
+            // r3
             // 
-            this.R4.Caption = "R4";
-            this.R4.DisplayFormat.FormatString = "D2";
-            this.R4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.R4.FieldName = "R4";
-            this.R4.Name = "R4";
-            this.R4.OptionsColumn.FixedWidth = true;
-            this.R4.Visible = true;
-            this.R4.VisibleIndex = 4;
-            this.R4.Width = 25;
+            this.r3.Caption = "r3";
+            this.r3.FieldName = "R3";
+            this.r3.Name = "r3";
+            this.r3.Visible = true;
+            this.r3.Width = 33;
             // 
-            // R5
+            // r4
             // 
-            this.R5.Caption = "R5";
-            this.R5.DisplayFormat.FormatString = "D2";
-            this.R5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.R5.FieldName = "R5";
-            this.R5.Name = "R5";
-            this.R5.OptionsColumn.FixedWidth = true;
-            this.R5.Visible = true;
-            this.R5.VisibleIndex = 5;
-            this.R5.Width = 25;
+            this.r4.Caption = "r4";
+            this.r4.FieldName = "R4";
+            this.r4.Name = "r4";
+            this.r4.Visible = true;
+            this.r4.Width = 33;
             // 
-            // R6
+            // r5
             // 
-            this.R6.Caption = "R6";
-            this.R6.DisplayFormat.FormatString = "D2";
-            this.R6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.R6.FieldName = "R6";
-            this.R6.Name = "R6";
-            this.R6.OptionsColumn.FixedWidth = true;
-            this.R6.Visible = true;
-            this.R6.VisibleIndex = 6;
-            this.R6.Width = 25;
+            this.r5.Caption = "r5";
+            this.r5.FieldName = "R5";
+            this.r5.Name = "r5";
+            this.r5.Visible = true;
+            this.r5.Width = 33;
             // 
-            // BL
+            // r6
             // 
-            this.BL.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
-            this.BL.AppearanceCell.Options.UseForeColor = true;
-            this.BL.Caption = "BL";
-            this.BL.DisplayFormat.FormatString = "D2";
-            this.BL.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.BL.FieldName = "BL";
-            this.BL.Name = "BL";
-            this.BL.OptionsColumn.FixedWidth = true;
-            this.BL.Visible = true;
-            this.BL.VisibleIndex = 7;
-            this.BL.Width = 25;
+            this.r6.Caption = "r6";
+            this.r6.FieldName = "R6";
+            this.r6.Name = "r6";
+            this.r6.Visible = true;
+            this.r6.Width = 33;
             // 
-            // SUM_RED
+            // r7
             // 
-            this.SUM_RED.Caption = "SUM";
-            this.SUM_RED.FieldName = "SUM_RED";
-            this.SUM_RED.Name = "SUM_RED";
-            this.SUM_RED.OptionsColumn.FixedWidth = true;
-            this.SUM_RED.Visible = true;
-            this.SUM_RED.VisibleIndex = 8;
-            this.SUM_RED.Width = 25;
+            this.r7.Caption = "r7";
+            this.r7.FieldName = "R7";
+            this.r7.Name = "r7";
+            this.r7.Visible = true;
+            this.r7.Width = 33;
             // 
-            // AC
+            // r8
             // 
-            this.AC.Caption = "AC";
-            this.AC.FieldName = "AC";
-            this.AC.Name = "AC";
-            this.AC.OptionsColumn.FixedWidth = true;
-            this.AC.Visible = true;
-            this.AC.VisibleIndex = 9;
-            this.AC.Width = 25;
+            this.r8.Caption = "r8";
+            this.r8.FieldName = "R8";
+            this.r8.Name = "r8";
+            this.r8.Visible = true;
+            this.r8.Width = 33;
             // 
-            // SD
+            // r9
             // 
-            this.SD.Caption = "SD";
-            this.SD.FieldName = "SD";
-            this.SD.Name = "SD";
-            this.SD.OptionsColumn.FixedWidth = true;
-            this.SD.Visible = true;
-            this.SD.VisibleIndex = 10;
-            this.SD.Width = 25;
+            this.r9.Caption = "r9";
+            this.r9.FieldName = "R9";
+            this.r9.Name = "r9";
+            this.r9.Visible = true;
+            this.r9.Width = 33;
             // 
-            // ODD
+            // r10
             // 
-            this.ODD.Caption = "ODD";
-            this.ODD.FieldName = "ODD_NUM";
-            this.ODD.Name = "ODD";
-            this.ODD.OptionsColumn.FixedWidth = true;
-            this.ODD.Visible = true;
-            this.ODD.VisibleIndex = 11;
-            this.ODD.Width = 25;
+            this.r10.Caption = "r10";
+            this.r10.FieldName = "R10";
+            this.r10.Name = "r10";
+            this.r10.Visible = true;
+            this.r10.Width = 33;
             // 
-            // sc_v2
+            // r11
             // 
-            this.sc_v2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sc_v2.Horizontal = false;
-            this.sc_v2.Location = new System.Drawing.Point(0, 0);
-            this.sc_v2.Name = "sc_v2";
-            this.sc_v2.Panel1.Controls.Add(this.comb_name_select_r);
-            this.sc_v2.Panel1.Controls.Add(this.comb_id_select_range_r);
-            this.sc_v2.Panel1.Controls.Add(this.comb_id_select_end_r);
-            this.sc_v2.Panel1.Controls.Add(this.comb_id_select_begin_r);
-            this.sc_v2.Panel1.Text = "Panel1";
-            this.sc_v2.Panel2.Controls.Add(this.sc_v3);
-            this.sc_v2.Panel2.Text = "Panel2";
-            this.sc_v2.Size = new System.Drawing.Size(586, 595);
-            this.sc_v2.SplitterPosition = 40;
-            this.sc_v2.TabIndex = 0;
-            this.sc_v2.Text = "splitContainerControl1";
+            this.r11.Caption = "r11";
+            this.r11.FieldName = "R11";
+            this.r11.Name = "r11";
+            this.r11.Visible = true;
+            this.r11.Width = 33;
             // 
-            // comb_name_select_r
+            // r12
             // 
-            this.comb_name_select_r.Location = new System.Drawing.Point(3, 12);
-            this.comb_name_select_r.Name = "comb_name_select_r";
-            this.comb_name_select_r.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comb_name_select_r.Size = new System.Drawing.Size(83, 20);
-            this.comb_name_select_r.TabIndex = 0;
-            this.comb_name_select_r.SelectedIndexChanged += new System.EventHandler(this.comb_name_select_r_SelectedIndexChanged);
+            this.r12.Caption = "r12";
+            this.r12.FieldName = "R12";
+            this.r12.Name = "r12";
+            this.r12.Visible = true;
+            this.r12.Width = 33;
+            // 
+            // r13
+            // 
+            this.r13.Caption = "r13";
+            this.r13.FieldName = "R13";
+            this.r13.Name = "r13";
+            this.r13.Visible = true;
+            this.r13.Width = 33;
+            // 
+            // r14
+            // 
+            this.r14.Caption = "r14";
+            this.r14.FieldName = "R14";
+            this.r14.Name = "r14";
+            this.r14.Visible = true;
+            this.r14.Width = 33;
+            // 
+            // r15
+            // 
+            this.r15.Caption = "r15";
+            this.r15.FieldName = "R15";
+            this.r15.Name = "r15";
+            this.r15.Visible = true;
+            this.r15.Width = 33;
+            // 
+            // r16
+            // 
+            this.r16.Caption = "r16";
+            this.r16.FieldName = "R16";
+            this.r16.Name = "r16";
+            this.r16.Visible = true;
+            this.r16.Width = 33;
+            // 
+            // r17
+            // 
+            this.r17.Caption = "r17";
+            this.r17.FieldName = "R17";
+            this.r17.Name = "r17";
+            this.r17.Visible = true;
+            this.r17.Width = 33;
+            // 
+            // r18
+            // 
+            this.r18.Caption = "r18";
+            this.r18.FieldName = "R18";
+            this.r18.Name = "r18";
+            this.r18.Visible = true;
+            this.r18.Width = 33;
+            // 
+            // r19
+            // 
+            this.r19.Caption = "r19";
+            this.r19.FieldName = "R19";
+            this.r19.Name = "r19";
+            this.r19.Visible = true;
+            this.r19.Width = 33;
+            // 
+            // r20
+            // 
+            this.r20.Caption = "r20";
+            this.r20.FieldName = "R20";
+            this.r20.Name = "r20";
+            this.r20.Visible = true;
+            this.r20.Width = 33;
+            // 
+            // r21
+            // 
+            this.r21.Caption = "r21";
+            this.r21.FieldName = "R21";
+            this.r21.Name = "r21";
+            this.r21.Visible = true;
+            this.r21.Width = 33;
+            // 
+            // r22
+            // 
+            this.r22.Caption = "r22";
+            this.r22.FieldName = "R22";
+            this.r22.Name = "r22";
+            this.r22.Visible = true;
+            this.r22.Width = 33;
+            // 
+            // r23
+            // 
+            this.r23.Caption = "r23";
+            this.r23.FieldName = "R23";
+            this.r23.Name = "r23";
+            this.r23.Visible = true;
+            this.r23.Width = 33;
+            // 
+            // r24
+            // 
+            this.r24.Caption = "r24";
+            this.r24.FieldName = "R24";
+            this.r24.Name = "r24";
+            this.r24.Visible = true;
+            this.r24.Width = 33;
+            // 
+            // r25
+            // 
+            this.r25.Caption = "r25";
+            this.r25.FieldName = "R25";
+            this.r25.Name = "r25";
+            this.r25.Visible = true;
+            this.r25.Width = 33;
+            // 
+            // r26
+            // 
+            this.r26.Caption = "r26";
+            this.r26.FieldName = "R26";
+            this.r26.Name = "r26";
+            this.r26.Visible = true;
+            this.r26.Width = 33;
+            // 
+            // r27
+            // 
+            this.r27.Caption = "r27";
+            this.r27.FieldName = "R27";
+            this.r27.Name = "r27";
+            this.r27.Visible = true;
+            this.r27.Width = 33;
+            // 
+            // r28
+            // 
+            this.r28.Caption = "r28";
+            this.r28.FieldName = "R28";
+            this.r28.Name = "r28";
+            this.r28.Visible = true;
+            this.r28.Width = 33;
+            // 
+            // r29
+            // 
+            this.r29.Caption = "r29";
+            this.r29.FieldName = "R29";
+            this.r29.Name = "r29";
+            this.r29.Visible = true;
+            this.r29.Width = 33;
+            // 
+            // r30
+            // 
+            this.r30.Caption = "r30";
+            this.r30.FieldName = "R30";
+            this.r30.Name = "r30";
+            this.r30.Visible = true;
+            this.r30.Width = 33;
+            // 
+            // r31
+            // 
+            this.r31.Caption = "r31";
+            this.r31.FieldName = "R31";
+            this.r31.Name = "r31";
+            this.r31.Visible = true;
+            this.r31.Width = 33;
+            // 
+            // r32
+            // 
+            this.r32.Caption = "r32";
+            this.r32.FieldName = "R32";
+            this.r32.Name = "r32";
+            this.r32.Visible = true;
+            this.r32.Width = 33;
+            // 
+            // r33
+            // 
+            this.r33.Caption = "r33";
+            this.r33.FieldName = "R33";
+            this.r33.Name = "r33";
+            this.r33.Visible = true;
+            this.r33.Width = 46;
+            // 
+            // b1
+            // 
+            this.b1.Caption = "b1";
+            this.b1.FieldName = "B1";
+            this.b1.Name = "b1";
+            this.b1.Visible = true;
+            this.b1.Width = 33;
+            // 
+            // b2
+            // 
+            this.b2.Caption = "b2";
+            this.b2.FieldName = "B2";
+            this.b2.Name = "b2";
+            this.b2.Visible = true;
+            this.b2.Width = 33;
+            // 
+            // b3
+            // 
+            this.b3.Caption = "b3";
+            this.b3.FieldName = "B3";
+            this.b3.Name = "b3";
+            this.b3.Visible = true;
+            this.b3.Width = 33;
+            // 
+            // b4
+            // 
+            this.b4.Caption = "b4";
+            this.b4.FieldName = "B4";
+            this.b4.Name = "b4";
+            this.b4.Visible = true;
+            this.b4.Width = 33;
+            // 
+            // b5
+            // 
+            this.b5.Caption = "b5";
+            this.b5.FieldName = "B5";
+            this.b5.Name = "b5";
+            this.b5.Visible = true;
+            this.b5.Width = 33;
+            // 
+            // b6
+            // 
+            this.b6.Caption = "b6";
+            this.b6.FieldName = "B6";
+            this.b6.Name = "b6";
+            this.b6.Visible = true;
+            this.b6.Width = 33;
+            // 
+            // b7
+            // 
+            this.b7.Caption = "b7";
+            this.b7.FieldName = "B7";
+            this.b7.Name = "b7";
+            this.b7.Visible = true;
+            this.b7.Width = 33;
+            // 
+            // b8
+            // 
+            this.b8.Caption = "b8";
+            this.b8.FieldName = "B8";
+            this.b8.Name = "b8";
+            this.b8.Visible = true;
+            this.b8.Width = 33;
+            // 
+            // b9
+            // 
+            this.b9.Caption = "b9";
+            this.b9.FieldName = "B9";
+            this.b9.Name = "b9";
+            this.b9.Visible = true;
+            this.b9.Width = 33;
+            // 
+            // b10
+            // 
+            this.b10.Caption = "b10";
+            this.b10.FieldName = "B10";
+            this.b10.Name = "b10";
+            this.b10.Visible = true;
+            this.b10.Width = 33;
+            // 
+            // b11
+            // 
+            this.b11.Caption = "b11";
+            this.b11.FieldName = "B11";
+            this.b11.Name = "b11";
+            this.b11.Visible = true;
+            this.b11.Width = 33;
+            // 
+            // b12
+            // 
+            this.b12.Caption = "b12";
+            this.b12.FieldName = "B12";
+            this.b12.Name = "b12";
+            this.b12.Visible = true;
+            this.b12.Width = 33;
+            // 
+            // b13
+            // 
+            this.b13.Caption = "b13";
+            this.b13.FieldName = "B13";
+            this.b13.Name = "b13";
+            this.b13.Visible = true;
+            this.b13.Width = 33;
+            // 
+            // b14
+            // 
+            this.b14.Caption = "b14";
+            this.b14.FieldName = "B14";
+            this.b14.Name = "b14";
+            this.b14.Visible = true;
+            this.b14.Width = 33;
+            // 
+            // b15
+            // 
+            this.b15.Caption = "b15";
+            this.b15.FieldName = "B15";
+            this.b15.Name = "b15";
+            this.b15.Visible = true;
+            this.b15.Width = 33;
+            // 
+            // b16
+            // 
+            this.b16.Caption = "b16";
+            this.b16.FieldName = "B16";
+            this.b16.Name = "b16";
+            this.b16.Visible = true;
+            this.b16.Width = 40;
+            // 
+            // splitContainerControl2
+            // 
+            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_range_r);
+            this.splitContainerControl2.Panel1.Controls.Add(this.comb_name_select_r);
+            this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_end_r);
+            this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_begin_r);
+            this.splitContainerControl2.Panel1.Controls.Add(this.chart_line_one);
+            this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.chart_dig_one);
+            this.splitContainerControl2.Panel2.Text = "Panel2";
+            this.splitContainerControl2.Size = new System.Drawing.Size(1117, 324);
+            this.splitContainerControl2.SplitterPosition = 436;
+            this.splitContainerControl2.TabIndex = 0;
+            this.splitContainerControl2.Text = "splitContainerControl2";
             // 
             // comb_id_select_range_r
             // 
-            this.comb_id_select_range_r.Location = new System.Drawing.Point(409, 12);
+            this.comb_id_select_range_r.Location = new System.Drawing.Point(390, 3);
             this.comb_id_select_range_r.Name = "comb_id_select_range_r";
             this.comb_id_select_range_r.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -529,58 +739,41 @@
             "最近  100  期",
             "最近  300  期"});
             this.comb_id_select_range_r.Size = new System.Drawing.Size(101, 20);
-            this.comb_id_select_range_r.TabIndex = 0;
+            this.comb_id_select_range_r.TabIndex = 16;
             this.comb_id_select_range_r.SelectedIndexChanged += new System.EventHandler(this.comb_id_select_range_r_SelectedIndexChanged);
+            // 
+            // comb_name_select_r
+            // 
+            this.comb_name_select_r.Location = new System.Drawing.Point(34, 3);
+            this.comb_name_select_r.Name = "comb_name_select_r";
+            this.comb_name_select_r.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comb_name_select_r.Size = new System.Drawing.Size(83, 20);
+            this.comb_name_select_r.TabIndex = 15;
+            this.comb_name_select_r.SelectedIndexChanged += new System.EventHandler(this.comb_name_select_r_SelectedIndexChanged);
+            this.comb_name_select_r.SelectedValueChanged += new System.EventHandler(this.comb_name_select_r_SelectedIndexChanged);
             // 
             // comb_id_select_end_r
             // 
-            this.comb_id_select_end_r.Location = new System.Drawing.Point(265, 12);
+            this.comb_id_select_end_r.Location = new System.Drawing.Point(263, 3);
             this.comb_id_select_end_r.Name = "comb_id_select_end_r";
             this.comb_id_select_end_r.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comb_id_select_end_r.Size = new System.Drawing.Size(101, 20);
-            this.comb_id_select_end_r.TabIndex = 0;
+            this.comb_id_select_end_r.TabIndex = 13;
             this.comb_id_select_end_r.SelectedIndexChanged += new System.EventHandler(this.comb_id_select_end_r_SelectedIndexChanged);
+            this.comb_id_select_end_r.SelectedValueChanged += new System.EventHandler(this.comb_id_select_end_r_SelectedIndexChanged);
             // 
             // comb_id_select_begin_r
             // 
-            this.comb_id_select_begin_r.Location = new System.Drawing.Point(121, 12);
+            this.comb_id_select_begin_r.Location = new System.Drawing.Point(140, 3);
             this.comb_id_select_begin_r.Name = "comb_id_select_begin_r";
             this.comb_id_select_begin_r.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comb_id_select_begin_r.Size = new System.Drawing.Size(105, 20);
-            this.comb_id_select_begin_r.TabIndex = 0;
+            this.comb_id_select_begin_r.TabIndex = 14;
             this.comb_id_select_begin_r.SelectedIndexChanged += new System.EventHandler(this.comb_id_select_begin_r_SelectedIndexChanged);
-            // 
-            // sc_v3
-            // 
-            this.sc_v3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sc_v3.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
-            this.sc_v3.Horizontal = false;
-            this.sc_v3.Location = new System.Drawing.Point(0, 0);
-            this.sc_v3.Name = "sc_v3";
-            this.sc_v3.Panel1.Controls.Add(this.sc_h_4);
-            this.sc_v3.Panel1.Text = "Panel1";
-            this.sc_v3.Panel2.Text = "Panel2";
-            this.sc_v3.Size = new System.Drawing.Size(586, 549);
-            this.sc_v3.SplitterPosition = 41;
-            this.sc_v3.TabIndex = 0;
-            this.sc_v3.Text = "splitContainerControl1";
-            // 
-            // sc_h_4
-            // 
-            this.sc_h_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sc_h_4.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
-            this.sc_h_4.Location = new System.Drawing.Point(0, 0);
-            this.sc_h_4.Name = "sc_h_4";
-            this.sc_h_4.Panel1.Controls.Add(this.chart_line_one);
-            this.sc_h_4.Panel1.Text = "Panel1";
-            this.sc_h_4.Panel2.Controls.Add(this.chart_dig_one);
-            this.sc_h_4.Panel2.Text = "Panel2";
-            this.sc_h_4.Size = new System.Drawing.Size(586, 502);
-            this.sc_h_4.SplitterPosition = 388;
-            this.sc_h_4.TabIndex = 0;
-            this.sc_h_4.Text = "splitContainerControl1";
+            this.comb_id_select_begin_r.SelectedValueChanged += new System.EventHandler(this.comb_id_select_begin_r_SelectedIndexChanged);
             // 
             // chart_line_one
             // 
@@ -590,59 +783,19 @@
             xyDiagram1.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             xyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram1.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1;0;1;2";
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.GridLines.MinorVisible = true;
             xyDiagram1.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             xyDiagram1.AxisY.Range.AlwaysShowZeroLevel = false;
             xyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagramPane1.Name = "Pane 1";
-            xyDiagramPane1.PaneID = 0;
-            xyDiagramPane2.Name = "Pane 2";
-            xyDiagramPane2.PaneID = 1;
-            xyDiagramPane3.Name = "Pane 3";
-            xyDiagramPane3.PaneID = 2;
-            xyDiagram1.Panes.AddRange(new DevExpress.XtraCharts.XYDiagramPane[] {
-            xyDiagramPane1,
-            xyDiagramPane2,
-            xyDiagramPane3});
-            secondaryAxisY1.AxisID = 0;
-            secondaryAxisY1.GridLines.MinorVisible = true;
-            secondaryAxisY1.GridLines.Visible = true;
-            secondaryAxisY1.Name = "Secondary AxisY 1";
-            secondaryAxisY1.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisY1.Range.AlwaysShowZeroLevel = false;
-            secondaryAxisY1.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisY1.Range.SideMarginsEnabled = true;
-            secondaryAxisY1.VisibleInPanesSerializable = "0";
-            secondaryAxisY2.AxisID = 1;
-            secondaryAxisY2.GridLines.MinorVisible = true;
-            secondaryAxisY2.GridLines.Visible = true;
-            secondaryAxisY2.Name = "Secondary AxisY 2";
-            secondaryAxisY2.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisY2.Range.AlwaysShowZeroLevel = false;
-            secondaryAxisY2.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisY2.Range.SideMarginsEnabled = true;
-            secondaryAxisY2.VisibleInPanesSerializable = "1";
-            secondaryAxisY3.AxisID = 2;
-            secondaryAxisY3.GridLines.MinorVisible = true;
-            secondaryAxisY3.GridLines.Visible = true;
-            secondaryAxisY3.Name = "Secondary AxisY 3";
-            secondaryAxisY3.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisY3.Range.AlwaysShowZeroLevel = false;
-            secondaryAxisY3.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisY3.Range.SideMarginsEnabled = true;
-            secondaryAxisY3.VisibleInPanesSerializable = "2";
-            xyDiagram1.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
-            secondaryAxisY1,
-            secondaryAxisY2,
-            secondaryAxisY3});
             this.chart_line_one.Diagram = xyDiagram1;
             this.chart_line_one.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart_line_one.Legend.EquallySpacedItems = false;
+            this.chart_line_one.Legend.Visible = false;
             this.chart_line_one.Location = new System.Drawing.Point(0, 0);
             this.chart_line_one.Name = "chart_line_one";
+            this.chart_line_one.Padding.Top = 20;
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             pointSeriesLabel1.LineVisible = true;
             pointOptions1.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
@@ -655,61 +808,16 @@
             lineSeriesView1.LineMarkerOptions.Visible = true;
             lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
             series1.View = lineSeriesView1;
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            this.chart_line_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
             pointSeriesLabel2.LineVisible = true;
             pointOptions2.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointOptions2.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
             pointSeriesLabel2.PointOptions = pointOptions2;
-            series2.Label = pointSeriesLabel2;
-            series2.Name = "Series_2";
-            lineSeriesView2.AxisYName = "Secondary AxisY 1";
-            lineSeriesView2.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
-            lineSeriesView2.LineMarkerOptions.Visible = true;
-            lineSeriesView2.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            lineSeriesView2.PaneName = "Pane 1";
-            series2.View = lineSeriesView2;
-            series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            pointSeriesLabel3.LineVisible = true;
-            pointOptions3.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions3.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointSeriesLabel3.PointOptions = pointOptions3;
-            series3.Label = pointSeriesLabel3;
-            series3.Name = "Series_3";
-            lineSeriesView3.AxisYName = "Secondary AxisY 2";
-            lineSeriesView3.LineMarkerOptions.BorderVisible = false;
-            lineSeriesView3.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
-            lineSeriesView3.LineMarkerOptions.Visible = true;
-            lineSeriesView3.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            lineSeriesView3.PaneName = "Pane 2";
-            series3.View = lineSeriesView3;
-            series4.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            pointSeriesLabel4.LineVisible = true;
-            pointOptions4.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions4.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointSeriesLabel4.PointOptions = pointOptions4;
-            series4.Label = pointSeriesLabel4;
-            series4.Name = "Series_4";
-            lineSeriesView4.AxisYName = "Secondary AxisY 3";
-            lineSeriesView4.LineMarkerOptions.BorderVisible = false;
-            lineSeriesView4.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
-            lineSeriesView4.LineMarkerOptions.Visible = true;
-            lineSeriesView4.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            lineSeriesView4.PaneName = "Pane 3";
-            series4.View = lineSeriesView4;
-            this.chart_line_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2,
-        series3,
-        series4};
-            pointSeriesLabel5.LineVisible = true;
-            pointOptions5.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions5.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointSeriesLabel5.PointOptions = pointOptions5;
-            this.chart_line_one.SeriesTemplate.Label = pointSeriesLabel5;
-            this.chart_line_one.SeriesTemplate.View = lineSeriesView5;
-            this.chart_line_one.Size = new System.Drawing.Size(192, 502);
-            this.chart_line_one.TabIndex = 0;
-            this.chart_line_one.ObjectSelected += new DevExpress.XtraCharts.HotTrackEventHandler(this.chart_line_one_ObjectSelected);
+            this.chart_line_one.SeriesTemplate.Label = pointSeriesLabel2;
+            this.chart_line_one.SeriesTemplate.View = lineSeriesView2;
+            this.chart_line_one.Size = new System.Drawing.Size(675, 324);
+            this.chart_line_one.TabIndex = 8;
             // 
             // chart_dig_one
             // 
@@ -725,200 +833,169 @@
             xyDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
             xyDiagram2.AxisY.Range.SideMarginsEnabled = true;
             xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagramPane4.Name = "Pane 1";
-            xyDiagramPane4.PaneID = 0;
-            xyDiagramPane5.Name = "Pane 2";
-            xyDiagramPane5.PaneID = 1;
-            xyDiagramPane6.Name = "Pane 3";
-            xyDiagramPane6.PaneID = 2;
-            xyDiagram2.Panes.AddRange(new DevExpress.XtraCharts.XYDiagramPane[] {
-            xyDiagramPane4,
-            xyDiagramPane5,
-            xyDiagramPane6});
-            secondaryAxisX1.AxisID = 0;
-            secondaryAxisX1.DateTimeScaleMode = DevExpress.XtraCharts.DateTimeScaleMode.Manual;
-            secondaryAxisX1.Name = "Secondary AxisX 1";
-            secondaryAxisX1.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisX1.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisX1.Range.SideMarginsEnabled = true;
-            secondaryAxisX1.VisibleInPanesSerializable = "0";
-            secondaryAxisX2.AxisID = 1;
-            secondaryAxisX2.DateTimeScaleMode = DevExpress.XtraCharts.DateTimeScaleMode.Manual;
-            secondaryAxisX2.Name = "Secondary AxisX 2";
-            secondaryAxisX2.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisX2.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisX2.Range.SideMarginsEnabled = true;
-            secondaryAxisX2.VisibleInPanesSerializable = "1";
-            secondaryAxisX3.AxisID = 2;
-            secondaryAxisX3.DateTimeScaleMode = DevExpress.XtraCharts.DateTimeScaleMode.Manual;
-            secondaryAxisX3.Name = "Secondary AxisX 3";
-            secondaryAxisX3.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisX3.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisX3.Range.SideMarginsEnabled = true;
-            secondaryAxisX3.VisibleInPanesSerializable = "2";
-            xyDiagram2.SecondaryAxesX.AddRange(new DevExpress.XtraCharts.SecondaryAxisX[] {
-            secondaryAxisX1,
-            secondaryAxisX2,
-            secondaryAxisX3});
-            secondaryAxisY4.AxisID = 0;
-            secondaryAxisY4.GridLines.MinorVisible = true;
-            secondaryAxisY4.GridLines.Visible = true;
-            secondaryAxisY4.Name = "Secondary AxisY 1";
-            secondaryAxisY4.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisY4.Range.AlwaysShowZeroLevel = false;
-            secondaryAxisY4.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisY4.Range.SideMarginsEnabled = true;
-            secondaryAxisY4.VisibleInPanesSerializable = "0";
-            secondaryAxisY5.AxisID = 1;
-            secondaryAxisY5.GridLines.MinorVisible = true;
-            secondaryAxisY5.GridLines.Visible = true;
-            secondaryAxisY5.Name = "Secondary AxisY 2";
-            secondaryAxisY5.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisY5.Range.AlwaysShowZeroLevel = false;
-            secondaryAxisY5.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisY5.Range.SideMarginsEnabled = true;
-            secondaryAxisY5.VisibleInPanesSerializable = "1";
-            secondaryAxisY6.AxisID = 2;
-            secondaryAxisY6.GridLines.MinorVisible = true;
-            secondaryAxisY6.GridLines.Visible = true;
-            secondaryAxisY6.Name = "Secondary AxisY 3";
-            secondaryAxisY6.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            secondaryAxisY6.Range.AlwaysShowZeroLevel = false;
-            secondaryAxisY6.Range.ScrollingRange.SideMarginsEnabled = true;
-            secondaryAxisY6.Range.SideMarginsEnabled = true;
-            secondaryAxisY6.VisibleInPanesSerializable = "2";
-            xyDiagram2.SecondaryAxesY.AddRange(new DevExpress.XtraCharts.SecondaryAxisY[] {
-            secondaryAxisY4,
-            secondaryAxisY5,
-            secondaryAxisY6});
             this.chart_dig_one.Diagram = xyDiagram2;
             this.chart_dig_one.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart_dig_one.Legend.Visible = false;
             this.chart_dig_one.Location = new System.Drawing.Point(0, 0);
             this.chart_dig_one.Name = "chart_dig_one";
-            series5.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             sideBySideBarSeriesLabel1.LineVisible = true;
-            pointOptions6.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions6.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel1.PointOptions = pointOptions6;
-            series5.Label = sideBySideBarSeriesLabel1;
-            series5.Name = "Series_g_1";
-            series6.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            sideBySideBarSeriesLabel2.LineVisible = true;
-            pointOptions7.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions7.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel2.PointOptions = pointOptions7;
-            series6.Label = sideBySideBarSeriesLabel2;
-            series6.Name = "Series_g_2";
-            sideBySideBarSeriesView1.AxisXName = "Secondary AxisX 1";
-            sideBySideBarSeriesView1.AxisYName = "Secondary AxisY 1";
-            sideBySideBarSeriesView1.PaneName = "Pane 1";
-            series6.View = sideBySideBarSeriesView1;
-            series7.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            sideBySideBarSeriesLabel3.LineVisible = true;
-            pointOptions8.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions8.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel3.PointOptions = pointOptions8;
-            series7.Label = sideBySideBarSeriesLabel3;
-            series7.Name = "Series_g_3";
-            sideBySideBarSeriesView2.AxisXName = "Secondary AxisX 2";
-            sideBySideBarSeriesView2.AxisYName = "Secondary AxisY 2";
-            sideBySideBarSeriesView2.PaneName = "Pane 2";
-            series7.View = sideBySideBarSeriesView2;
-            series8.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            sideBySideBarSeriesLabel4.LineVisible = true;
-            pointOptions9.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions9.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel4.PointOptions = pointOptions9;
-            series8.Label = sideBySideBarSeriesLabel4;
-            series8.Name = "Series_g_4";
-            sideBySideBarSeriesView3.AxisXName = "Secondary AxisX 3";
-            sideBySideBarSeriesView3.AxisYName = "Secondary AxisY 3";
-            sideBySideBarSeriesView3.PaneName = "Pane 3";
-            series8.View = sideBySideBarSeriesView3;
+            pointOptions3.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions3.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            sideBySideBarSeriesLabel1.PointOptions = pointOptions3;
+            series2.Label = sideBySideBarSeriesLabel1;
+            series2.Name = "Series_g_1";
             this.chart_dig_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series5,
-        series6,
-        series7,
-        series8};
-            sideBySideBarSeriesLabel5.LineVisible = true;
-            pointOptions10.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions10.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel5.PointOptions = pointOptions10;
-            this.chart_dig_one.SeriesTemplate.Label = sideBySideBarSeriesLabel5;
-            this.chart_dig_one.Size = new System.Drawing.Size(388, 502);
-            this.chart_dig_one.TabIndex = 0;
-            this.chart_dig_one.ObjectSelected += new DevExpress.XtraCharts.HotTrackEventHandler(this.chart_dig_one_ObjectSelected);
+        series2};
+            sideBySideBarSeriesLabel2.LineVisible = true;
+            pointOptions4.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions4.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            sideBySideBarSeriesLabel2.PointOptions = pointOptions4;
+            this.chart_dig_one.SeriesTemplate.Label = sideBySideBarSeriesLabel2;
+            this.chart_dig_one.Size = new System.Drawing.Size(436, 324);
+            this.chart_dig_one.TabIndex = 9;
+            // 
+            // pageOther
+            // 
+            this.pageOther.Name = "pageOther";
+            this.pageOther.Size = new System.Drawing.Size(1117, 566);
+            this.pageOther.Text = "号码筛选";
+            // 
+            // gridBand_id
+            // 
+            this.gridBand_id.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand_id.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand_id.Caption = "期号";
+            this.gridBand_id.Columns.Add(this.bg_id);
+            this.gridBand_id.Name = "gridBand_id";
+            this.gridBand_id.OptionsBand.AllowHotTrack = false;
+            this.gridBand_id.OptionsBand.AllowMove = false;
+            this.gridBand_id.OptionsBand.AllowPress = false;
+            this.gridBand_id.OptionsBand.AllowSize = false;
+            this.gridBand_id.OptionsBand.FixedWidth = true;
+            this.gridBand_id.Width = 65;
+            // 
+            // gridBand_red
+            // 
+            this.gridBand_red.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand_red.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand_red.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand_red.Caption = "红球";
+            this.gridBand_red.Columns.Add(this.r1);
+            this.gridBand_red.Columns.Add(this.r2);
+            this.gridBand_red.Columns.Add(this.r3);
+            this.gridBand_red.Columns.Add(this.r4);
+            this.gridBand_red.Columns.Add(this.r5);
+            this.gridBand_red.Columns.Add(this.r6);
+            this.gridBand_red.Columns.Add(this.r7);
+            this.gridBand_red.Columns.Add(this.r8);
+            this.gridBand_red.Columns.Add(this.r9);
+            this.gridBand_red.Columns.Add(this.r10);
+            this.gridBand_red.Columns.Add(this.r11);
+            this.gridBand_red.Columns.Add(this.r12);
+            this.gridBand_red.Columns.Add(this.r13);
+            this.gridBand_red.Columns.Add(this.r14);
+            this.gridBand_red.Columns.Add(this.r15);
+            this.gridBand_red.Columns.Add(this.r16);
+            this.gridBand_red.Columns.Add(this.r17);
+            this.gridBand_red.Columns.Add(this.r18);
+            this.gridBand_red.Columns.Add(this.r19);
+            this.gridBand_red.Columns.Add(this.r20);
+            this.gridBand_red.Columns.Add(this.r21);
+            this.gridBand_red.Columns.Add(this.r22);
+            this.gridBand_red.Columns.Add(this.r23);
+            this.gridBand_red.Columns.Add(this.r24);
+            this.gridBand_red.Columns.Add(this.r25);
+            this.gridBand_red.Columns.Add(this.r26);
+            this.gridBand_red.Columns.Add(this.r27);
+            this.gridBand_red.Columns.Add(this.r28);
+            this.gridBand_red.Columns.Add(this.r29);
+            this.gridBand_red.Columns.Add(this.r30);
+            this.gridBand_red.Columns.Add(this.r31);
+            this.gridBand_red.Columns.Add(this.r32);
+            this.gridBand_red.Columns.Add(this.r33);
+            this.gridBand_red.Name = "gridBand_red";
+            this.gridBand_red.OptionsBand.AllowHotTrack = false;
+            this.gridBand_red.OptionsBand.AllowMove = false;
+            this.gridBand_red.OptionsBand.AllowPress = false;
+            this.gridBand_red.OptionsBand.AllowSize = false;
+            this.gridBand_red.Width = 1102;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.Caption = " ";
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.OptionsBand.AllowMove = false;
+            this.gridBand1.OptionsBand.AllowPress = false;
+            this.gridBand1.OptionsBand.AllowSize = false;
+            this.gridBand1.OptionsBand.FixedWidth = true;
+            this.gridBand1.OptionsBand.ShowCaption = false;
+            this.gridBand1.Width = 20;
+            // 
+            // gridBand_blue
+            // 
+            this.gridBand_blue.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand_blue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand_blue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand_blue.Caption = "篮球";
+            this.gridBand_blue.Columns.Add(this.b1);
+            this.gridBand_blue.Columns.Add(this.b2);
+            this.gridBand_blue.Columns.Add(this.b3);
+            this.gridBand_blue.Columns.Add(this.b4);
+            this.gridBand_blue.Columns.Add(this.b5);
+            this.gridBand_blue.Columns.Add(this.b6);
+            this.gridBand_blue.Columns.Add(this.b7);
+            this.gridBand_blue.Columns.Add(this.b8);
+            this.gridBand_blue.Columns.Add(this.b9);
+            this.gridBand_blue.Columns.Add(this.b10);
+            this.gridBand_blue.Columns.Add(this.b11);
+            this.gridBand_blue.Columns.Add(this.b12);
+            this.gridBand_blue.Columns.Add(this.b13);
+            this.gridBand_blue.Columns.Add(this.b14);
+            this.gridBand_blue.Columns.Add(this.b15);
+            this.gridBand_blue.Columns.Add(this.b16);
+            this.gridBand_blue.Name = "gridBand_blue";
+            this.gridBand_blue.OptionsBand.AllowHotTrack = false;
+            this.gridBand_blue.OptionsBand.AllowMove = false;
+            this.gridBand_blue.OptionsBand.AllowPress = false;
+            this.gridBand_blue.OptionsBand.AllowSize = false;
+            this.gridBand_blue.Width = 535;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 595);
-            this.Controls.Add(this.sc_h_1);
+            this.Controls.Add(this.xtraTabControl1);
             this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "MainForm";
             this.Text = "双色球分析 1.1";
-            ((System.ComponentModel.ISupportInitialize)(this.sc_h_1)).EndInit();
-            this.sc_h_1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sc_h_v2)).EndInit();
-            this.sc_h_v2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_history)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_his_view)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_v2)).EndInit();
-            this.sc_v2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.comb_name_select_r.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.pageHisotry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridHis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.girdHisView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
+            this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_range_r.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comb_name_select_r.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_end_r.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_begin_r.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sc_v3)).EndInit();
-            this.sc_v3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sc_h_4)).EndInit();
-            this.sc_h_4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_line_one)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagramPane6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisX1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisX2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisX3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(secondaryAxisY6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_dig_one)).EndInit();
             this.ResumeLayout(false);
 
@@ -926,31 +1003,74 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SplitContainerControl sc_h_1;
-        private DevExpress.XtraEditors.SplitContainerControl sc_h_v2;
-        private DevExpress.XtraGrid.GridControl grid_history;
-        private DevExpress.XtraGrid.Views.Grid.GridView grid_his_view;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
-        private DevExpress.XtraGrid.Columns.GridColumn R1;
-        private DevExpress.XtraGrid.Columns.GridColumn R2;
-        private DevExpress.XtraGrid.Columns.GridColumn R3;
-        private DevExpress.XtraGrid.Columns.GridColumn R4;
-        private DevExpress.XtraGrid.Columns.GridColumn R5;
-        private DevExpress.XtraGrid.Columns.GridColumn R6;
-        private DevExpress.XtraGrid.Columns.GridColumn BL;
-        private DevExpress.XtraGrid.Columns.GridColumn SUM_RED;
-        private DevExpress.XtraGrid.Columns.GridColumn AC;
-        private DevExpress.XtraGrid.Columns.GridColumn SD;
-        private DevExpress.XtraGrid.Columns.GridColumn ODD;
-        private DevExpress.XtraEditors.SplitContainerControl sc_v2;
-        private DevExpress.XtraEditors.SplitContainerControl sc_v3;
-        private DevExpress.XtraEditors.SplitContainerControl sc_h_4;
-        private DevExpress.XtraCharts.ChartControl chart_line_one;
-        private DevExpress.XtraCharts.ChartControl chart_dig_one;
-        private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_end_r;
-        private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_begin_r;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage pageHisotry;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.ComboBoxEdit comb_name_select_r;
         private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_range_r;
+        private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_begin_r;
+        private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_end_r;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
+        private DevExpress.XtraCharts.ChartControl chart_line_one;
+        private DevExpress.XtraCharts.ChartControl chart_dig_one;
+        private DevExpress.XtraTab.XtraTabPage pageOther;
+        private DevExpress.XtraGrid.GridControl gridHis;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView girdHisView;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bg_id;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r3;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r4;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r5;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r6;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r7;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r8;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r9;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r10;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r11;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r12;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r13;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r14;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r15;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r16;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r17;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r18;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r19;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r20;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r21;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r22;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r23;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r24;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r25;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r26;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r27;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r28;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r29;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r30;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r31;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r32;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn r33;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b3;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b4;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b5;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b6;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b7;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b8;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b9;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b10;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b11;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b12;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b13;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b14;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b15;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn b16;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_id;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_red;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_blue;
+
 
 
     }
