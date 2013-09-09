@@ -518,5 +518,11 @@ namespace NewLt
                 missBase <<= 6;
             }
         }
+
+        public string toString()
+        {
+            return string.Format("{0:00}  {1:00}  {2:00}  {3:00}  {4:00}  {5:00}"
+                , red[0], red[1], red[2], red[3], red[4], red[5]); 
+        }
     }
 }

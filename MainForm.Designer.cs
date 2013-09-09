@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions1 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel2 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions2 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions3 = new DevExpress.XtraCharts.PointOptions();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.PointOptions pointOptions4 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel3 = new DevExpress.XtraCharts.PointSeriesLabel();
+            DevExpress.XtraCharts.PointOptions pointOptions5 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView3 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel4 = new DevExpress.XtraCharts.PointSeriesLabel();
+            DevExpress.XtraCharts.PointOptions pointOptions6 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView4 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.XYDiagram xyDiagram4 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.PointOptions pointOptions7 = new DevExpress.XtraCharts.PointOptions();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel4 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.PointOptions pointOptions8 = new DevExpress.XtraCharts.PointOptions();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.pageHisotry = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -102,14 +102,26 @@
             this.b15 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.b16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btFileter = new DevExpress.XtraEditors.SimpleButton();
             this.comb_id_select_range_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_name_select_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_id_select_end_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comb_id_select_begin_r = new DevExpress.XtraEditors.ComboBoxEdit();
             this.chart_line_one = new DevExpress.XtraCharts.ChartControl();
+            this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
             this.chart_dig_one = new DevExpress.XtraCharts.ChartControl();
             this.pageOther = new DevExpress.XtraTab.XtraTabPage();
+            this.btDoFileter = new DevExpress.XtraEditors.SimpleButton();
+            this.btRandChange = new DevExpress.XtraEditors.SimpleButton();
+            this.gridFilter = new DevExpress.XtraGrid.GridControl();
+            this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.labelFilterOut = new DevExpress.XtraEditors.LabelControl();
+            this.progressFilter = new DevExpress.XtraEditors.ProgressBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.pageHisotry.SuspendLayout();
@@ -124,17 +136,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_end_r.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_begin_r.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_line_one)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
+            this.splitContainerControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_dig_one)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFilter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressFilter.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -143,7 +160,8 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.pageHisotry;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1123, 595);
+            this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1402, 598);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.pageHisotry,
@@ -154,7 +172,7 @@
             // 
             this.pageHisotry.Controls.Add(this.splitContainerControl1);
             this.pageHisotry.Name = "pageHisotry";
-            this.pageHisotry.Size = new System.Drawing.Size(1117, 566);
+            this.pageHisotry.Size = new System.Drawing.Size(1396, 592);
             this.pageHisotry.Text = "历史数据";
             // 
             // splitContainerControl1
@@ -168,8 +186,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1117, 566);
-            this.splitContainerControl1.SplitterPosition = 324;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1396, 592);
+            this.splitContainerControl1.SplitterPosition = 316;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -179,7 +197,7 @@
             this.gridHis.Location = new System.Drawing.Point(0, 0);
             this.gridHis.MainView = this.girdHisView;
             this.gridHis.Name = "gridHis";
-            this.gridHis.Size = new System.Drawing.Size(1117, 236);
+            this.gridHis.Size = new System.Drawing.Size(1396, 270);
             this.gridHis.TabIndex = 1;
             this.gridHis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.girdHisView});
@@ -815,28 +833,18 @@
             this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.btFileter);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_range_r);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_name_select_r);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_end_r);
             this.splitContainerControl2.Panel1.Controls.Add(this.comb_id_select_begin_r);
             this.splitContainerControl2.Panel1.Controls.Add(this.chart_line_one);
             this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.chart_dig_one);
+            this.splitContainerControl2.Panel2.Controls.Add(this.splitContainerControl3);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1117, 324);
-            this.splitContainerControl2.SplitterPosition = 436;
+            this.splitContainerControl2.Size = new System.Drawing.Size(1396, 316);
+            this.splitContainerControl2.SplitterPosition = 767;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
-            // btFileter
-            // 
-            this.btFileter.Location = new System.Drawing.Point(510, 2);
-            this.btFileter.Name = "btFileter";
-            this.btFileter.Size = new System.Drawing.Size(75, 22);
-            this.btFileter.TabIndex = 17;
-            this.btFileter.Text = "号码过滤";
-            this.btFileter.Click += new System.EventHandler(this.btFileter_Click);
             // 
             // comb_id_select_range_r
             // 
@@ -891,98 +899,276 @@
             // 
             this.chart_line_one.CrosshairOptions.ArgumentLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(57)))), ((int)(((byte)(205)))));
             this.chart_line_one.CrosshairOptions.ValueLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(57)))), ((int)(((byte)(205)))));
-            xyDiagram1.AxisX.GridLines.Visible = true;
-            xyDiagram1.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            xyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram1.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.GridLines.MinorVisible = true;
-            xyDiagram1.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            xyDiagram1.AxisY.Range.AlwaysShowZeroLevel = false;
-            xyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chart_line_one.Diagram = xyDiagram1;
+            xyDiagram3.AxisX.GridLines.Visible = true;
+            xyDiagram3.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            xyDiagram3.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
+            xyDiagram3.AxisX.Range.SideMarginsEnabled = true;
+            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram3.AxisY.GridLines.MinorVisible = true;
+            xyDiagram3.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            xyDiagram3.AxisY.Range.AlwaysShowZeroLevel = false;
+            xyDiagram3.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            xyDiagram3.AxisY.Range.SideMarginsEnabled = true;
+            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
+            this.chart_line_one.Diagram = xyDiagram3;
             this.chart_line_one.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart_line_one.Legend.Visible = false;
             this.chart_line_one.Location = new System.Drawing.Point(0, 0);
             this.chart_line_one.Name = "chart_line_one";
             this.chart_line_one.Padding.Top = 20;
-            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            pointSeriesLabel1.LineVisible = true;
-            pointOptions1.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions1.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointSeriesLabel1.PointOptions = pointOptions1;
-            series1.Label = pointSeriesLabel1;
-            series1.Name = "Series_1";
-            lineSeriesView1.LineMarkerOptions.BorderVisible = false;
-            lineSeriesView1.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
-            lineSeriesView1.LineMarkerOptions.Visible = true;
-            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series1.View = lineSeriesView1;
+            series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            pointSeriesLabel3.LineVisible = true;
+            pointOptions5.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions5.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointSeriesLabel3.PointOptions = pointOptions5;
+            series3.Label = pointSeriesLabel3;
+            series3.Name = "Series_1";
+            lineSeriesView3.LineMarkerOptions.BorderVisible = false;
+            lineSeriesView3.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Square;
+            lineSeriesView3.LineMarkerOptions.Visible = true;
+            lineSeriesView3.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series3.View = lineSeriesView3;
             this.chart_line_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            pointSeriesLabel2.LineVisible = true;
-            pointOptions2.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions2.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointSeriesLabel2.PointOptions = pointOptions2;
-            this.chart_line_one.SeriesTemplate.Label = pointSeriesLabel2;
-            this.chart_line_one.SeriesTemplate.View = lineSeriesView2;
-            this.chart_line_one.Size = new System.Drawing.Size(675, 324);
+        series3};
+            pointSeriesLabel4.LineVisible = true;
+            pointOptions6.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions6.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointSeriesLabel4.PointOptions = pointOptions6;
+            this.chart_line_one.SeriesTemplate.Label = pointSeriesLabel4;
+            this.chart_line_one.SeriesTemplate.View = lineSeriesView4;
+            this.chart_line_one.Size = new System.Drawing.Size(623, 316);
             this.chart_line_one.TabIndex = 8;
+            // 
+            // splitContainerControl3
+            // 
+            this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl3.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
+            this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl3.Name = "splitContainerControl3";
+            this.splitContainerControl3.Panel1.Controls.Add(this.chart_dig_one);
+            this.splitContainerControl3.Panel1.Text = "Panel1";
+            this.splitContainerControl3.Panel2.Controls.Add(this.progressFilter);
+            this.splitContainerControl3.Panel2.Controls.Add(this.labelFilterOut);
+            this.splitContainerControl3.Panel2.Controls.Add(this.btDoFileter);
+            this.splitContainerControl3.Panel2.Controls.Add(this.btRandChange);
+            this.splitContainerControl3.Panel2.Controls.Add(this.gridFilter);
+            this.splitContainerControl3.Panel2.Text = "Panel2";
+            this.splitContainerControl3.Size = new System.Drawing.Size(767, 316);
+            this.splitContainerControl3.SplitterPosition = 364;
+            this.splitContainerControl3.TabIndex = 0;
+            this.splitContainerControl3.Text = "splitContainerControl3";
             // 
             // chart_dig_one
             // 
             this.chart_dig_one.CrosshairOptions.ArgumentLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(57)))), ((int)(((byte)(205)))));
             this.chart_dig_one.CrosshairOptions.ValueLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(57)))), ((int)(((byte)(205)))));
-            xyDiagram2.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            xyDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram2.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram2.AxisY.GridLines.MinorVisible = true;
-            xyDiagram2.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            xyDiagram2.AxisY.Range.AlwaysShowZeroLevel = false;
-            xyDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram2.AxisY.Range.SideMarginsEnabled = true;
-            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            this.chart_dig_one.Diagram = xyDiagram2;
+            xyDiagram4.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            xyDiagram4.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
+            xyDiagram4.AxisX.Range.SideMarginsEnabled = true;
+            xyDiagram4.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram4.AxisY.GridLines.MinorVisible = true;
+            xyDiagram4.AxisY.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            xyDiagram4.AxisY.Range.AlwaysShowZeroLevel = false;
+            xyDiagram4.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            xyDiagram4.AxisY.Range.SideMarginsEnabled = true;
+            xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
+            this.chart_dig_one.Diagram = xyDiagram4;
             this.chart_dig_one.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart_dig_one.Legend.Visible = false;
             this.chart_dig_one.Location = new System.Drawing.Point(0, 0);
             this.chart_dig_one.Name = "chart_dig_one";
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            sideBySideBarSeriesLabel1.LineVisible = true;
-            pointOptions3.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions3.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel1.PointOptions = pointOptions3;
-            series2.Label = sideBySideBarSeriesLabel1;
-            series2.Name = "Series_g_1";
+            series4.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            sideBySideBarSeriesLabel3.LineVisible = true;
+            pointOptions7.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions7.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            sideBySideBarSeriesLabel3.PointOptions = pointOptions7;
+            series4.Label = sideBySideBarSeriesLabel3;
+            series4.Name = "Series_g_1";
             this.chart_dig_one.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            sideBySideBarSeriesLabel2.LineVisible = true;
-            pointOptions4.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            pointOptions4.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
-            sideBySideBarSeriesLabel2.PointOptions = pointOptions4;
-            this.chart_dig_one.SeriesTemplate.Label = sideBySideBarSeriesLabel2;
-            this.chart_dig_one.Size = new System.Drawing.Size(436, 324);
-            this.chart_dig_one.TabIndex = 9;
+        series4};
+            sideBySideBarSeriesLabel4.LineVisible = true;
+            pointOptions8.ArgumentNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            pointOptions8.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.General;
+            sideBySideBarSeriesLabel4.PointOptions = pointOptions8;
+            this.chart_dig_one.SeriesTemplate.Label = sideBySideBarSeriesLabel4;
+            this.chart_dig_one.Size = new System.Drawing.Size(397, 316);
+            this.chart_dig_one.TabIndex = 11;
             // 
             // pageOther
             // 
             this.pageOther.Name = "pageOther";
-            this.pageOther.Size = new System.Drawing.Size(1117, 566);
+            this.pageOther.Size = new System.Drawing.Size(1396, 592);
             this.pageOther.Text = "号码筛选";
+            // 
+            // btDoFileter
+            // 
+            this.btDoFileter.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.btDoFileter.Appearance.Options.UseFont = true;
+            this.btDoFileter.Location = new System.Drawing.Point(164, 14);
+            this.btDoFileter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btDoFileter.Name = "btDoFileter";
+            this.btDoFileter.Size = new System.Drawing.Size(86, 30);
+            this.btDoFileter.TabIndex = 6;
+            this.btDoFileter.Text = "全量过虑";
+            this.btDoFileter.Click += new System.EventHandler(this.btDoFileter_Click);
+            // 
+            // btRandChange
+            // 
+            this.btRandChange.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.btRandChange.Appearance.Options.UseFont = true;
+            this.btRandChange.Location = new System.Drawing.Point(272, 14);
+            this.btRandChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btRandChange.Name = "btRandChange";
+            this.btRandChange.Size = new System.Drawing.Size(84, 30);
+            this.btRandChange.TabIndex = 6;
+            this.btRandChange.Text = "换一批";
+            this.btRandChange.Click += new System.EventHandler(this.btRandChange_Click);
+            // 
+            // gridFilter
+            // 
+            this.gridFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridFilter.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridFilter.Location = new System.Drawing.Point(0, 0);
+            this.gridFilter.MainView = this.bandedGridView1;
+            this.gridFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridFilter.Name = "gridFilter";
+            this.gridFilter.Size = new System.Drawing.Size(364, 316);
+            this.gridFilter.TabIndex = 5;
+            this.gridFilter.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bandedGridView1});
+            // 
+            // bandedGridView1
+            // 
+            this.bandedGridView1.Appearance.BandPanel.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.bandedGridView1.Appearance.BandPanel.Options.UseFont = true;
+            this.bandedGridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.bandedGridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.bandedGridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.bandedGridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridView1.Appearance.Row.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.bandedGridView1.Appearance.Row.Options.UseFont = true;
+            this.bandedGridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.bandedGridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand2});
+            this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
+            this.bandedGridView1.GridControl = this.gridFilter;
+            this.bandedGridView1.Name = "bandedGridView1";
+            this.bandedGridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridView1.OptionsCustomization.AllowBandMoving = false;
+            this.bandedGridView1.OptionsCustomization.AllowBandResizing = false;
+            this.bandedGridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.bandedGridView1.OptionsCustomization.AllowColumnResizing = false;
+            this.bandedGridView1.OptionsCustomization.AllowFilter = false;
+            this.bandedGridView1.OptionsCustomization.AllowGroup = false;
+            this.bandedGridView1.OptionsCustomization.AllowQuickHideColumns = false;
+            this.bandedGridView1.OptionsCustomization.AllowSort = false;
+            this.bandedGridView1.OptionsView.ShowGroupPanel = false;
+            this.bandedGridView1.OptionsView.ShowIndicator = false;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.gridBand2.AppearanceHeader.Options.UseFont = true;
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridBand2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand2.Caption = "    过滤选项";
+            this.gridBand2.Columns.Add(this.gridColumn1);
+            this.gridBand2.Columns.Add(this.gridColumn2);
+            this.gridBand2.Columns.Add(this.gridColumn3);
+            this.gridBand2.Columns.Add(this.gridColumn4);
+            this.gridBand2.Columns.Add(this.gridColumn5);
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.RowCount = 2;
+            this.gridBand2.Width = 394;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "名称";
+            this.gridColumn1.FieldName = "TYPE";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowShowHide = false;
+            this.gridColumn1.OptionsColumn.AllowSize = false;
+            this.gridColumn1.OptionsColumn.FixedWidth = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.Width = 50;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "最小值";
+            this.gridColumn2.FieldName = "MIN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.FixedWidth = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.Width = 50;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "最大值";
+            this.gridColumn3.FieldName = "MAX";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.FixedWidth = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.Width = 50;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "包含";
+            this.gridColumn4.FieldName = "INC";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.Width = 114;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "排除";
+            this.gridColumn5.FieldName = "DEC";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.Width = 130;
+            // 
+            // labelControl1
+            // 
+            this.labelFilterOut.Appearance.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold);
+            this.labelFilterOut.Appearance.ForeColor = System.Drawing.Color.Coral;
+            this.labelFilterOut.Location = new System.Drawing.Point(12, 229);
+            this.labelFilterOut.Name = "labelControl1";
+            this.labelFilterOut.Size = new System.Drawing.Size(185, 36);
+            this.labelFilterOut.TabIndex = 9;
+            this.labelFilterOut.Text = "labelControl1";
+            // 
+            // progressFilter
+            // 
+            this.progressFilter.Location = new System.Drawing.Point(0, 294);
+            this.progressFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.progressFilter.Name = "progressFilter";
+            this.progressFilter.Size = new System.Drawing.Size(364, 22);
+            this.progressFilter.TabIndex = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 595);
+            this.ClientSize = new System.Drawing.Size(1402, 598);
             this.Controls.Add(this.xtraTabControl1);
+            this.KeyPreview = true;
             this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "MainForm";
             this.Text = "双色球分析 1.1";
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.pageHisotry.ResumeLayout(false);
@@ -996,18 +1182,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.comb_name_select_r.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_end_r.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comb_id_select_begin_r.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_line_one)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
+            this.splitContainerControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_dig_one)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFilter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressFilter.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1022,8 +1213,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_begin_r;
         private DevExpress.XtraEditors.ComboBoxEdit comb_id_select_end_r;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraCharts.ChartControl chart_line_one;
-        private DevExpress.XtraCharts.ChartControl chart_dig_one;
         private DevExpress.XtraTab.XtraTabPage pageOther;
         private DevExpress.XtraGrid.GridControl gridHis;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView girdHisView;
@@ -1081,7 +1270,21 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_red;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand_blue;
-        private DevExpress.XtraEditors.SimpleButton btFileter;
+        private DevExpress.XtraCharts.ChartControl chart_line_one;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
+        private DevExpress.XtraCharts.ChartControl chart_dig_one;
+        private DevExpress.XtraEditors.SimpleButton btDoFileter;
+        private DevExpress.XtraEditors.SimpleButton btRandChange;
+        private DevExpress.XtraGrid.GridControl gridFilter;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn3;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn4;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn5;
+        private DevExpress.XtraEditors.LabelControl labelFilterOut;
+        private DevExpress.XtraEditors.ProgressBarControl progressFilter;
 
 
 

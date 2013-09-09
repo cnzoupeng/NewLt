@@ -28,21 +28,37 @@ namespace NewLt
         public bool runchart_is_drawing;
         public int index_begin;
         public int index_end;
+        public bool appInit;
+        public List<TinyLott> listFilAll;
+        public ArrayList listRule;
+        public const int SHOW_MATCH_COUT = 6;
+        Random random;
 
         public MainForm()
         {
             InitializeComponent();
-
+            appInit = true;
             load_history();
             init_number_all();
             init_ctrl();
             init_filter();
             refresh_all_data();
+            viewSet();
+            appInit = false;
+        }
 
-          
-            //this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+        public void viewSet()
+        {
+            //Form size
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            System.Drawing.Point pt = new System.Drawing.Point(0, 0);
+            this.StartPosition = FormStartPosition.Manual;
+            this.PointToScreen(pt);
+            this.Width = screenWidth;
+            this.Height = screenHeight - 45;
+
+            labelFilterOut.Text = "";
         }
 
         public void itemCalcTest()
@@ -78,7 +94,11 @@ namespace NewLt
             listFilter.Add(new TypeFilt("散度", "3", "27", "3", "8"));
             listFilter.Add(new TypeFilt("偶数", "0", "6", "2", "1"));
             listFilter.Add(new TypeFilt("缺行", "0", "5", "2 ", "4"));
-            //listFilter.Add(new TypeFilt("篮球", "1", "16", "12 ", "2 3 4"));
+
+            listRule = new ArrayList();
+            listFilAll = new List<TinyLott>();
+            gridFilter.DataSource = listFilter;
+            random = new Random(DateTime.Now.DayOfYear + DateTime.Now.Millisecond);
         }
 
         public void load_history()
@@ -104,7 +124,7 @@ namespace NewLt
         {
             init_runchart();
 
-            comb_name_select_r.SelectedIndex = 7;
+            comb_name_select_r.SelectedIndex = 0;
             comb_id_select_range_r.SelectedIndex = 1;
         }
 
@@ -142,6 +162,30 @@ namespace NewLt
             comb_name_select_r.SelectedIndex = -1;
             comb_id_select_begin_r.SelectedIndex = -1;
             comb_id_select_end_r.SelectedIndex = -1;
+        }
+
+        private void comb_id_select_begin_r_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!appInit)
+            {
+                refresh_all_data();
+            }    
+        }
+
+        private void comb_id_select_end_r_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!appInit)
+            {
+                refresh_all_data();
+            }    
+        }
+
+        private void comb_name_select_r_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!appInit)
+            {
+                refresh_all_data();
+            }    
         }
 
         private void comb_id_select_range_r_SelectedIndexChanged(object sender, EventArgs e)
@@ -184,7 +228,10 @@ namespace NewLt
             comb_id_select_end_r.SelectedIndex = comb_id_select_end_r.Properties.Items.Count - 1;
             comb_id_select_begin_r.SelectedIndex = begin_index;
 
-            refresh_all_data();
+            if (!appInit)
+            {
+                refresh_all_data();
+            }            
         }
 
         public int get_id_range(ref int start, ref int stop)
@@ -296,35 +343,12 @@ namespace NewLt
             BindingList<NumCensus> list_census_3 = new BindingList<NumCensus>();
             BindingList<NumCensus> list_census_4 = new BindingList<NumCensus>();
             get_item_census(index_begin, index_end, LottoryItem.ItemCnId(comb_name_select_r.Text), list_census_1);
-            //get_item_census(index_begin, index_end, LottoryItem.ItemId("AC"), list_census_2);
-            //get_item_census(index_begin, index_end, LottoryItem.ItemId("SD"), list_census_3);
-            //get_item_census(index_begin, index_end, LottoryItem.ItemId("BL"), list_census_4);
-
 
             //----------------------------------------------
-            //chart_dig_one.DataSource = list_census;
-
             chart_dig_one.SeriesSerializable[0].DataSource = list_census_1;
-            //chart_dig_one.SeriesSerializable[1].DataSource = list_census_2;
-            //chart_dig_one.SeriesSerializable[2].DataSource = list_census_3;
-            //chart_dig_one.SeriesSerializable[3].DataSource = list_census_4;
-
             chart_dig_one.SeriesSerializable[0].Name = comb_name_select_r.Text;
             chart_dig_one.SeriesSerializable[0].ArgumentDataMember = "NUM";
             chart_dig_one.SeriesSerializable[0].ValueDataMembers[0] = "COUNT";
-
-            //chart_dig_one.SeriesSerializable[1].Name = "AC值";
-            //chart_dig_one.SeriesSerializable[1].ArgumentDataMember = "NUM";
-            //chart_dig_one.SeriesSerializable[1].ValueDataMembers[0] = "COUNT";
-
-            //chart_dig_one.SeriesSerializable[2].Name = "散度";
-            //chart_dig_one.SeriesSerializable[2].ArgumentDataMember = "NUM";
-            //chart_dig_one.SeriesSerializable[2].ValueDataMembers[0] = "COUNT";
-
-            //chart_dig_one.SeriesSerializable[3].Name = "篮球";
-            //chart_dig_one.SeriesSerializable[3].ArgumentDataMember = "NUM";
-            //chart_dig_one.SeriesSerializable[3].ValueDataMembers[0] = "COUNT";
-
 
             runchart_is_drawing = false;
         }
@@ -354,18 +378,6 @@ namespace NewLt
             chart_line_one.SeriesSerializable[0].ArgumentDataMember = "ID";
             chart_line_one.SeriesSerializable[0].ValueDataMembers[0] = LottoryItem.names[LottoryItem.ItemCnId(comb_name_select_r.Text)];
 
-            //chart_line_one.SeriesSerializable[1].Name = "AC值";
-            //chart_line_one.SeriesSerializable[1].ArgumentDataMember = "ID";
-            //chart_line_one.SeriesSerializable[1].ValueDataMembers[0] = "AC";
-
-            //chart_line_one.SeriesSerializable[2].Name = "散度";
-            //chart_line_one.SeriesSerializable[2].ArgumentDataMember = "ID";
-            //chart_line_one.SeriesSerializable[2].ValueDataMembers[0] = "SD";
-
-            //chart_line_one.SeriesSerializable[3].Name = "篮球";
-            //chart_line_one.SeriesSerializable[3].ArgumentDataMember = "ID";
-            //chart_line_one.SeriesSerializable[3].ValueDataMembers[0] = "BL";
-
             runchart_is_drawing = false;
         }
 
@@ -390,34 +402,22 @@ namespace NewLt
 
             refresh_runchart_data();
 
-            refresh_dig_data();
+            refresh_dig_data();            
 
             this.Cursor = Cursors.Default;
         }
 
         public void refresh_all_data_update()
         {
+            gridHis.DataSource = null;
             ltData.clone_history(gridList);
+            init_number_all();
             init_ctrl();
             refresh_all_data();
-            girdHisView.MoveLast();
             comb_id_select_range_r.SelectedIndex = -1;
             comb_id_select_range_r.SelectedIndex = 1;
-        }
-
-        private void comb_id_select_begin_r_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            refresh_all_data();
-        }
-
-        private void comb_id_select_end_r_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            refresh_all_data();
-        }
-
-        private void comb_name_select_r_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            refresh_all_data();
+            gridHis.Focus();
+            SendKeys.SendWait("^{END}");
         }
 
         public delegate void UpdateDatas();
@@ -430,10 +430,9 @@ namespace NewLt
 
         private void bandedGridView1_CustomDrawCell_1(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column.ColumnHandle > 0)
+            if (e.Column.ColumnHandle > 0 && gridListAll.Count > 0)
             {
                 NumberAll number = (NumberAll)gridListAll[e.RowHandle];
-
 
                 if (number.map[e.Column.ColumnHandle - 1] > 0)
                 {
@@ -463,6 +462,162 @@ namespace NewLt
         {
             FormFileter formf = new FormFileter(listFilter);
             formf.Show();
+        }
+
+        private void btDoFileter_Click(object sender, EventArgs e)
+        {
+            int randIndex = 0;
+            string err = "";
+            btDoFileter.Enabled = false;
+
+            if (!parseFiltOpt(ref err))
+            {
+                MessageBox.Show(err);
+                btDoFileter.Enabled = true;
+                return;
+            }
+
+            listFilAll.Clear();
+
+            Combin cmb = new Combin(33, 6);
+            long curMap = cmb.next();
+            int allIndex = 0;
+
+            int showStep = 1000;
+            int prgsStep = (int)cmb.COUNT / showStep;
+            progressFilter.Properties.Minimum = 0;
+            progressFilter.Properties.Maximum = prgsStep;
+            progressFilter.Properties.Step = 1;
+            progressFilter.Position = 0;
+            progressFilter.Refresh();
+
+            while (curMap != 0)
+            {
+                TinyLott lott = new TinyLott(curMap);
+                if (isMatch(lott))
+                {
+                    listFilAll.Add(lott);
+                    if (listFilAll.Count % 10 == 0)
+                    {
+                        labelFilterOut.Text = lott.toString();
+                        labelFilterOut.Refresh();
+                    }
+                }
+                curMap = cmb.next();
+
+                allIndex++;
+                if (allIndex % showStep == 0)
+                {
+                    progressFilter.PerformStep();
+                    progressFilter.Refresh();
+                    gridBand2.Caption = "  找到 " + listFilAll.Count.ToString() + " 个号码";                    
+                    gridFilter.Refresh();
+                }
+            }
+
+            if (listFilAll.Count > 0)
+            {
+                randIndex = random.Next(0, listFilAll.Count);
+                labelFilterOut.Text = listFilAll[randIndex].toString();
+            }
+            
+            gridBand2.Caption = "  找到 " + listFilAll.Count.ToString() + " 个号码";
+            progressFilter.Properties.Step = prgsStep;
+            progressFilter.Refresh();
+            btDoFileter.Enabled = true;
+        }
+
+        private void btRandChange_Click(object sender, EventArgs e)
+        {
+            if (listFilAll.Count > 0)
+            {
+                btRandChange.Enabled = false;
+                int randIndex = random.Next(0, listFilAll.Count);
+                labelFilterOut.Text = listFilAll[randIndex].toString();
+                btRandChange.Enabled = true;
+            }            
+        }
+
+        public bool isMatch(TinyLott lott)
+        {
+            if (!((TypeFilt)listRule[0]).match_red(ref lott.red))
+            {
+                return false;
+            }
+            if (!((TypeFilt)listRule[1]).match(lott.sum))
+            {
+                return false;
+            }
+            if (!((TypeFilt)listRule[2]).match(lott.ac))
+            {
+                return false;
+            }
+            if (!((TypeFilt)listRule[3]).match(lott.sd))
+            {
+                return false;
+            }
+            if (!((TypeFilt)listRule[4]).match(lott.odd))
+            {
+                return false;
+            }
+            if (!((TypeFilt)listRule[5]).match(lott.miss))
+            {
+                return false;
+            }
+            return true;
+            
+        }
+
+        public bool parseFiltOpt(ref string err)
+        {
+            listRule.Clear();
+            for (int i = 0; i < listFilter.Count; i++)
+            {
+                TypeFilt ruleInGrid = (TypeFilt)listFilter[i];
+                TypeFilt rule = new TypeFilt(ruleInGrid.type, ruleInGrid.min, ruleInGrid.max, ruleInGrid.inc, ruleInGrid.dec);
+
+                if (!rule.parseRule(ref err))
+                {
+                    listRule.Clear();
+                    return false;
+                }
+                listRule.Add(rule);
+            }
+            return true;
+        }
+
+        private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (this.FormBorderStyle == FormBorderStyle.None)
+                {
+                    this.TopMost = false;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    this.WindowState = FormWindowState.Normal;
+                }
+                else
+                {
+                    this.TopMost = true;
+                    this.FormBorderStyle = FormBorderStyle.None;
+                    this.WindowState = FormWindowState.Maximized;
+                }
+
+                this.Refresh();
+            }
+
+            if (e.KeyChar == (char)27)
+            {
+                this.TopMost = false;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            gridHis.Focus();
+            SendKeys.SendWait("^{END}");
         }
     }
 }
