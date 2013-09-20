@@ -95,7 +95,7 @@ namespace NewLt
             return bytes;
         }
 
-        public object BytesToStruct(byte[] bytes, Type type)
+        public static object BytesToStruct(byte[] bytes, Type type)
         {
             int size = Marshal.SizeOf(type);
             if (size > bytes.Length)
@@ -123,7 +123,7 @@ namespace NewLt
                 load_from_file(DEFINE.HISTORY_FILE);
             }
 
-            var th2 = new Thread(LtData.get_new);
+            Thread th2 = new Thread(LtData.get_new);
             th2.Start(this);
 
             return 0;
@@ -149,7 +149,7 @@ RETRY:
             try
             {
                 TcpClient tclient = new TcpClient();
-                tclient.Connect("192.168.1.15", 5000);
+                tclient.Connect("42.121.193.75", 5000);
                 NetworkStream stream = tclient.GetStream();
 
                 ReqHisData req = new ReqHisData();
@@ -176,7 +176,7 @@ RETRY:
                     return;
                 }
 
-                res = (ResData)ltData.BytesToStruct(byteHead, res.GetType());
+                res = (ResData)BytesToStruct(byteHead, res.GetType());
                 res.head.key = IPAddress.NetworkToHostOrder(res.head.key);
                 res.head.magic = IPAddress.NetworkToHostOrder(res.head.magic);
                 res.head.job = IPAddress.NetworkToHostOrder(res.head.job);

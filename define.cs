@@ -22,6 +22,12 @@
     public class LtNet
     {
         public const uint LT_MAGIC = 0x56ADF65B;
+        public const uint RCV_BUF_LEN = 4096;
+        public const string REMOTE_HOST = "zousir.me";
+        public const ushort REMOTE_PORT = 5000;
+        public const string VERSION_FILE = "version.xml";
+        public const string UPDATA_DIR = "update";
+        public const string UPDATA_EXE = "update.exe";
     }
 
     enum JobId
@@ -51,6 +57,18 @@
     {
         public CommHead head;
         public ReqHis req;
+    }
+
+    public struct ReqFile
+    {
+        public int len;
+        //public byte[] fileName;
+    }
+
+    public struct ReqFileData
+    {
+        public CommHead head;
+        public ReqFile req;
     }
 
     public struct ResData

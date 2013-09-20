@@ -14,6 +14,13 @@ using DevExpress.Utils;
 using System.Collections;
 using DevExpress.XtraCharts;
 using DevExpress.XtraGrid.Views.Base;
+using System.Net.Sockets;
+using System.Net;
+using System.Runtime.InteropServices;
+using System.IO;
+using System.Diagnostics;
+using System.Threading;
+using System.Xml;
 
 
 
@@ -33,6 +40,8 @@ namespace NewLt
         public ArrayList listRule;
         public const int SHOW_MATCH_COUT = 6;
         Random random;
+        UpCheck updateCheck;
+        public string version;
 
         public MainForm()
         {
@@ -45,8 +54,64 @@ namespace NewLt
             refresh_all_data();
             viewSet();
             appInit = false;
+
+            set_version();
+            update();
         }
 
+        public void update()
+        {
+            string curDir = Directory.GetCurrentDirectory();
+            string dstFile = curDir + "\\" + LtNet.UPDATA_EXE;
+            string updateFile = curDir + "\\" + LtNet.UPDATA_DIR + "\\" + LtNet.UPDATA_EXE;
+            try
+            {
+                if (File.Exists(updateFile))
+                {
+                    File.Delete(dstFile);
+                    File.Move(updateFile, dstFile);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("移动更新文件失败: " + ex.Message);
+            }
+
+            updateCheck = new UpCheck(this);
+            updateCheck.doCheck();
+
+        }
+
+        public void set_version()
+        {
+            string curDir = Directory.GetCurrentDirectory();
+            string lclXmlFile = curDir + "\\version.xml";
+            XmlDocument xmlLocal = new XmlDocument();
+            string ver = "";
+            int lcl_ver_main = 0;
+            int lcl_ver_sub = 0;
+
+            try
+            {
+                xmlLocal.Load(lclXmlFile);
+                XmlNodeList topM = xmlLocal.DocumentElement.ChildNodes;
+                foreach (XmlElement elm in topM)
+                {
+                    if (elm.Name.ToLower() == "version")
+                    {
+                        lcl_ver_main = Int32.Parse(elm.GetAttribute("major"));
+                        lcl_ver_sub = Int32.Parse(elm.GetAttribute("sub"));
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("读取版本信息失败：" + ex.Message);
+            }
+            ver = lcl_ver_main.ToString() + "." + lcl_ver_sub.ToString();
+            this.Text = this.Text + " " + ver;
+        }
+        
         public void viewSet()
         {
             //Form size
@@ -421,11 +486,45 @@ namespace NewLt
         }
 
         public delegate void UpdateDatas();
+        public delegate void UpdateNotify();
 
         public void otherUpdateDatas()
         {
             UpdateDatas updt = new UpdateDatas(refresh_all_data_update);
             this.BeginInvoke(updt);
+        }
+
+        public void doCheckNotify()
+        {
+            if (UpCheck.needUp)
+            {
+                DialogResult dr = MessageBox.Show("检查到新版本 现在升级？", "更新提示", 
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                {
+                    try
+                    {
+                        Process.Start(LtNet.UPDATA_EXE);
+                        System.Environment.Exit(0);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }                    
+                }
+            }
+
+            if (UpCheck.err != null)
+            {
+                MessageBox.Show("升级失败 " + UpCheck.err);
+            }
+        }
+
+        public void upCheckNotify()
+        {            
+            UpdateNotify notify = new UpdateNotify(doCheckNotify);
+            this.Invoke(notify);
+            //this.BeginInvoke(notify);
         }
 
         private void bandedGridView1_CustomDrawCell_1(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -618,6 +717,11 @@ namespace NewLt
         {
             gridHis.Focus();
             SendKeys.SendWait("^{END}");
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //System.Environment.Exit(0);
         }
     }
 }
