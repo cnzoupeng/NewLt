@@ -327,15 +327,15 @@ namespace NewLt
             }
 
             upList.Clear();
-            if (false)
-            {
-                if (rmt_ver_main == lcl_ver_main && rmt_ver_sub == lcl_ver_sub)
-                {
-                    err = "已经是最新版本: " + rmt_ver_main.ToString();
-                    err += "." + rmt_ver_sub.ToString();
-                    return 0;
-                }
-            }
+//             if (false)
+//             {
+//                 if (rmt_ver_main == lcl_ver_main && rmt_ver_sub == lcl_ver_sub)
+//                 {
+//                     err = "已经是最新版本: " + rmt_ver_main.ToString();
+//                     err += "." + rmt_ver_sub.ToString();
+//                     return 0;
+//                 }
+//             }
 
             bool existFile = false;
             foreach (FileItem newItem in listRmt)
@@ -371,7 +371,7 @@ namespace NewLt
         public static void check(object ltd)
         {
             List<FileItem> upList = new List<FileItem>();
-            
+            Thread.Sleep(1000);
             if (get_up_list(upList) < 0)
             {
                 mform.upCheckNotify();

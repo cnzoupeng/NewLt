@@ -544,6 +544,107 @@ namespace NewLt
         }
     }
 
+
+    public class LottMin
+    {
+        public int[] red = { 0, 0, 0, 0, 0, 0 };
+        public int blue;
+        public int sum;
+        public int ac;
+        public int sd;
+        public long map;
+
+        public LottMin(string str)
+        {
+            long ONE = 1;
+            map = 0;
+            string[] strItem = str.Split(' ');
+            if (strItem.Length < 6)
+            {
+                return;
+            }
+
+            for (var i = 0; i < 6; i++)
+            {
+                red[i] = int.Parse(strItem[i + 1]);
+                sum += red[i];
+                map |= ONE << ((char)(red[i] - 1));
+            }
+            calc_ac();
+            calc_sandu();
+        }
+
+        public LottMin(long rmap)
+        {
+            int count = 0;
+            long ONE = 1;
+            for (int i = 0; i < 33 && count < 6; ++i)
+            {
+                if ((rmap & (ONE << i)) != 0)
+                {
+                    red[count++] = i + 1;
+                    sum += i + 1;
+                }
+            }
+            calc_ac();
+            calc_sandu();
+        }
+
+        public static int bit_one_count(long u)
+        {
+            int ret = 0;
+            while (u != 0)
+            {
+                u = (u & (u - 1));
+                ret++;
+            }
+            return ret;
+        }
+
+        public int calc_ac()
+        {
+            long acmap = 0;
+            long one = 1;
+            int acTmp = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = i + 1; j < 6; j++)
+                {
+                    acTmp = Math.Abs(red[j] - red[i]);
+                    acmap |= one << (acTmp - 1);
+                }
+            }
+
+            this.ac = bit_one_count(acmap) - 5;
+            return ac;
+        }
+
+        public int calc_sandu()
+        {
+            long max = 0;
+            for (int i = 1; i < 34; i++)
+            {
+                long min = 0xFF;
+                long cal = 0;
+                for (var j = 0; j < 6; j++)
+                {
+                    cal = Math.Abs(i - (int)red[j]);
+                    if (cal < min)
+                    {
+                        min = cal;
+                    }
+                }
+
+                if (min > max)
+                {
+                    max = min;
+                }
+            }
+            sd = (int)max;
+            return sd;
+        }
+    }
+
     public class LtFileOper
     {
         public int string_to_item(string str, LottoryItem item)

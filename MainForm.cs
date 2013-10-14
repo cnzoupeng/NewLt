@@ -35,8 +35,9 @@ namespace NewLt
         public bool runchart_is_drawing;
         public int index_begin;
         public int index_end;
+        public int chart_range;
         public bool appInit;
-        public List<TinyLott> listFilAll;
+        
         public ArrayList listRule;
         public const int SHOW_MATCH_COUT = 6;
         Random random;
@@ -45,21 +46,27 @@ namespace NewLt
 
         public MainForm()
         {
+            chart_range = 10;
             InitializeComponent();
-            appInit = true;
+            viewSet();
+        }
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            appInit = true;                 
             load_history();
             init_number_all();
             init_ctrl();
-            init_filter();
-            refresh_all_data();
-            viewSet();
-            appInit = false;
-
+            refresh_all_data();            
+            initToolTab();
+            initDistribTab();
             set_version();
-            update();
+            AppUpdateCheck();
+            appInit = false;
         }
 
-        public void update()
+        public void AppUpdateCheck()
         {
             string curDir = Directory.GetCurrentDirectory();
             string dstFile = curDir + "\\" + LtNet.UPDATA_EXE;
@@ -79,7 +86,6 @@ namespace NewLt
 
             updateCheck = new UpCheck(this);
             updateCheck.doCheck();
-
         }
 
         public void set_version()
@@ -122,50 +128,8 @@ namespace NewLt
             this.PointToScreen(pt);
             this.Width = screenWidth;
             this.Height = screenHeight - 45;
-
-            labelFilterOut.Text = "";
         }
-
-        public void itemCalcTest()
-        {
-            for (int j = 0; j < gridList.Count; j++)
-            {
-                LottoryItem item = (LottoryItem)gridList[j];
-                TinyLott tItem = new TinyLott(item.map);
-                if (tItem.sd != item.sd || tItem.ac != item.ac || tItem.sum != item.sum_red || tItem.odd != item.odd_num)
-                {
-                    MessageBox.Show("Error");
-                    return;
-                }
-                for(int i = 0; i < 6; i++)
-                {
-                    if (tItem.red[i] != item.red[i])
-                    {
-                        MessageBox.Show("Error");
-                        return;
-                    }
-                }
-            }
-
-            MessageBox.Show("OK");
-        }
-
-        public void init_filter()
-        {
-            listFilter = new BindingList<TypeFilt>();
-            listFilter.Add(new TypeFilt("红球", "1", "33", "4 5 6", "7 8"));
-            listFilter.Add(new TypeFilt("和值", "21", "183", "88 89", "98 99"));
-            listFilter.Add(new TypeFilt("AC", "0", "10", "2 3", "7"));
-            listFilter.Add(new TypeFilt("散度", "3", "27", "3", "8"));
-            listFilter.Add(new TypeFilt("偶数", "0", "6", "2", "1"));
-            listFilter.Add(new TypeFilt("缺行", "0", "5", "2 ", "4"));
-
-            listRule = new ArrayList();
-            listFilAll = new List<TinyLott>();
-            gridFilter.DataSource = listFilter;
-            random = new Random(DateTime.Now.DayOfYear + DateTime.Now.Millisecond);
-        }
-
+        
         public void load_history()
         {
             ltData = new LtData(this);
@@ -212,9 +176,9 @@ namespace NewLt
                     break;
                 }
 
-                comb_name_select_r.Properties.Items.Add(LottoryItem.namesCn[i]);
+                comb_name_select_r.Properties.Items.Add(LottoryItem.namesCn[i]);                
             }
-
+            comb_name_select_r.Properties.Items.Add("热球");
             comb_id_select_begin_r.Properties.Items.Clear();
             comb_id_select_end_r.Properties.Items.Clear();
 
@@ -255,36 +219,45 @@ namespace NewLt
 
         private void comb_id_select_range_r_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int range = 0;
+            chart_range = 10;
             switch (comb_id_select_range_r.SelectedIndex)
             {
                 case 0:
-                    range = 10;
+                    chart_range = 5;
                     break;
                 case 1:
-                    range = 30;
+                    chart_range = 10;
                     break;
                 case 2:
-                    range = 50;
+                    chart_range = 15;
                     break;
                 case 3:
-                    range = 100;
+                    chart_range = 20;
                     break;
                 case 4:
-                    range = 300;
+                    chart_range = 30;
+                    break;
+                case 5:
+                    chart_range = 50;
+                    break;
+                case 6:
+                    chart_range = 100;
+                    break;
+                case 7:
+                    chart_range = 300;
                     break;
                 default:
-                    range = 0;
+                    chart_range = 10;
                     break;
             }
 
-            if (range <= 0)
+            if (chart_range <= 0)
             {
                 return;
             }
 
             int all_count = comb_id_select_end_r.Properties.Items.Count;
-            int begin_index = all_count - 1 - range;
+            int begin_index = all_count - 1 - chart_range;
             if (begin_index < 0)
             {
                 begin_index = 0;
@@ -296,7 +269,40 @@ namespace NewLt
             if (!appInit)
             {
                 refresh_all_data();
-            }            
+            }
+        }
+
+        private void comb_id_select_range_r_EditValueChanged(object sender, EventArgs e)
+        {
+            chart_range = 10;
+            try
+            {
+                chart_range = Int32.Parse(comb_id_select_range_r.Text);
+            }
+            catch (System.Exception ex)
+            {
+                return;
+            }
+
+            if (chart_range <= 0)
+            {
+                return;
+            }
+
+            int all_count = comb_id_select_end_r.Properties.Items.Count;
+            int begin_index = all_count - 1 - chart_range;
+            if (begin_index < 0)
+            {
+                begin_index = 0;
+            }
+
+            comb_id_select_end_r.SelectedIndex = comb_id_select_end_r.Properties.Items.Count - 1;
+            comb_id_select_begin_r.SelectedIndex = begin_index;
+
+            if (!appInit)
+            {
+                refresh_all_data();
+            }
         }
 
         public int get_id_range(ref int start, ref int stop)
@@ -309,24 +315,32 @@ namespace NewLt
                 return -1;
             }
 
+            int valIndex = 0;
             int id_begin = Int32.Parse(comb_id_select_begin_r.EditValue.ToString());
             int id_end = Int32.Parse(comb_id_select_end_r.EditValue.ToString());
             string nameid = comb_name_select_r.EditValue.ToString();
 
-            int valIndex = 0;
-            for (; valIndex < LottoryItem.namesCn.Length; valIndex++)
+            if (nameid == "热球")
             {
-                if (LottoryItem.namesCn[valIndex] == nameid)
+                valIndex = 1;
+            }
+            else
+            {
+                for (; valIndex < LottoryItem.namesCn.Length; valIndex++)
                 {
-                    break;
+                    if (LottoryItem.namesCn[valIndex] == nameid)
+                    {
+                        break;
+                    }
+                }
+
+                if (valIndex >= LottoryItem.namesCn.Length)
+                {
+                    runchart_is_drawing = false;
+                    return -1;
                 }
             }
 
-            if (valIndex >= LottoryItem.namesCn.Length)
-            {
-                runchart_is_drawing = false;
-                return -1;
-            }
 
             int index_begin = -1;
             int index_end = -1;
@@ -392,6 +406,33 @@ namespace NewLt
             }
         }
 
+        public void get_hot_red_census(int start, int stop, BindingList<NumCensus> list)
+        {
+            int[] index = new int[36];
+            for (int i = 0; i < 36; i++)
+            {
+                index[i] = 0;
+            }
+
+            for (int i = index_begin; i <= index_end; i++)
+            {
+                LottoryItem item = (LottoryItem)ltData.ltSet[i];
+                for (int k = 0; k < 6; ++k )
+                {
+                    index[item.red[k]]++;
+                }
+            }
+
+            for (int i = 0; i < 36; i++)
+            {
+                if (index[i] > 0)
+                {
+                    NumCensus census = new NumCensus(i, index[i]);
+                    list.Add(census);
+                }
+            }
+        }
+
         public void refresh_dig_data()
         {
             if (runchart_is_drawing)
@@ -404,10 +445,27 @@ namespace NewLt
 
             //-------------------------------------------
             BindingList<NumCensus> list_census_1 = new BindingList<NumCensus>();
-            BindingList<NumCensus> list_census_2 = new BindingList<NumCensus>();
-            BindingList<NumCensus> list_census_3 = new BindingList<NumCensus>();
-            BindingList<NumCensus> list_census_4 = new BindingList<NumCensus>();
-            get_item_census(index_begin, index_end, LottoryItem.ItemCnId(comb_name_select_r.Text), list_census_1);
+            if (nameid == "热球")
+            {
+                get_hot_red_census(index_begin, index_end, list_census_1);
+            }
+            else
+            {
+                get_item_census(index_begin, index_end, LottoryItem.ItemCnId(comb_name_select_r.Text), list_census_1);
+            }
+            
+
+            //平均值
+            float sum = 0;
+            float count = 0;
+            float aver = 0;
+            foreach (NumCensus item in list_census_1)
+            {
+                count += item.COUNT;
+                sum += item.NUM * item.COUNT;
+            }
+            aver = sum / count;
+            label_average.Text = "平均值: " + aver.ToString("F2");
 
             //----------------------------------------------
             chart_dig_one.SeriesSerializable[0].DataSource = list_census_1;
@@ -424,9 +482,15 @@ namespace NewLt
             {
                 return;
             }
-
+            
             runchart_is_drawing = true;
             string nameid = comb_name_select_r.EditValue.ToString();
+
+            if (nameid == "热球")
+            {
+                runchart_is_drawing = false;
+                return;
+            }
             //-------------------------------------------
 
             ArrayList list_data = ltData.ltSet.GetRange(index_begin, index_end - index_begin + 1);
@@ -445,8 +509,6 @@ namespace NewLt
 
             runchart_is_drawing = false;
         }
-
-
 
         public void refresh_all_data()
         {
@@ -527,7 +589,7 @@ namespace NewLt
             //this.BeginInvoke(notify);
         }
 
-        private void bandedGridView1_CustomDrawCell_1(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        private void bandedGridViewDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             if (e.Column.ColumnHandle > 0 && gridListAll.Count > 0)
             {
@@ -556,135 +618,7 @@ namespace NewLt
             ColumnView view = sender as ColumnView;
             girdHisView.MoveLast();
         }
-
-        private void btFileter_Click(object sender, EventArgs e)
-        {
-            FormFileter formf = new FormFileter(listFilter);
-            formf.Show();
-        }
-
-        private void btDoFileter_Click(object sender, EventArgs e)
-        {
-            int randIndex = 0;
-            string err = "";
-            btDoFileter.Enabled = false;
-
-            if (!parseFiltOpt(ref err))
-            {
-                MessageBox.Show(err);
-                btDoFileter.Enabled = true;
-                return;
-            }
-
-            listFilAll.Clear();
-
-            Combin cmb = new Combin(33, 6);
-            long curMap = cmb.next();
-            int allIndex = 0;
-
-            int showStep = 1000;
-            int prgsStep = (int)cmb.COUNT / showStep;
-            progressFilter.Properties.Minimum = 0;
-            progressFilter.Properties.Maximum = prgsStep;
-            progressFilter.Properties.Step = 1;
-            progressFilter.Position = 0;
-            progressFilter.Refresh();
-
-            while (curMap != 0)
-            {
-                TinyLott lott = new TinyLott(curMap);
-                if (isMatch(lott))
-                {
-                    listFilAll.Add(lott);
-                    if (listFilAll.Count % 10 == 0)
-                    {
-                        labelFilterOut.Text = lott.toString();
-                        labelFilterOut.Refresh();
-                    }
-                }
-                curMap = cmb.next();
-
-                allIndex++;
-                if (allIndex % showStep == 0)
-                {
-                    progressFilter.PerformStep();
-                    progressFilter.Refresh();
-                    gridBand2.Caption = "  找到 " + listFilAll.Count.ToString() + " 个号码";                    
-                    gridFilter.Refresh();
-                }
-            }
-
-            if (listFilAll.Count > 0)
-            {
-                randIndex = random.Next(0, listFilAll.Count);
-                labelFilterOut.Text = listFilAll[randIndex].toString();
-            }
-            
-            gridBand2.Caption = "  找到 " + listFilAll.Count.ToString() + " 个号码";
-            progressFilter.Properties.Step = prgsStep;
-            progressFilter.Refresh();
-            btDoFileter.Enabled = true;
-        }
-
-        private void btRandChange_Click(object sender, EventArgs e)
-        {
-            if (listFilAll.Count > 0)
-            {
-                btRandChange.Enabled = false;
-                int randIndex = random.Next(0, listFilAll.Count);
-                labelFilterOut.Text = listFilAll[randIndex].toString();
-                btRandChange.Enabled = true;
-            }            
-        }
-
-        public bool isMatch(TinyLott lott)
-        {
-            if (!((TypeFilt)listRule[0]).match_red(ref lott.red))
-            {
-                return false;
-            }
-            if (!((TypeFilt)listRule[1]).match(lott.sum))
-            {
-                return false;
-            }
-            if (!((TypeFilt)listRule[2]).match(lott.ac))
-            {
-                return false;
-            }
-            if (!((TypeFilt)listRule[3]).match(lott.sd))
-            {
-                return false;
-            }
-            if (!((TypeFilt)listRule[4]).match(lott.odd))
-            {
-                return false;
-            }
-            if (!((TypeFilt)listRule[5]).match(lott.miss))
-            {
-                return false;
-            }
-            return true;
-            
-        }
-
-        public bool parseFiltOpt(ref string err)
-        {
-            listRule.Clear();
-            for (int i = 0; i < listFilter.Count; i++)
-            {
-                TypeFilt ruleInGrid = (TypeFilt)listFilter[i];
-                TypeFilt rule = new TypeFilt(ruleInGrid.type, ruleInGrid.min, ruleInGrid.max, ruleInGrid.inc, ruleInGrid.dec);
-
-                if (!rule.parseRule(ref err))
-                {
-                    listRule.Clear();
-                    return false;
-                }
-                listRule.Add(rule);
-            }
-            return true;
-        }
-
+        
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -722,6 +656,67 @@ namespace NewLt
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //System.Environment.Exit(0);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            int all_count = comb_id_select_end_r.Properties.Items.Count;
+            int end_index = comb_id_select_end_r.SelectedIndex - chart_range;
+            int begin_index = end_index - chart_range;
+            if (begin_index < 0)
+            {
+                begin_index = 0;
+            }
+            if (end_index < 0)
+            {
+                end_index = 0;
+            }
+
+            comb_id_select_end_r.SelectedIndex = end_index;
+            comb_id_select_begin_r.SelectedIndex = begin_index;
+
+            refresh_all_data();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            int all_count = comb_id_select_end_r.Properties.Items.Count;
+            int end_index = comb_id_select_end_r.SelectedIndex + chart_range;
+            int begin_index = end_index - chart_range;
+            if (begin_index >= all_count)
+            {
+                begin_index = all_count - 1;
+            }
+            if (end_index >= all_count)
+            {
+                end_index = all_count - 1;
+            }
+
+            comb_id_select_end_r.SelectedIndex = end_index;
+            comb_id_select_begin_r.SelectedIndex = begin_index;
+
+            refresh_all_data();
+        }
+
+        private void btSortCount_Click(object sender, EventArgs e)
+        {
+            BindingList<NumCensus> list_census = (BindingList<NumCensus>)chart_dig_one.SeriesSerializable[0].DataSource;
+            if (list_census == null || list_census.Count == 0)
+            {
+                return;
+            }
+            List<NumCensus> list = new List<NumCensus>();
+            foreach (NumCensus item in list_census)
+            {
+                list.Add(item);
+            }
+            list.Sort();
+
+            list_census.Clear();
+            foreach (NumCensus item in list)
+            {
+                list_census.Add(item);
+            }
         }
     }
 }
