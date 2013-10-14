@@ -202,14 +202,18 @@
             this.chartCensusHis = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabDistrib = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl6 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.splitContainerControl7 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.splitContainerControl8 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridDistrib = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabMain)).BeginInit();
             this.xtraTabMain.SuspendLayout();
             this.xtraTabHistory.SuspendLayout();
@@ -272,6 +276,10 @@
             this.xtraTabDistrib.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl6)).BeginInit();
             this.splitContainerControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl7)).BeginInit();
+            this.splitContainerControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl8)).BeginInit();
+            this.splitContainerControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDistrib)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView2)).BeginInit();
             this.SuspendLayout();
@@ -2364,13 +2372,60 @@
             this.splitContainerControl6.Horizontal = false;
             this.splitContainerControl6.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl6.Name = "splitContainerControl6";
-            this.splitContainerControl6.Panel1.Controls.Add(this.gridDistrib);
+            this.splitContainerControl6.Panel1.Controls.Add(this.splitContainerControl8);
             this.splitContainerControl6.Panel1.Text = "Panel1";
+            this.splitContainerControl6.Panel2.Controls.Add(this.splitContainerControl7);
             this.splitContainerControl6.Panel2.Text = "Panel2";
             this.splitContainerControl6.Size = new System.Drawing.Size(1234, 804);
             this.splitContainerControl6.SplitterPosition = 452;
             this.splitContainerControl6.TabIndex = 0;
             this.splitContainerControl6.Text = "splitContainerControl6";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(11, 17);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 10;
+            this.simpleButton3.Text = "Same";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // gridBand4
+            // 
+            this.gridBand4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.gridBand4.AppearanceHeader.Options.UseFont = true;
+            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridBand4.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.RowCount = 2;
+            this.gridBand4.Width = 1732;
+            // 
+            // splitContainerControl7
+            // 
+            this.splitContainerControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl7.Name = "splitContainerControl7";
+            this.splitContainerControl7.Panel1.Text = "Panel1";
+            this.splitContainerControl7.Panel2.Text = "Panel2";
+            this.splitContainerControl7.Size = new System.Drawing.Size(1234, 346);
+            this.splitContainerControl7.SplitterPosition = 750;
+            this.splitContainerControl7.TabIndex = 0;
+            this.splitContainerControl7.Text = "splitContainerControl7";
+            // 
+            // splitContainerControl8
+            // 
+            this.splitContainerControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl8.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl8.Name = "splitContainerControl8";
+            this.splitContainerControl8.Panel1.Controls.Add(this.simpleButton3);
+            this.splitContainerControl8.Panel1.Controls.Add(this.gridDistrib);
+            this.splitContainerControl8.Panel1.Text = "Panel1";
+            this.splitContainerControl8.Panel2.Text = "Panel2";
+            this.splitContainerControl8.Size = new System.Drawing.Size(1234, 452);
+            this.splitContainerControl8.SplitterPosition = 701;
+            this.splitContainerControl8.TabIndex = 0;
+            this.splitContainerControl8.Text = "splitContainerControl8";
             // 
             // gridDistrib
             // 
@@ -2380,8 +2435,8 @@
             this.gridDistrib.MainView = this.bandedGridView2;
             this.gridDistrib.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridDistrib.Name = "gridDistrib";
-            this.gridDistrib.Size = new System.Drawing.Size(1234, 452);
-            this.gridDistrib.TabIndex = 9;
+            this.gridDistrib.Size = new System.Drawing.Size(701, 452);
+            this.gridDistrib.TabIndex = 11;
             this.gridDistrib.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView2});
             // 
@@ -2400,7 +2455,7 @@
             this.bandedGridView2.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.bandedGridView2.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.bandedGridView2.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand4});
+            this.gridBand5});
             this.bandedGridView2.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.bandedGridColumn4,
             this.bandedGridColumn5,
@@ -2411,16 +2466,22 @@
             this.bandedGridView2.Name = "bandedGridView2";
             this.bandedGridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridView2.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridView2.OptionsBehavior.ReadOnly = true;
             this.bandedGridView2.OptionsCustomization.AllowBandMoving = false;
-            this.bandedGridView2.OptionsCustomization.AllowBandResizing = false;
             this.bandedGridView2.OptionsCustomization.AllowColumnMoving = false;
-            this.bandedGridView2.OptionsCustomization.AllowColumnResizing = false;
-            this.bandedGridView2.OptionsCustomization.AllowFilter = false;
-            this.bandedGridView2.OptionsCustomization.AllowGroup = false;
-            this.bandedGridView2.OptionsCustomization.AllowQuickHideColumns = false;
-            this.bandedGridView2.OptionsCustomization.AllowSort = false;
             this.bandedGridView2.OptionsView.ShowGroupPanel = false;
             this.bandedGridView2.OptionsView.ShowIndicator = false;
+            // 
+            // gridBand5
+            // 
+            this.gridBand5.Columns.Add(this.bandedGridColumn4);
+            this.gridBand5.Columns.Add(this.bandedGridColumn5);
+            this.gridBand5.Columns.Add(this.bandedGridColumn6);
+            this.gridBand5.Columns.Add(this.bandedGridColumn7);
+            this.gridBand5.Columns.Add(this.bandedGridColumn8);
+            this.gridBand5.Name = "gridBand5";
+            this.gridBand5.RowCount = 2;
+            this.gridBand5.Width = 1732;
             // 
             // bandedGridColumn4
             // 
@@ -2467,22 +2528,6 @@
             this.bandedGridColumn8.Name = "bandedGridColumn8";
             this.bandedGridColumn8.Visible = true;
             this.bandedGridColumn8.Width = 701;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.AppearanceHeader.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
-            this.gridBand4.AppearanceHeader.Options.UseFont = true;
-            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridBand4.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridBand4.Columns.Add(this.bandedGridColumn4);
-            this.gridBand4.Columns.Add(this.bandedGridColumn5);
-            this.gridBand4.Columns.Add(this.bandedGridColumn6);
-            this.gridBand4.Columns.Add(this.bandedGridColumn7);
-            this.gridBand4.Columns.Add(this.bandedGridColumn8);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.RowCount = 2;
-            this.gridBand4.Width = 1732;
             // 
             // MainForm
             // 
@@ -2563,6 +2608,10 @@
             this.xtraTabDistrib.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl6)).EndInit();
             this.splitContainerControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl7)).EndInit();
+            this.splitContainerControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl8)).EndInit();
+            this.splitContainerControl8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridDistrib)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -2718,13 +2767,17 @@
         private DevExpress.XtraEditors.SimpleButton btSortCount;
         private DevExpress.XtraTab.XtraTabPage xtraTabDistrib;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl8;
         private DevExpress.XtraGrid.GridControl gridDistrib;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView2;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl7;
     }
 }

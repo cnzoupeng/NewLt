@@ -40,14 +40,47 @@ namespace NewLt
 
             gridDistrib.DataSource = listDistrib;
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            Dictionary<int, int> tmpMap = new Dictionary<int, int>();
+            foreach (DistData item in listDistrib)
+            {
+                if (tmpMap.ContainsKey(item.distr))
+                {
+                    tmpMap[item.distr]++;
+                }
+                else
+                {
+                    tmpMap.Add(item.distr, 1);
+                }
+            }
+
+            int allCount = listDistrib.Count;
+            int perCount = 20;
+            int count = 0;
+            for (int i = 0; i < allCount - perCount; ++i)
+            {
+                for (int j = i + 1; j < (i + perCount); ++j )
+                {
+                    if (listDistrib[i].distr == listDistrib[j].distr)
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            int xx = 0;
+        }
+
     }
 
     public class DistData
     {
-        int id;        
-        int miss;
-        string distr;
-        string num;
+        public int id;
+        public int miss;
+        public int distr;
+        public string num;
 
         public DistData(LottoryItem item)
         {
@@ -56,16 +89,17 @@ namespace NewLt
             num = string.Format("{0:00} {1:00} {2:00} {3:00} {4:00} {5:00} {6:00}"
                     , item.red[0], item.red[1], item.red[2], item.red[3], item.red[4], item.red[5], item.blue);
 
-            int[] countMap = { 0, 0, 0, 0, 0, 0 };
+
             long Fix = 0x3F;
             for (int i = 0; i < 5; ++i )
             {
                 long mapTmp = item.map & (Fix << (i * 6));
-                countMap[i] = Combin.bit_count(mapTmp);
+                distr *= 10;
+                distr += Combin.bit_count(mapTmp);
             }
-            countMap[5] = Combin.bit_count(item.map & 0x1C0000000);
-            distr = string.Format("{0:0}{1:0}{2:0}{3:0}{4:0}{5:0}",
-                countMap[0], countMap[1], countMap[2], countMap[3], countMap[4], countMap[5]);
+
+            distr *= 10;
+            distr += Combin.bit_count(item.map & 0x1C0000000);
         }
 
         public int ID
@@ -85,7 +119,7 @@ namespace NewLt
 
         public string DIST
         {
-            get { return distr; }
+            get { return string.Format("{0:000000}", distr); }
         }
     }
 }
